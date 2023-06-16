@@ -4,5 +4,19 @@
   },
   "scripts": {
     "tailwind": "npx tailwindcss -i ./src/css/input.css -o ./src/css/output.css --watch"
-  }
+  },
+  "name": "front-projeto-integrado",
+  "description": "Front-end do Buscalab",
+  "version": "1.0.0",
+  "main": "tailwind.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RafiMota/front-projeto-integrado.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RafiMota/front-projeto-integrado/issues"
+  },
+  "homepage": "https://github.com/RafiMota/front-projeto-integrado#readme"
 }

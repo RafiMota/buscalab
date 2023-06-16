@@ -11,31 +11,73 @@
 
 <body>
     <header class="p-8 pb-2 pt-2 flex justify-between items-center border-b-2 border-red-200">
-        <img src="assets/logo.svg" alt="" class="w-16">
-        <span class="text-xl font-bold text-slate-600"><img src="assets/lupa.svg" alt="" class=""></span>
+        <img id="logo" src="/assets/cyberpunk/logo-cyberpunk.svg" alt="" class="w-16">
+        <span class="text-xl font-bold text-slate-600"><img id="lupa" src="/assets/cyberpunk/lupa-cyberpunk.svg" alt=""
+                class=""></span>
     </header>
 
-    <main>
-        <section class="text-center pt-8 pb-8 flex flex-col items-center">
-            <h2 class="text-3xl font-bold text-red-600 pb-8">Conheça os laboratórios</h2>
 
-            <div id="carrossel" class="flex flex-row w-full justify-around items-center">
-                <a href=""><img src="assets/setaesq.png" alt="Seta apontando para a esquerda"></a>
-                <img src="assets/cyberpunk.png" alt="" class="">
-                <a href=""><img src="assets/setadir.png" alt="Seta apontando para a esquerda"></a>
+    <main>
+
+        <link rel="stylesheet" href="/src/css/carousel.css">
+        <section>
+            <h2 id="title">Conheça os laboratórios</h2>
+
+            <div class="slideshow-container">
+
+                <div class="mySlides fade">
+
+                    <img src="/assets/cyberpunk/cyberpunk.png" style="width:100%">
+                    <div class="text">Caption Text</div>
+                </div>
+
+                <div class="mySlides fade">
+
+                    <img src="/assets/magicworld/magicworld.png" style="width:100%">
+                    <div class="text">Caption Two</div>
+                </div>
+
+                <div class="mySlides fade">
+
+                    <img src="/assets/solarpunk/solarpunk.png" style="width:100%">
+                    <div class="text">Caption Three</div>
+                </div>
+
+                <div class="mySlides fade">
+
+                    <img src="/assets/steampunk/steampunk.png" style="width:100%">
+                    <div class="text">Caption Three</div>
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+
             </div>
 
+
+            <div style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
         </section>
 
-        <section class="flex flex-col h-full bg-rose-400 p-8">
-            <img src="assets/megafone.svg" alt="" class="w-1/2 self-center">
-            <h3 class="text-2xl font-bold text-cyan-950">Aconteceu algum problema?</h3>
+
+
+        <link rel="stylesheet" href="src/css/output.css">
+        <section id="report" class="flex flex-col h-full bg-rose-400 p-8">
+            <img id="megafone" src="/assets/cyberpunk/megafone-cyberpunk.svg" alt="" class="w-1/2 self-center">
+            <br>
+            <h3 id="h3-report" class="text-2xl font-bold text-cyan-950">Aconteceu algum problema?</h3>
             <div class="pt-4 pb-4 text-left">
                 <p class="text-slate-50">Seu computador não está ligando?</p>
                 <p class="text-slate-50">O projetor não conectou no celular?</p>
+                <br>
+                <p class="text-slate-50">Não se preocupe, informe seu problema abaixo!</p>
             </div>
-            <p class="text-slate-50 text-xl font-bold">Não se preocupe, informe seu problema abaixo!</p>
-            <a href=""><button
+
+            <a href=""><button id="report_button"
                     class="mt-8 bg-cyan-950 p-4 rounded-md text-slate-50 text-xl font-bold ">Reportar</button></a>
         </section>
 
@@ -45,5 +87,6 @@
 
     </footer>
 </body>
+<script src="/src/main.js"></script>
 
 </html>
