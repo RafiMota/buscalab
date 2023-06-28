@@ -1,0 +1,47 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+section{
+    display: flex;
+    justify-content: center;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+section > h2{
+    font-size: 1.7rem;
+    line-height: 2.25rem;
+    font-weight: 700;
+    color: #B81F1F;
+    padding: 0.5rem 0rem;
+}
+article{    
+    width: 277px;    
+    margin: auto;    
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 55%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: #B81F1F;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+.next {
+    right: -50px;
+    /* border-radius: 3px 0 0 3px; */
+}
+.prev {
+    left: -50px;
+    border-radius: 3px 0 0 3px;
+}
+

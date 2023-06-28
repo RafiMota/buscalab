@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
-        'bgLogin': "url('/assets/bgLogin.jpg')"
+        'bgLogin': "url('/assets/bgLogin.jpg')",
+        'capa_lab_cybepunk': "url('/assets/cyberpunk/capa-lab-cyberpunk.png')"
       }
     },
   },
