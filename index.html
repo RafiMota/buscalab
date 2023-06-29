@@ -2,90 +2,132 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buscalab</title>
-    <link rel="stylesheet" href="src/css/output.css">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buscalab</title>
+  <link rel="stylesheet" href="/src/css/glide.core.css" />
+  <link rel="stylesheet" href="/src/css/glide.theme.css" />
+  <link rel="stylesheet" href="/src/css/carousel.css" />
+  <link rel="stylesheet" href="src/css/output.css" />
 </head>
 
-<body>
-    <header class="p-8 pb-2 pt-2 flex justify-between items-center border-b-2 border-red-200">
-        <img id="logo" src="/assets/cyberpunk/logo-cyberpunk.svg" alt="" class="w-16">
-        <span class="text-xl font-bold text-slate-600"><img id="lupa" src="/assets/cyberpunk/lupa-cyberpunk.svg" alt=""
-                class=""></span>
-    </header>
+<body class="">
+  <header class="flex items-center justify-between border-b-2 border-red-300 p-8 pb-2 pt-2">
+    <img id="logo" src="/assets/cyberpunk/logo-cyberpunk.svg" alt="" class="w-16" />
+    <a href="#" class="text-xl font-bold text-slate-600"><img id="lupa" src="/assets/cyberpunk/lupa-cyberpunk.svg"
+        alt="" class="" /></a>
+  </header>
 
-
-    <main>
-
-        <link rel="stylesheet" href="/src/css/carousel.css">
-        <section>
-            <h2 id="title">Conheça os laboratórios</h2>
-
-            <div class="slideshow-container">
-
-                <div class="mySlides fade">
-
-                    <img src="/assets/cyberpunk/cyberpunk.png" style="width:100%">
-                    <div class="text">Caption Text</div>
-                </div>
-
-                <div class="mySlides fade">
-
-                    <img src="/assets/magicworld/magicworld.png" style="width:100%">
-                    <div class="text">Caption Two</div>
-                </div>
-
-                <div class="mySlides fade">
-
-                    <img src="/assets/solarpunk/solarpunk.png" style="width:100%">
-                    <div class="text">Caption Three</div>
-                </div>
-
-                <div class="mySlides fade">
-
-                    <img src="/assets/steampunk/steampunk.png" style="width:100%">
-                    <div class="text">Caption Three</div>
-                </div>
-
-                <a class="prev" onclick="plusSlides(-1)">❮</a>
-                <a class="next" onclick="plusSlides(1)">❯</a>
-
+  <main id="carrossel">
+    <section>
+      <h2 id="title" class="mb-2 mt-2 text-3xl">Conheça os laboratórios</h2>
+      <!-- Article abaixo representa o Carrossel -->
+      <article class="mb-8 flex flex-col justify-center">
+        <div class="carousel">
+          <div class="glide">
+            <div data-glide-el="track" class="glide__track">
+              <ul class="glide__slides">
+                <a href="/html/lab1.html" class="glide__slide">
+                  <img src="/assets/cyberpunk/cyberpunk.png" alt="" class="" />
+                </a>
+                <a href="/html/lab2.html" class="glide__slide">
+                  <img src="/assets/solarpunk/solarpunk.png" alt="" class="" />
+                </a>
+                <a href="/html/lab3.html" class="glide__slide">
+                  <img src="/assets/magicworld/magicworld.png" alt="" class="" />
+                </a>
+                <a href="/html/lab4.html" class="glide__slide">
+                  <img src="/assets/medieval/medieval.png" alt="" class="" />
+                </a>
+                <a href="/html/lab5.html" class="glide__slide">
+                  <img src="/assets/steampunk/steampunk.png" alt="" class="" />
+                </a>
+                <a href="/html/lab6.html" class="glide__slide">
+                  <img src="/assets/spaceopera/spaceopera.png" alt="" class="" />
+                </a>
+              </ul>
+            </div>
+            <div class="glide__arrows" data-glide-el="controls">
+              <button class="prev glide__arrow glide__arrow--left" data-glide-dir="<" onclick="showSlides(-1)">
+                < </button>
+                  <button class="next glide__arrow glide__arrow--right" data-glide-dir=">" onclick="showSlides(-1)">
+                    >
+                  </button>
+            </div>
+            <div class="glide__bullets flex h-10 items-center justify-center" data-glide-el="controls[nav]">
+              <button class="glide__bullet h-2 w-2 hover:bg-slate-400 focus:bg-slate-400" data-number="0"
+                data-glide-dir="= 0" onclick="showSlides(0)"></button>
+              <button class="glide__bullet h-2 w-2 hover:bg-slate-400 focus:bg-slate-400" data-number="1"
+                data-glide-dir="= 1" onclick="showSlides(1)"></button>
+              <button class="glide__bullet h-2 w-2 hover:bg-slate-400 focus:bg-slate-400" data-number="2"
+                data-glide-dir="= 2" onclick="showSlides(2)"></button>
+              <button class="glide__bullet h-2 w-2 hover:bg-slate-400 focus:bg-slate-400" data-number="3"
+                data-glide-dir="= 3" onclick="showSlides(3)"></button>
+              <button class="glide__bullet h-2 w-2 hover:bg-slate-400 focus:bg-slate-400" data-number="4"
+                data-glide-dir="= 4" onclick="showSlides(4)"></button>
+              <button class="glide__bullet h-2 w-2 hover:bg-slate-400 focus:bg-slate-400" data-number="5"
+                data-glide-dir="= 5" onclick="showSlides(5)"></button>
             </div>
 
+          </div>
+        </div>
+      </article>
 
-            <div style="text-align:center">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-                <span class="dot" onclick="currentSlide(4)"></span>
-            </div>
-        </section>
+      <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+      <script>
+        const config = {
+          type: "carousel",
+          perView: 1,
+        };
+        new Glide(".glide", config).mount();
+      </script>
+    </section>
+
+    <section id="report" class="flex h-full flex-col bg-rose-400 p-10">
+      <img id="megafone" src="./assets/cyberpunk/megafone-cyberpunk.svg" alt="" class="w-1/2 self-center" />
+      <h3 id="h3-report" class="text-2xl font-bold text-cyan-950">
+        Aconteceu algum problema?
+      </h3>
+      <div class="pb-4 pt-4 text-left">
+        <p class="text-slate-50">Seu computador não está ligando?</p>
+        <p class="text-slate-50">O projetor não conectou no celular?</p>
+        <br />
+        <p class="text-slate-50">
+          Não se preocupe, informe seu problema abaixo!
+        </p>
+      </div>
 
 
+      <a href="" class="self-start"><button id="report_button"
+          class="mt-8 rounded-md bg-cyan-950 p-4 text-xl font-bold text-slate-50">
+          Reportar
+        </button></a>
+    </section>
 
-        <link rel="stylesheet" href="src/css/output.css">
-        <section id="report" class="flex flex-col h-full bg-rose-400 p-8">
-            <img id="megafone" src="/assets/cyberpunk/megafone-cyberpunk.svg" alt="" class="w-1/2 self-center">
-            <br>
-            <h3 id="h3-report" class="text-2xl font-bold text-cyan-950">Aconteceu algum problema?</h3>
-            <div class="pt-4 pb-4 text-left">
-                <p class="text-slate-50">Seu computador não está ligando?</p>
-                <p class="text-slate-50">O projetor não conectou no celular?</p>
-                <br>
-                <p class="text-slate-50">Não se preocupe, informe seu problema abaixo!</p>
-            </div>
+    <section class="flex h-full flex-col bg-rose-50 p-10 text-rose-500">
+      <img id="regras" src="./assets/cyberpunk/regras-cyberpunk.svg" alt="" class="mb-2 w-1/2 self-center" />
 
-            <a href=""><button id="report_button"
-                    class="mt-8 bg-cyan-950 p-4 rounded-md text-slate-50 text-xl font-bold ">Reportar</button></a>
-        </section>
+      <h3 id="h3-regras" class="text-2xl font-bold text-rose-500">
+        O que pode ou não pode fazer nos Laboratórios?
+      </h3>
+      <div class="pb-4 pt-4 text-left">
+        <p class="mb-1">Será que posso comer nos laboratórios?</p>
+        <p class="mb-1">É permitido escutar música nos laboratórios?</p>
+        <p class="mb-1">Informe-se aqui!</p>
+      </div>
 
-    </main>
+      <a href="" class="self-start"><button id="regras_button"
+          class="mt-8 rounded-md bg-cyan-950 p-4 text-xl font-bold text-slate-50">
+          Reportar
+        </button></a>
+    </section>
+  </main>
 
-    <footer>
-
-    </footer>
+  <footer id="footer" class="bg-red-300 p-4 flex justify-between text-sm">
+    <p>UFC</p>
+    <p>Desenvolvido por Techplan©</p>
+  </footer>
 </body>
 <script src="/src/main.js"></script>
 
