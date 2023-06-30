@@ -804,6 +804,14 @@ video {
   background-image: url('/assets/cyberpunk/capa-lab-cyberpunk.png');
 }
 
+.bg-\[url\(\'assets\/cyberpunk\/capa-lab-cyberpunk\.png\'\)\] {
+  background-image: url('assets/cyberpunk/capa-lab-cyberpunk.png');
+}
+
+.bg-\[url\(\'\.\/assets\/cyberpunk\/capa-lab-cyberpunk\.png\'\)\] {
+  background-image: url('./assets/cyberpunk/capa-lab-cyberpunk.png');
+}
+
 .bg-cover {
   background-size: cover;
 }
