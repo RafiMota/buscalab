@@ -1,0 +1,31 @@
+.glide__bullet {
+  cursor: pointer;
+  line-height: 0;
+  box-shadow: 0 0.25em 0.5em 0 rgba(0, 0, 0, 0.1);
+  margin: 0 0.25em;
+}
+.glide__bullet:hover, .glide__bullet:focus {
+  border: 2px solid white;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.glide__bullet--active {
+  background-color: rgb(226, 113, 113);
+  font-size: larger;
+  font-weight: bold;
+  color: #831818;
+  border-bottom: 2px solid #a31b1b;
+  transition: 150ms;
+}
+
+.glide--swipeable {
+  cursor: grab;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+.glide--dragging {
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+}
+
+/*# sourceMappingURL=glide.theme.css.map */

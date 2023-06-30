@@ -4,6 +4,9 @@ module.exports = {
     "./*.{html,js}",
     "./html/*.{html,js}"],
   theme: {
+    fontFamily: {
+      'montserrat': ['Montserrat']
+    },
     extend: {
       backgroundImage: {
         'bgLogin': "url('/assets/bgLogin.jpg')",
