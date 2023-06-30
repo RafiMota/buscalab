@@ -1,3 +1,4 @@
+<?php  include '../src/models/labs.model.php'?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,7 +21,7 @@
     <header
       class="flex items-center justify-between border-b-2 border-red-300 p-8 pb-2 pt-2"
     >
-      <a href="../index.html">
+      <a href="../index.php">
         <img
           id="logo"
           src="../assets/cyberpunk/logo-cyberpunk.svg"
@@ -70,6 +71,10 @@
             <div data-glide-el="track" class="glide__track">
               <ul class="glide__slides">
                 <li class="glide__slide">
+
+                <?php foreach($dados_soft as $key => $value){
+                        if($dados_soft[$key]['lab'.$id_lab] != 0){
+                ?>
                   <section
                     id="softwares"
                     class="flex flex-row justify-around bg-rose-200 p-8"
@@ -81,45 +86,43 @@
                         src="../assets/cyberpunk/logo-cyberpunk.svg"
                         alt=""
                       />
-                      <p class="text-lg font-bold">Gimp</p>
-                    </div>
-                    <div
-                      class="flex h-32 w-32 flex-col items-center justify-center rounded-xl bg-rose-50 p-4 hover:brightness-50"
-                    >
-                      <img
-                        src="../assets/cyberpunk/logo-cyberpunk.svg"
-                        alt=""
-                      />
-                      <p class="text-lg font-bold">Photoshop</p>
+                      <p class="text-lg font-bold"><?=$dados_soft[$key]['software'];?></p>
                     </div>
                   </section>
+
+                  <?php }};?>
+
                 </li>
                 <li class="glide__slide">
+                <?php foreach($dados_modelos as $key => $value){
+                        if($dados_modelos[$key]['lab'.$id_lab] != 0){
+                ?>
                   <section
                     id="computadores"
+                    
                     class="flex flex-col gap-10 bg-rose-200 p-8"
-                  >
+                  > 
+                    
                     <div class="flex h-20 w-full rounded-xl bg-rose-50">
+                    
                       <div
                         class="h-full w-1/3 rounded-l-xl bg-violet-500"
                       ></div>
                       <div class="w-full p-4">
-                        <h3 class="text-xl font-bold">Optiplex</h3>
-                        <p>Quantidade: <span>3</span></p>
-                      </div>
-                    </div>
-                    <div class="flex h-20 w-full rounded-xl bg-rose-50">
-                      <div
-                        class="h-full w-1/3 rounded-l-xl bg-violet-500"
-                      ></div>
-                      <div class="w-full p-4">
-                        <h3 class="text-xl font-bold">iMac 15''</h3>
-                        <p>Quantidade: <span>3</span></p>
-                      </div>
-                    </div>
+                        <h3 class="text-xl font-bold"><?=$dados_modelos[$key]['modelo'];?></h3>
+                        <p>Quantidade: <span><?=$dados_modelos[$key]['lab'.$id_lab];?></span></p>
+                      </div>  
+                    </div>  
                   </section>
+
+                  <?php }};?>
+
                 </li>
                 <li class="glide__slide">
+
+                <?php foreach($dados_equip as $key => $value){
+                        if($dados_equip[$key]['lab'.$id_lab] != 0){
+                ?>
                   <section
                     id="equipamentos"
                     class="flex flex-col gap-10 bg-rose-200 p-8"
@@ -130,19 +133,12 @@
                       ></div>
                       <div class="w-full p-4">
                         <h3 class="text-xl font-bold">Projetor</h3>
-                        <p>Quantidade: <span>3</span></p>
+                        <p><?=$dados_equip[$key]['modelo'];?> <span><?=$dados_equip[$key]['lab'.$id_lab];?></span></p>
                       </div>
                     </div>
-                    <div class="flex h-20 w-full rounded-xl bg-rose-50">
-                      <div
-                        class="h-full w-1/3 rounded-l-xl bg-violet-500"
-                      ></div>
-                      <div class="w-full p-4">
-                        <h3 class="text-xl font-bold">Caixa de Som</h3>
-                        <p>Quantidade: <span>3</span></p>
-                      </div>
-                    </div>
+                    
                   </section>
+                  <?php }};?>
                 </li>
               </ul>
             </div>
