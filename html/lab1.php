@@ -15,8 +15,13 @@
     <link rel="stylesheet" href="../src/css/carousel.css" />
     <link rel="stylesheet" href="../src/css/glide_carrossel_lab.css" />
     <link rel="stylesheet" href="../src/css/output.css" />
+    <script src="../src/lab.js"></script>
   </head>
-
+  <style>
+    *{
+      outline: dashed 1px red;
+    }
+  </style>
   <body class="font-montserrat">
     <header
       class="flex items-center justify-between border-b-2 border-red-300 p-8 pb-2 pt-2"
@@ -32,7 +37,7 @@
     </header>
 
     <section>
-      <img src="../assets/cyberpunk/capa-lab-cyberpunk.png" alt="">
+      <img id="logo" src="../assets/cyberpunk/capa-lab-cyberpunk.png" alt="">
     </section>
 
     <main>
@@ -72,73 +77,86 @@
               <ul class="glide__slides">
                 <li class="glide__slide">
 
-                <?php foreach($dados_soft as $key => $value){
-                        if($dados_soft[$key]['lab'.$id_lab] != 0){
-                ?>
+                  <style>
+                    #softwares{
+                      display: flex;
+                      flex-flow: row wrap;
+                      justify-content: space-around;
+                      align-items: start;
+                      gap: 2.5rem;
+                    }
+                  </style>
                   <section
                     id="softwares"
-                    class="flex flex-row justify-around bg-rose-200 p-8"
-                  >
-                    <div
-                      class="flex h-32 w-32 flex-col items-center justify-center rounded-xl bg-rose-50 p-4 hover:brightness-50"
-                    >
-                      <img
-                        src="../assets/cyberpunk/logo-cyberpunk.svg"
-                        alt=""
-                      />
-                      <p class="text-lg font-bold"><?=$dados_soft[$key]['software'];?></p>
-                    </div>
+                    class="justify-center bg-rose-200 p-8 ">
+
+                    <?php foreach($dados_soft as $key => $value){
+                          if($dados_soft[$key]['lab'.$id_lab] != 0){
+                    ?>
+
+                      <div
+                        class="flexflex-col items-center justify-center h-32 w-32 rounded-xl bg-rose-50 p-4 text-center hover:brightness-50">
+                        <img
+                          src="../assets/cyberpunk/logo-cyberpunk.svg"
+                          alt=""
+                        />
+                        <p class="text-xs font-bold"><?=$dados_soft[$key]['software'];?></p>
+                      </div>
+
+                    <?php }};?>
                   </section>
 
-                  <?php }};?>
+                  
 
                 </li>
                 <li class="glide__slide">
-                <?php foreach($dados_modelos as $key => $value){
-                        if($dados_modelos[$key]['lab'.$id_lab] != 0){
-                ?>
+                
                   <section
                     id="computadores"
                     
                     class="flex flex-col gap-10 bg-rose-200 p-8"
                   > 
-                    
-                    <div class="flex h-20 w-full rounded-xl bg-rose-50">
-                    
-                      <div
-                        class="h-full w-1/3 rounded-l-xl bg-violet-500"
-                      ></div>
-                      <div class="w-full p-4">
-                        <h3 class="text-xl font-bold"><?=$dados_modelos[$key]['modelo'];?></h3>
-                        <p>Quantidade: <span><?=$dados_modelos[$key]['lab'.$id_lab];?></span></p>
+                    <?php foreach($dados_modelos as $key => $value){
+                          if($dados_modelos[$key]['lab'.$id_lab] != 0){
+                    ?>
+                      <div class="flex h-20 w-full rounded-xl bg-rose-50">
+                      
+                        <div
+                          class="h-full w-1/3 rounded-l-xl bg-violet-500"
+                        ></div>
+                        <div class="w-full p-4">
+                          <h3 class="text-xl font-bold"><?=$dados_modelos[$key]['modelo'];?></h3>
+                          <p>Quantidade: <span><?=$dados_modelos[$key]['lab'.$id_lab];?></span></p>
+                        </div>  
                       </div>  
-                    </div>  
+                    <?php }};?>
                   </section>
 
-                  <?php }};?>
+                  
 
                 </li>
                 <li class="glide__slide">
 
-                <?php foreach($dados_equip as $key => $value){
-                        if($dados_equip[$key]['lab'.$id_lab] != 0){
-                ?>
+                
                   <section
                     id="equipamentos"
                     class="flex flex-col gap-10 bg-rose-200 p-8"
                   >
-                    <div class="flex h-20 w-full rounded-xl bg-rose-50">
-                      <div
-                        class="h-full w-1/3 rounded-l-xl bg-violet-500"
-                      ></div>
-                      <div class="w-full p-4">
-                        <h3 class="text-xl font-bold">Projetor</h3>
-                        <p><?=$dados_equip[$key]['modelo'];?> <span><?=$dados_equip[$key]['lab'.$id_lab];?></span></p>
+                    <?php foreach($dados_equip as $key => $value){
+                          if($dados_equip[$key]['lab'.$id_lab] != 0){
+                    ?>
+                      <div class="flex h-20 w-full rounded-xl bg-rose-50">
+                        <div
+                          class="h-full w-1/3 rounded-l-xl bg-violet-500"
+                        ></div>
+                        <div class="w-full p-4">
+                          <h3 class="text-xl font-bold">Projetor</h3>
+                          <p><?=$dados_equip[$key]['modelo'];?> <span><?=$dados_equip[$key]['lab'.$id_lab];?></span></p>
+                        </div>
                       </div>
-                    </div>
-                    
+                    <?php }};?>
                   </section>
-                  <?php }};?>
+                  
                 </li>
               </ul>
             </div>

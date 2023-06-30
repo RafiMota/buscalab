@@ -24,49 +24,49 @@ function adjustcolor(n) {
             "base-color": "#B81F1F",
             "secondary-color": "#FB7185",
             "complementary-color": "#063448",
-            "logo": "/assets/cyberpunk/logo-cyberpunk.svg",
-            "lupa": "/assets/cyberpunk/lupa-cyberpunk.svg",
+            "logo": "assets/cyberpunk/logo-cyberpunk.svg",
+            "lupa": "assets/cyberpunk/lupa-cyberpunk.svg",
             "megafone": "assets/cyberpunk/megafone-cyberpunk.svg",
         },
         {
             "base-color": "#193E1D",
             "secondary-color": "#A0C592",
             "complementary-color": "#152314",
-            "logo": "/assets/solarpunk/logo-solarpunk.svg",
-            "lupa": "/assets/solarpunk/lupa-solarpunk.svg",
+            "logo": "assets/solarpunk/logo-solarpunk.svg",
+            "lupa": "assets/solarpunk/lupa-solarpunk.svg",
             "megafone": "assets/solarpunk/megafone-solarpunk.svg",
         },
         {
             "base-color": "#469AAF",
             "secondary-color": "#A1AAA9",
             "complementary-color": "#D0BABB",
-            "logo": "/assets/magicworld/logo-magicworld.svg",
-            "lupa": "/assets/magicworld/lupa-magicworld.svg",
+            "logo": "assets/magicworld/logo-magicworld.svg",
+            "lupa": "assets/magicworld/lupa-magicworld.svg",
             "megafone": "assets/magicworld/megafone-magicworld.svg",
         },
         {
             "base-color": "#F24422",
             "secondary-color": "#FD9D51",
             "complementary-color": "#44DF19",
-            "logo": "/assets/medieval/logo-medieval.svg",
-            "lupa": "/assets/medieval/lupa-medieval.svg",
+            "logo": "assets/medieval/logo-medieval.svg",
+            "lupa": "assets/medieval/lupa-medieval.svg",
             "megafone": "assets/medieval/megafone-medieval.svg",
         },
         {
             "base-color": "#3E1FB5",
             "secondary-color": "#2F2BD0",
             "complementary-color": "#FD9F0B",
-            "logo": "/assets/spaceopera/logo-spaceopera.svg",
-            "lupa": "/assets/spaceopera/lupa-spaceopera.svg",
+            "logo": "assets/spaceopera/logo-spaceopera.svg",
+            "lupa": "assets/spaceopera/lupa-spaceopera.svg",
             "megafone": "assets/spaceopera/megafone-spaceopera.svg",
         },        
         {
             "base-color": "#C35221",
             "secondary-color": "#EB975F",
             "complementary-color": "#C35221",
-            "logo": "/assets/steampunk/logo-steampunk.svg",
-            "lupa": "/assets/steampunk/lupa-steampunk.svg",
-            "megafone": "assets/steampunk/megafone-steampunk.svg",
+            "logo": "./assets/steampunk/logo-steampunk.svg",
+            "lupa": "./assets/steampunk/lupa-steampunk.svg",
+            "megafone": "./assets/steampunk/megafone-steampunk.svg",
         }
     ]
 
@@ -83,6 +83,16 @@ function adjustcolor(n) {
     let regras_button = document.getElementById("regras_button");
     title.style.color = "#ffffff";
     let footer= document.getElementById("footer");
+
+    let bolas = document.getElementsByClassName("glide__bullet")
+    
+    for(let bol of bolas){
+        bol.style.backgroundColor = "#dddddd";
+    }
+        
+    let bola = document.getElementsByClassName("glide__bullet--active")
+    bola[0].style.backgroundColor = rgb[color]["base-color"];
+    
 
     logo.src = rgb[color]["logo"];
     lupa.src = rgb[color]["lupa"];

@@ -54,35 +54,35 @@
                       class="rounded-xl"
                     />
                   </a>
-                  <a href="html/lab2.php?l=2" class="glide__slide">
+                  <a href="html/lab1.php?l=2" class="glide__slide">
                     <img
                       src="./assets/solarpunk/solarpunk.png"
                       alt=""
                       class="rounded-xl"
                     />
                   </a>
-                  <a href="html/lab3.php?l=3" class="glide__slide">
+                  <a href="html/lab1.php?l=3" class="glide__slide">
                     <img
                       src="./assets/magicworld/magicworld.png"
                       alt=""
                       class="rounded-xl"
                     />
                   </a>
-                  <a href="html/lab4.php?l=4" class="glide__slide">
+                  <a href="html/lab1.php?l=4" class="glide__slide">
                     <img
                       src="./assets/medieval/medieval.png"
                       alt=""
                       class="rounded-xl"
                     />
                   </a>
-                  <a href="html/lab5.php?l=5" class="glide__slide">
+                  <a href="html/lab1.php?l=5" class="glide__slide">
                     <img
                       src="./assets/steampunk/steampunk.png"
                       alt=""
                       class="rounded-xl"
                     />
                   </a>
-                  <a href="html/lab6.php?l=6" class="glide__slide">
+                  <a href="html/lab1.php?l=6" class="glide__slide">
                     <img
                       src="./assets/spaceopera/spaceopera.png"
                       alt=""

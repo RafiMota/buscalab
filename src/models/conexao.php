@@ -4,7 +4,7 @@
         private  $host = 'localhost';
         private  $dbname = 'inventario_labs';
         private  $user = 'root';
-        private  $pass = '150e240e';
+        private  $pass = '';
 
         public function conectar() {
             try {
