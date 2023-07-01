@@ -1,33 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Reportar</title>
     <link rel="stylesheet" href="../src/css/output.css" />
   </head>
 
-  <body>
+  <body class="font-montserrat">
     <header
-      class="flex items-center justify-between border-b-2 border-red-300 p-8 pb-2 pt-2"
+      class="flex items-center justify-center border-b-2 border-red-300 p-8 pb-2 pt-2 mb-4"
     >
-      <a href="../index.html">
+      <a href="../index.php">
         <img
           id="logo"
-          src="/assets/cyberpunk/logo-cyberpunk.svg"
+          src="../assets/cyberpunk/logo-cyberpunk.svg"
           alt=""
           class="w-16"
         />
       </a>
-
-      <a href="#" class="text-xl font-bold text-slate-600"
-        ><img
-          id="lupa"
-          src="/assets/cyberpunk/lupa-cyberpunk.svg"
-          alt=""
-          class=""
-      /></a>
     </header>
+
+    <main class="flex flex-col items-center justify-center p-4">
+      <h2 class="text-2xl font-bold mb-2">REPORTAR</h2>
+      <section class="bg-rose-200 rounded-xl w-full p-4">
+        <h3 class="text-xl font-semibold mb-2">Descreva o problema</h3>
+        <form action="" class="flex flex-col">
+          <label for="labs" class="font-semibold">Laboratório</label>
+          <select class="p-2 rounded-xl h-10 mb-4" name="labs" id="labs" >
+            <option id="" class="text-slate-20" value="placeholder" disabled selected>Escolha um laboratório</option>
+            <option class="" value="lab1">Laboratório 1</option>
+            <option class="bg-rose-100" value="lab2">Laboratório 2</option>
+            <option class="" value="lab3">Laboratório 3</option>
+            <option class="bg-rose-100" value="lab4">Laboratório 4</option>
+            <option class="" value="lab5">Laboratório 5</option>
+            <option class="bg-rose-100" value="lab6">Laboratório 6</option>
+          </select>
+
+          <div id="categoria" class="flex flex-col">
+            <label for="categoria" class="font-semibold">Categoria</label>
+            <select class="p-2 rounded-xl h-10 mb-4" name="labs" id="labs" >
+              <option id="" class="text-slate-20" value="placeholder" disabled selected>Escolha um laboratório</option>
+              <option onfocus="checkValue()" class="" value="lab1">Laboratório 1</option>
+              <option onfocus="checkValue()" class="bg-rose-100" value="lab2">Laboratório 2</option>
+              <option onfocus="checkValue()" class="" value="lab3">Laboratório 3</option>
+              <option onfocus="checkValue()" class="bg-rose-100" value="lab4">Laboratório 4</option>
+              <option onfocus="checkValue()" class="" value="lab5">Laboratório 5</option>
+              <option onfocus="checkValue()" class="bg-rose-100" value="lab6">Laboratório 6</option>
+            </select>  
+          </div>
+
+          
+        </form>
+      </section>
+      
+    </main>
+
+    <script src="../src/reportar.js"></script>
   </body>
 
   </html>
