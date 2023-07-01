@@ -1,4 +1,5 @@
 <?php  include '../src/models/labs.model.php'?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -95,7 +96,7 @@
                     ?>
 
                       <div
-                        class="flexflex-col items-center justify-center h-32 w-32 rounded-xl bg-rose-50 p-4 text-center hover:brightness-50">
+                        class="flex flex-col items-center justify-center h-32 w-32 rounded-xl bg-rose-50 p-4 text-center hover:brightness-50">
                         <img
                           src="../assets/cyberpunk/logo-cyberpunk.svg"
                           alt=""
