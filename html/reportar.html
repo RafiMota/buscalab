@@ -31,36 +31,78 @@
 
     <main class="flex flex-col items-center justify-center p-4">
       <h2 class="text-2xl font-bold mb-2">REPORTAR</h2>
-      <section class="bg-rose-200 rounded-xl w-full p-4">
+      
+      <section class="bg-rose-200 rounded-xl shadow-md w-full p-4">
         <h3 class="text-xl font-semibold mb-2">Descreva o problema</h3>
-        <form action="" class="flex flex-col">
-          <label for="labs" class="font-semibold">Laboratório</label>
-          <select class="p-2 rounded-xl h-10 mb-4" name="labs" id="labs" >
-            <option id="" class="text-slate-20" value="placeholder" disabled selected>Escolha um laboratório</option>
-            <option class="" value="lab1">Laboratório 1</option>
-            <option class="bg-rose-100" value="lab2">Laboratório 2</option>
-            <option class="" value="lab3">Laboratório 3</option>
-            <option class="bg-rose-100" value="lab4">Laboratório 4</option>
-            <option class="" value="lab5">Laboratório 5</option>
-            <option class="bg-rose-100" value="lab6">Laboratório 6</option>
+        
+        <form autocomplete="off" action="reportar.php" method="POST" class="flex flex-col" id="reporte">
+          
+          <label for="laboratorio" class="font-semibold">Laboratório</label>
+          <select class="p-2 rounded-xl h-10 mb-4" name="lab" id="laboratorio">
+
+            <option class="text-slate-20" hidden>Escolha um laboratório</option>
+            <option class="" value="1">Laboratório 01</option>
+            <option class="bg-rose-100" value="2">Laboratório 02</option>
+            <option class="" value="3">Laboratório 03</option>
+            <option class="bg-rose-100" value="4">Laboratório 04</option>
+            <option class="" value="5">Laboratório 05</option>
+            <option class="bg-rose-100" value="6">Laboratório 06</option>
           </select>
 
-          <div id="categoria" class="flex flex-col">
+          <div id="divCategoria" class="flex flex-col">
             <label for="categoria" class="font-semibold">Categoria</label>
-            <select class="p-2 rounded-xl h-10 mb-4" name="labs" id="labs" >
-              <option id="" class="text-slate-20" value="placeholder" disabled selected>Escolha um laboratório</option>
-              <option onfocus="checkValue()" class="" value="lab1">Laboratório 1</option>
-              <option onfocus="checkValue()" class="bg-rose-100" value="lab2">Laboratório 2</option>
-              <option onfocus="checkValue()" class="" value="lab3">Laboratório 3</option>
-              <option onfocus="checkValue()" class="bg-rose-100" value="lab4">Laboratório 4</option>
-              <option onfocus="checkValue()" class="" value="lab5">Laboratório 5</option>
-              <option onfocus="checkValue()" class="bg-rose-100" value="lab6">Laboratório 6</option>
+            <select class="p-2 rounded-xl h-10 mb-4" name="categ" id="categoria" onchange="atualizarOpcoes()">
+              
+              <option class="text-slate-20" hidden value="">Selecione uma categoria</option>
+              <option class="" value="Computador">Computador</option>
+              <option class="bg-rose-100" value="Equipamento">Equipamento</option>
+              <option class="" value="Software">Software</option>
+              <option class="bg-rose-100" value="Outro">Outro</option>
             </select>  
           </div>
 
+          <div id="divSoftware" class="flex flex-col collapse">
+            <label for="software" class="font-semibold">Software</label>
+            <input type="text" name="soft" class="p-2 rounded-xl h-10 mb-4" id="software" placeholder="Qual o software?">
+          </div>
+
+          <div id="divEquipamento" class="flex flex-col collapse">
+            <label for="equipamento" class="font-semibold">Equipamento</label>
+            <select class="p-2 rounded-xl h-10 mb-4" name="equip" id="equipamento" >
+              
+              <option class="text-slate-20" hidden value="">Selecione um equipamento</option>
+              <option class="" value="Projetor">Projetor</option>
+              <option class="bg-rose-100" value="Ar-condicionado">Ar-condicionado</option>
+              <option class="" value="Caixa de som">Caixa de som</option>
+            </select>  
+          </div>
+
+          <div id="divProblema" class="flex flex-col collapse">
+            <label for="problema" class="font-semibold">Problema</label>
+            <select class="p-2 rounded-xl h-10 mb-4" name="prob" id="problema">
+              
+            </select>
+          </div>
+
+          <div id="divMesa" class="flex flex-col collapse">
+            <label for="mesa" class="font-semibold">Mesa</label>
+            <input type="number" name="mesa" class="p-2 rounded-xl h-10 mb-4" id="mesa" placeholder="Informe o número da mesa">
+          </div>
+
+        
+
+          <div  id="divOutro" class="flex flex-col collapse">
+            <label for="outroProblema" class="font-semibold">Problema</label>
+            <textarea name="outro" class="p-2 rounded-xl h-10 mb-4" id="outroProblema"></textarea>
+          </div>
+
           
+
         </form>
       </section>
+
+      <input type="submit" form="reporte" class="font-semibold text-slate-100 bg-red-500 rounded-xl shadow-md w-3/4 p-4 mt-8" value="Enviar">
+      <a href="../index.php">Cancelar</a>
       
     </main>
 

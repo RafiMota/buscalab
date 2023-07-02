@@ -522,6 +522,14 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.collapse{
+  visibility: collapse;
+}
+
+.shadow-md{
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
 .m-0 {
   margin: 0px;
 }
@@ -540,6 +548,10 @@ video {
 
 .mt-2 {
   margin-top: 0.5rem;
+}
+
+.mt-8 {
+  margin-top: 2rem;
 }
 
 .block {
@@ -590,8 +602,16 @@ video {
   width: 40%;
 }
 
+.w-1\/2{
+  width: 50%;
+}
+
 .w-3\/5 {
   width: 60%;
+}
+
+.w-3\/4 {
+  width: 75%;
 }
 
 .w-32 {
@@ -747,6 +767,10 @@ video {
 
 .p-2 {
   padding: 0.5rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
 }
 
 .p-20 {
