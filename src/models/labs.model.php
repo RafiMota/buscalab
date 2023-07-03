@@ -15,7 +15,7 @@ $json = json_encode($dados_modelos);
 // --------------SOFTWARES---------------------------------------------
 
 
-$query_soft = $conexao->prepare("SELECT id,lab".$id_lab.",software FROM tabela_softwares");
+$query_soft = $conexao->prepare("SELECT id,lab".$id_lab.",software, imagem FROM tabela_softwares");
 $query_soft->execute();
 $dados_soft = $query_soft->fetchAll(PDO::FETCH_ASSOC);
 $json = json_encode($dados_soft);
