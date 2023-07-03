@@ -522,6 +522,10 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.green-success{
+  color: #278C31; 
+}
+
 .visible {
   visibility: visible;
 }
@@ -652,6 +656,10 @@ video {
 
 .w-3\/4 {
   width: 75%;
+}
+
+.w-85\% {
+  width: 85%;
 }
 
 .cursor-pointer {
