@@ -41,7 +41,7 @@
             <a class="transition-all hover:font-semibold" href="">Laboratório 6</a>
         </nav>
 
-        <main class="flex flex-col p-4 gap-8 w-full h-full">
+        <main class="flex flex-col p-4 gap-8 w-full h-screen">
             <section>
                 <div class="flex flex-row justify-between">
                     <h2 class="text-2xl font-semibold">Reportes</h2>
@@ -53,11 +53,11 @@
             </section>
 
             <section>
-                <h3 class="font-semibold text-xl p-4">
+                <h3 class="font-semibold text-xl p-4 transition-all">
                     Laboratório 2
                 </h3>
                 <article class="flex flex-row gap-4">
-                    <div class="cursor-pointer bg-slate-50 rounded-xl w-1/5 flex flex-col shadow-xl" onclick="concluiTarefa()">
+                    <div class="cursor-pointer bg-slate-50 rounded-xl w-1/5 flex flex-col shadow-xl hover:shadow-2xl transition-all duration-300" onclick="concluiTarefa()">
                         <div class="p-4">
                             <p class="w-full">Mesa:</p>
                             <span>123</span>
@@ -72,7 +72,7 @@
                         </div>
                     </div>
 
-                    <div class="cursor-pointer bg-slate-50 rounded-xl w-1/5 flex flex-col shadow-xl" onclick="concluiTarefa()">
+                    <div class="cursor-pointer bg-slate-50 rounded-xl w-1/5 flex flex-col shadow-xl hover:shadow-2xl transition-all duration-300" onclick="concluiTarefa()">
                         <div class="p-4">
                             <p class="w-full">Mesa:</p>
                             <span>123</span>
