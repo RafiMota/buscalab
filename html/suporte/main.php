@@ -1,3 +1,9 @@
+<?php  
+ 
+    require '../../src/models/login_seguranca.php';
+    require '../../src/models/conexao.php'; 
+     
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -87,7 +93,7 @@
     </section>
 
     <footer class="bg-slate-500 flex flex-row justify-self-end">
-        <p>oi</p>
+        <p>< footer aqui ></p>
     </footer>
 
     <script src="../../src/suporte_reportes.js"></script>

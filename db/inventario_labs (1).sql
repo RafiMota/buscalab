@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 03-Jul-2023 às 00:27
+-- Tempo de geração: 03-Jul-2023 às 13:56
 -- Versão do servidor: 8.0.33-0ubuntu0.22.04.2
 -- versão do PHP: 8.1.2-1ubuntu2.11
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `teste`
+-- Banco de dados: `inventario_labs`
 --
 
 -- --------------------------------------------------------
@@ -79,13 +79,12 @@ CREATE TABLE `tabela_softwares` (
 --
 
 INSERT INTO `tabela_softwares` (`id`, `software`, `lab1`, `lab2`, `lab3`, `lab4`, `lab5`, `lab6`, `imagem`) VALUES
-(1, 'Altium', b'0', b'0', b'1', b'0', b'1', b'1', ''),
+(1, 'Altium', b'1', b'1', b'1', b'0', b'1', b'1', 'img_software/logo-altium.png'),
 (2, 'Android Studio', b'1', b'0', b'1', b'1', b'0', b'0', 'img_software/logo-android-studio.svg'),
-(3, 'Arduino', b'0', b'1', b'1', b'0', b'0', b'1', ''),
+(3, 'Arduino', b'1', b'1', b'1', b'0', b'0', b'1', 'img_software/logo-arduino.png'),
 (4, 'Blender', b'1', b'0', b'1', b'0', b'0', b'0', 'img_software/logo-blender.svg'),
-(5, 'Gimp', b'1', b'1', b'1', b'0', b'1', b'0', ''),
-(6, 'Processing', b'1', b'1', b'0', b'1', b'0', b'1', ''),
-(7, 'Visual Studio Code', b'1', b'1', b'0', b'0', b'0', b'0', ''),
+(5, 'Gimp', b'1', b'1', b'1', b'0', b'1', b'0', 'img_software/logo-gimp.png'),
+(6, 'Processing', b'1', b'1', b'0', b'1', b'0', b'1', 'img_software/logo-processing.svg'),
 (17, 'vs code', b'1', b'1', b'1', b'1', b'1', b'1', 'img_software/logo-vscode.png');
 
 -- --------------------------------------------------------

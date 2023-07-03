@@ -16,11 +16,11 @@
   <link rel="stylesheet" href="../src/css/output.css" />
   <script src="../src/lab.js"></script>
 </head>
-<style>
+<!--<style>
   * {
     outline: dashed 1px red;
   }
-</style>
+</style>-->
 
 <body class="font-montserrat">
   <header class="flex items-center justify-between border-b-2 border-red-300 p-8 pb-2 pt-2">
