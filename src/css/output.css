@@ -522,6 +522,10 @@ video {
   --tw-backdrop-sepia:  ;
 }
 
+.green-success{
+  color: #278C31; 
+}
+
 .collapse{
   visibility: collapse;
 }
@@ -578,6 +582,18 @@ video {
   height: 8rem;
 }
 
+.h-64 {
+  height: 16rem;
+}
+
+.h-80 {
+  height: 20rem;
+}
+
+.h-96 {
+  height: 24rem;
+}
+
 .h-full {
   height: 100%;
 }
@@ -612,6 +628,10 @@ video {
 
 .w-3\/4 {
   width: 75%;
+}
+
+.w-85\% {
+  width: 85%;
 }
 
 .w-32 {
@@ -765,6 +785,10 @@ video {
   background-position: center;
 }
 
+.m-auto{
+  margin: auto ;
+}
+
 .p-2 {
   padding: 0.5rem;
 }
@@ -787,6 +811,10 @@ video {
 
 .pb-2 {
   padding-bottom: 0.5rem;
+}
+
+.pb-6 {
+  padding-bottom: 1.5rem;
 }
 
 .pt-2 {
