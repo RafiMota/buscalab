@@ -27,11 +27,11 @@ function atualizarOpcoes() {
 
 
     // Esconder todas as opções 
-    divSoftware.style.visibility = 'collapse';
-    divEquipamento.style.visibility= 'collapse';
-    divProblema.style.visibility = 'collapse';
-    divMesa.style.visibility= 'collapse';
-    divOutro.style.visibility= 'collapse';
+    divSoftware.style.display = 'none';
+    divEquipamento.style.display = 'none';
+    divProblema.style.display = 'none';
+    divMesa.style.display = 'none';
+    divOutro.style.display = 'none';
 
     
 
@@ -56,8 +56,8 @@ function atualizarOpcoes() {
         }
         
         
-        divProblema.style.visibility = 'visible';
-        divMesa.style.visibility= 'visible';
+        divProblema.style.display = 'flex';
+        divMesa.style.display = 'flex';
         
 
     } else if (problemaSelecionado === "Equipamento") {
@@ -77,8 +77,8 @@ function atualizarOpcoes() {
         }
         
         
-        divProblema.style.visibility = 'visible';
-        divEquipamento.style.visibility= 'visible';
+        divProblema.style.display = 'flex';
+        divEquipamento.style.display = 'flex';
 
     } else if (problemaSelecionado === "Software") {
         var opcoesSoftware = ["Selecione um problema", "Não foi instalado", "Não abre", "Expirou a licença"];
@@ -95,12 +95,12 @@ function atualizarOpcoes() {
             problema.add(option);
         }
         
-        divSoftware.style.visibility = 'visible';
-        divProblema.style.visibility = 'visible';
-        divMesa.style.visibility= 'visible';
+        divSoftware.style.display = 'flex';
+        divProblema.style.display = 'flex';
+        divMesa.style.display = 'flex';
         
     } else if (problemaSelecionado === "Outro") {
 
-        divOutro.style.visibility= 'visible';
+        divOutro.style.display = 'flex';
     } 
 }
