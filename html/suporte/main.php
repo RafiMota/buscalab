@@ -61,6 +61,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Buscalab</title>
     <link rel="stylesheet" href="../../src/css/output.css" />
+
+    <script src="../../src/suporte_reportes.js" defer></script>
+    <script src="../../src/novo.js"></script>
 </head>
 
 <body class="font-montserrat h-screen flex flex-col justify-between">
@@ -153,7 +156,7 @@
                     $lab = intval($row["laboratório"]);
                     $labend = $lab+1;
                     
-                    echo '<section class="reporte flex flex-col" style="outline: dashed 1px red" data-estado="'.$situacao.'" >
+                    echo '<section class="flex flex-col" style="outline: dashed 1px red">
                             <h3 class="font-semibold text-xl p-4 transition-all">
                             Laboratório '. $row["laboratório"]. '
                             </h3>
@@ -189,8 +192,8 @@
                                         <span>' . $row["problema"] . '</span>
                                     </div>
 
-                                    <div id="tarefa" class="bg-slate-500 font-semibold text-white rounded-b-xl pl-4 pt-2 pb-2">
-                                        <p id="status">' . $situacao . '</p>
+                                    <div id="tarefa" data-estado="'.$situacao.'" class="reporte bg-slate-500 font-semibold text-white rounded-b-xl pl-4 pt-2 pb-2">
+                                        <p class="" id="status">' . $situacao . '</p>
                                     </div>
                                 </div> 
                                                        
@@ -218,7 +221,7 @@
         <p>< footer aqui ></p>
     </footer>
 
-    <script src="../../src/suporte_reportes.js"></script>
+    
 </body>
 
 </html>

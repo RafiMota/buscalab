@@ -1,8 +1,12 @@
+
+
+
 document.addEventListener('DOMContentLoaded', function(){
-    document.querySelectorAll('.reporte').forEach(report =>{
-        report.onclick = function(){
+    
+    document.querySelectorAll('.reporte').forEach(reporte =>{
+        reporte.onclick = function(){
             concluiTarefa(this, this.dataset.estado);
-            console.log(this.dataset.estado);
+            
         }
     })
 })
@@ -10,18 +14,15 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 function concluiTarefa(elemento, estado) {
-
-    let isso = elemento;
-
-    
+ 
     if(estado == 'Pendente') {
-        isso.style.backgroundColor = "#22dd22"
-        isso.dataset.estado = 'Concluído'
-        isso.innerText = 'Concluído'
+        elemento.style.backgroundColor = "#22dd22"
+        elemento.dataset.estado = 'Concluído'
+        elemento.children[0].innerText = "Concluído" 
     } else {
-        isso.style.backgroundColor = "#647482"
-        isso.innerText = 'Pendente'
-        isso.dataset.estado = 'Pendente'
+        elemento.style.backgroundColor = "#647482"
+        elemento.dataset.estado = 'Pendente'
+        elemento.children[0].innerText = "Pendente"       
     }
     
 }
