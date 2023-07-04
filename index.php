@@ -15,6 +15,12 @@
     <link rel="stylesheet" href="src/css/glide.theme.css" />
     <link rel="stylesheet" href="src/css/carousel.css" />
     <link rel="stylesheet" href="src/css/output.css" />
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="src\busca_dinamica.js"></script>
   </head>
 
   <body class="font-montserrat">
@@ -29,17 +35,35 @@
           class="w-16"
         />
       </a>
-      <a href="#" class="text-xl font-bold text-slate-600"
-        ><img
+      <a onclick="showbar()" href="#" class="text-xl font-bold text-slate-600">
+        <img
           id="lupa"
           src="./assets/cyberpunk/lupa-cyberpunk.svg"
           alt=""
           class=""
-      /></a>
+        />        
+      </a>
+      
+        <div id="barra" class="search" >
+            <form>
+                <div class="search">
+                  <input type="text" id="search" class="search" placeholder="Search Here" autocomplete="off">
+                  <button type="submit" id="submit" class=""></button>
+                </div>
+            </form>
+          <div class="search" onclick="hidebar()" id="pop" >  
+              <div onclick="hidebar()" id="list"></div>
+          </div>
+        </div>
     </header>
 
+
+   
+    
+
+
     <main id="carrossel">
-      <section>
+      <section id="carousel">
         <h2 id="title" class="mb-8 mt-4 text-2xl">Conheça os laboratórios</h2>
         <!-- Article abaixo representa o Carrossel -->
         <article class="mb-8 flex flex-col justify-center">
