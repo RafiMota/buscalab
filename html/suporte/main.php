@@ -1,23 +1,7 @@
-<?php  
- 
+<?php   
     require '../../src/models/login_seguranca.php';
     require '../../src/models/conn.php'; 
 
-    // //Config. para acesso ao mySql localmente 
-    // $hostname = "localhost";
-    // $bancodedados = "inventario_labs";
-    // $usuario = "root";
-    // $senha = "";
-
-
-    // $mysqli = mysqli_connect($hostname, $usuario, $senha, $bancodedados);
-    // if ($mysqli->connect_errno) {
-    //     echo "Falha ao conectar:(" . $mysqli->connect_errno . ")" . $mysqli->connect_error;
-    // } else {
-    //     echo "Conectado com sucesso";
-    // }
-
-    // Consulta SQL
     
     $sql = "SELECT id, laboratório, categoria, software, equipamento, problema, outro_problema, mesa, situação 
             FROM problemas
@@ -86,8 +70,12 @@
         </section>
 
         <section class="flex gap-10 items-center">
-            <p class="transition-all cursor-pointer font-medium hover:font-semibold">Reportes</p>
-            <p class="transition-all cursor-pointer font-medium hover:font-semibold">Laboratório</p>
+            <a href="main.php">
+                <p class="transition-all cursor-pointer font-medium hover:font-semibold">Reportes</p>
+            </a>
+            <a href="lab.php?l=1">
+                <p class="transition-all cursor-pointer font-medium hover:font-semibold">Laboratório</p>
+            </a>
             <img src="../../assets/logout.svg" class="w-5 hover:w-6 transition-all" alt="">
         </section>
     </header>
@@ -99,7 +87,7 @@
                 $aux = 0; 
                 
                 for($i = 1; $i <7; $i++){
-                    echo '<a class="transition-all hover:font-semibold flex flex-row flex-nowrap gap-4" href="">
+                    echo '<a class="transition-all hover:font-semibold flex flex-row flex-nowrap gap-4" href="lab.php?l='.$i.'">
                             <p>Laboratório '.$i.'</p>';  
                             
                     if($row[$aux][1]==$i){
@@ -108,13 +96,7 @@
                     }
                     echo '</a>';
                 } 
-                // while($row = mysqli_fetch_all($result_num_report_lab)){  
-                //     print_r($row);                  
-                //     echo '<a class="transition-all hover:font-semibold flex flex-row flex-nowrap gap-4" href="">
-                //             <p>Laboratório '.$row["lab"].'</p> 
-                //             <div class="bg-orange-400 w-4 rounded-md text-center">'.$row["num"].'</div>
-                //             </a>';                    
-                // }
+                
             ?>
         </nav>
 
@@ -137,7 +119,7 @@
                                     echo ", ";
                                 }
                                 
-                                // print_r($row);
+                                
                             }                            
                             ?>
                          </span>
@@ -171,7 +153,7 @@
                     $lab = intval($row["laboratório"]);
                     $labend = $lab+1;
                     
-                    echo '<section class="flex flex-col" style="outline: dashed 1px red">
+                    echo '<section class="reporte flex flex-col" style="outline: dashed 1px red" data-estado="'.$situacao.'" >
                             <h3 class="font-semibold text-xl p-4 transition-all">
                             Laboratório '. $row["laboratório"]. '
                             </h3>

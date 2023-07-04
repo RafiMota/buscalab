@@ -1,12 +1,27 @@
-function concluiTarefa() {
-    let estadoTarefa = document.getElementById('status').innerText
+document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.reporte').forEach(report =>{
+        report.onclick = function(){
+            concluiTarefa(this, this.dataset.estado);
+            console.log(this.dataset.estado);
+        }
+    })
+})
 
-    if(estadoTarefa == 'Pendente') {
-        document.getElementById('tarefa').style.backgroundColor = "#22dd22"
-        document.getElementById('status').innerText = 'Concluído'
+
+
+function concluiTarefa(elemento, estado) {
+
+    let isso = elemento;
+
+    
+    if(estado == 'Pendente') {
+        isso.style.backgroundColor = "#22dd22"
+        isso.dataset.estado = 'Concluído'
+        isso.innerText = 'Concluído'
     } else {
-        document.getElementById('tarefa').style.backgroundColor = "#647482"
-        document.getElementById('status').innerText = 'Pendente'
+        isso.style.backgroundColor = "#647482"
+        isso.innerText = 'Pendente'
+        isso.dataset.estado = 'Pendente'
     }
     
 }
