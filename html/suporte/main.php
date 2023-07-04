@@ -3,18 +3,18 @@
     require '../../src/models/conn.php'; 
 
     
-    $sql = "SELECT id, laboratório, categoria, software, equipamento, problema, outro_problema, mesa, situação 
+    $sql = "SELECT id, laboratorio, categoria, software, equipamento, problema, outro_problema, mesa, situação 
             FROM problemas
-            ORDER BY laboratório ASC";
+            ORDER BY laboratorio ASC";
 
-    $slq_labs_c_problemas = "SELECT DISTINCT laboratório
+    $slq_labs_c_problemas = "SELECT DISTINCT laboratorio
                              FROM problemas
-                             ORDER BY laboratório ASC";
+                             ORDER BY laboratorio ASC";
 
-    $sql_num_report_lab = "SELECT Count(laboratório) AS num, laboratório AS lab
+    $sql_num_report_lab = "SELECT Count(laboratorio) AS num, laboratorio AS lab
                            FROM problemas 
-                           GROUP BY laboratório
-                           ORDER BY laboratório ASC";
+                           GROUP BY laboratorio
+                           ORDER BY laboratorio ASC";
 
     $result = mysqli_query($conn, $sql);
     $row_count = mysqli_num_rows($result);
@@ -77,21 +77,21 @@
                 <p class="transition-all cursor-pointer font-medium hover:font-semibold">Reportes</p>
             </a>
             <a href="lab.php?l=1">
-                <p class="transition-all cursor-pointer font-medium hover:font-semibold">Laboratório</p>
+                <p class="transition-all cursor-pointer font-medium hover:font-semibold">Laboratorio</p>
             </a>
             <img src="../../assets/logout.svg" class="w-5 hover:w-6 transition-all" alt="">
         </section>
     </header>
     <section class="flex bg-slate-100 p-8">
         <nav class="flex flex-col gap-3 w-1/4 p-4 bg-slate-50 rounded-lg shadow-lg">
-            <h3 class="text-lg font-semibold">Laboratórios</h3>
+            <h3 class="text-lg font-semibold">Laboratorios</h3>
             <?php
                 $row = mysqli_fetch_all($result_num_report_lab);
                 $aux = 0; 
                 
                 for($i = 1; $i <7; $i++){
                     echo '<a class="transition-all hover:font-semibold flex flex-row flex-nowrap gap-4" href="lab.php?l='.$i.'">
-                            <p>Laboratório '.$i.'</p>';  
+                            <p>Laboratorio '.$i.'</p>';  
                             
                     if($row[$aux][1]==$i){
                         echo "<div class='bg-orange-400 w-4 rounded-md text-center'>".$row[$aux][0]."</div>";
@@ -117,7 +117,7 @@
                             $aux = 0;
                             while ($row = mysqli_fetch_assoc($result_labs_c_problemas)) { 
                                 $aux++;
-                                echo $row["laboratório"];
+                                echo $row["laboratorio"];
                                 if($aux < $num_result_labs_c_problemas){
                                     echo ", ";
                                 }
@@ -153,12 +153,12 @@
                             
                 }
                 if($first){
-                    $lab = intval($row["laboratório"]);
+                    $lab = intval($row["laboratorio"]);
                     $labend = $lab+1;
                     
                     echo '<section class="flex flex-col" style="outline: dashed 1px red">
                             <h3 class="font-semibold text-xl p-4 transition-all">
-                            Laboratório '. $row["laboratório"]. '
+                            Laboratorio '. $row["laboratorio"]. '
                             </h3>
                             <article class="flex flex-row flex-wrap gap-4" >'; 
                     $first = false;
@@ -168,13 +168,13 @@
                     $labend = $lab+1;                    
                 } 
 
-                if($lab != intval($row["laboratório"])){ 
+                if($lab != intval($row["laboratorio"])){ 
                     echo '</article>   
                          </section>';                   
-                    $lab = intval($row["laboratório"]);
+                    $lab = intval($row["laboratorio"]);
                     echo '<section class="flex flex-col" style="outline: dashed 1px red">
                             <h3 class="font-semibold text-xl p-4 transition-all">
-                            Laboratório ' . $row["laboratório"] . '
+                            Laboratorio ' . $row["laboratorio"] . '
                             </h3>
                             <article class="flex flex-row flex-wrap gap-4">';  
                                                               

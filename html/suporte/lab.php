@@ -4,10 +4,10 @@
     require '../../src/models/conn.php'; 
     include '../../src/models/labs.model.php';
     
-    $sql_num_report_lab = "SELECT Count(laboratório) AS num, laboratório AS lab
+    $sql_num_report_lab = "SELECT Count(laboratorio) AS num, laboratorio AS lab
                            FROM problemas 
-                           GROUP BY laboratório
-                           ORDER BY laboratório ASC";
+                           GROUP BY laboratorio
+                           ORDER BY laboratorio ASC";
 
     
     $result_num_report_lab = mysqli_query($conn, $sql_num_report_lab);    
@@ -21,7 +21,7 @@
     }     
 ?>
 <!DOCTYPE html>
-    <html lang="en">
+    <html lang="pt-br">
 
     <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />

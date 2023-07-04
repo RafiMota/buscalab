@@ -1,38 +1,34 @@
 <?php
-$laboratorio = $_POST['lab'];
-$categoria = $_POST['categ'];
-$soft = $_POST['soft'];
-$equip = $_POST['equip'];
-$problema = $_POST['prob'];
-$outro_prob = $_POST['outro'];
-$mesa = $_POST['mesa'];
-$situacao= 1;
 
-
-$hostname = "localhost";
-$bancodedados = "inventario_labs";
-$usuario = "root";
-$senha = "";
-
-
-$mysqli = mysqli_connect($hostname, $usuario, $senha, $bancodedados);
-if ($mysqli->connect_errno) {
-    echo "Falha ao conectar:(" . $mysqli->connect_errno . ")" . $mysqli->connect_error;
-} else {
-    echo "Conectado com sucesso";
+require 'conexao.php';
+// guardando as variáveis vindo do form "reportar.html"
+if (isset($_POST) && !empty($_POST)){
+    $laboratorio = (int)$_POST['lab'];
+    $categoria = $_POST['categ'];
+    $soft = $_POST['soft'];
+    $equip = $_POST['equip'];
+    $problema = $_POST['prob'];
+    $outro_prob = $_POST['outro'];
+    $situacao= 1;
+    if(isset($_POST['mesa']) && !empty($_POST['mesa'])){
+        $mesa = (int)$_POST['mesa'];
+    } else {
+        $mesa = 0;
+    }
+    
 }
 
-$sql = "INSERT INTO problemas (laboratório, categoria, software, equipamento, problema, outro_problema, mesa, situação) VALUES
-                    ('$laboratorio', '$categoria', '$soft', '$equip', '$problema','$outro_prob', '$mesa', '$situacao')";
+// query para cadastrar os reportes na tabela "problemas" no banco de dados
+$query_add_report = $conexao->prepare(
+    "INSERT INTO problemas (laboratorio, categoria, software, equipamento, problema, outro_problema, mesa, situação)
+     VALUES('$laboratorio', '$categoria', '$soft', '$equip', '$problema','$outro_prob', $mesa, $situacao)"
+     );
 
-$result = mysqli_query($mysqli, $sql);
+$query_add_report->execute();
 
-if ($result) {
-    echo "Os registros foram inseridos com sucesso.";
-    header("Location: ../../html/sucesso.html");
-} else {
-    echo "Nao foi possivel executar ($sql) no banco de dados: " . mysqli_error($mysqli);
+header("Location: ../../html/sucesso.html");
 
-    exit;
-}
+
+
+
 ?>
