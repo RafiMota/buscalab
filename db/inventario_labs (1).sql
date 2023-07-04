@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 03-Jul-2023 às 13:56
+-- Tempo de geração: 04-Jul-2023 às 13:15
 -- Versão do servidor: 8.0.33-0ubuntu0.22.04.2
 -- versão do PHP: 8.1.2-1ubuntu2.11
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `problemas` (
   `id` int NOT NULL,
-  `laboratório` text COLLATE utf8mb4_general_ci NOT NULL,
+  `laboratorio` int NOT NULL,
   `categoria` text COLLATE utf8mb4_general_ci NOT NULL,
   `software` text COLLATE utf8mb4_general_ci NOT NULL,
   `equipamento` text COLLATE utf8mb4_general_ci NOT NULL,
@@ -43,18 +43,11 @@ CREATE TABLE `problemas` (
 -- Extraindo dados da tabela `problemas`
 --
 
-INSERT INTO `problemas` (`id`, `laboratório`, `categoria`, `software`, `equipamento`, `problema`, `outro_problema`, `mesa`, `situação`) VALUES
-(5, '2', 'Software', 'godot', '', 'Expirou a licença', '', 123, 1),
-(6, '2', 'Software', 'godot', '', 'Expirou a licença', '', 123, 1),
-(7, '4', 'Computador', '', '', 'Sem internet', '', 123, 1),
-(8, '4', 'Equipamento', '', 'Ar-condicionado', 'Pingando', '', 0, 1),
-(9, '6', 'Software', 'sla', '', 'Não foi instalado', '', 156, 1),
-(10, '5', 'Outro', '', '', 'Não foi instalado', 'aconteceu algum problema aqui', 0, 1),
-(11, '2', 'Outro', '', '', 'Não foi instalado', 'i', 0, 1),
-(12, '2', 'Outro', '', '', 'Não foi instalado', 'oi', 0, 1),
-(13, '3', 'Outro', '', '', '', 'sei n viu\r\n', 0, 1),
-(14, '', '', '', '', '', '', 0, 1),
-(15, '', '', '', '', '', '', 0, 1);
+INSERT INTO `problemas` (`id`, `laboratorio`, `categoria`, `software`, `equipamento`, `problema`, `outro_problema`, `mesa`, `situação`) VALUES
+(1, 2, 'Computador', '', '', 'Não liga', '', 131, 1),
+(2, 6, 'Software', 'vs code', '', 'Não abre', '', 611, 1),
+(3, 6, 'Outro', '', '', '', 'teclados sujos de comida', 0, 1),
+(37, 3, 'Computador', '', '', 'Periféricos não funcionam', '', 342, 1);
 
 -- --------------------------------------------------------
 
@@ -341,13 +334,13 @@ ALTER TABLE `tb_modelos-bkp`
 -- AUTO_INCREMENT de tabela `problemas`
 --
 ALTER TABLE `problemas`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT de tabela `tabela_softwares`
 --
 ALTER TABLE `tabela_softwares`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT de tabela `tb_cadastro`
