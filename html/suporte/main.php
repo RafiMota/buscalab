@@ -67,21 +67,22 @@
 </head>
 
 <body class="font-montserrat h-screen flex flex-col justify-between">
-    <header class="flex justify-between pt-2 pb-2 pr-8 pl-8 items-center shadow-lg border-b-2 border-slate-100">
+    <header class="flex justify-between pt-2 pb-2 pr-8 pl-8 items-center shadow-lg border-b-2 border-slate-200">
         <section>
             <img src="../../assets/cyberpunk/logo-cyberpunk.svg" alt="" class="w-1/4">
         </section>
 
         <section class="flex gap-10 items-center">
             <a href="main.php">
-                <p class="transition-all cursor-pointer font-medium hover:font-semibold">Reportes</p>
+                <p class="transition-all cursor-pointer font-medium hover:font-semibold" id="reportes">Reportes</p>
             </a>
             <a href="lab.php?l=1">
-                <p class="transition-all cursor-pointer font-medium hover:font-semibold">Laboratorio</p>
+                <p class="transition-all cursor-pointer font-medium hover:font-semibold" id="laboratorio">Laboratório</p>
             </a>
             <img src="../../assets/logout.svg" class="w-5 hover:w-6 transition-all" alt="">
         </section>
     </header>
+
     <section class="flex bg-slate-100 p-8">
         <nav class="flex flex-col gap-3 w-1/4 p-4 bg-slate-50 rounded-lg shadow-lg">
             <h3 class="text-lg font-semibold">Laboratorios</h3>
@@ -182,7 +183,7 @@
                 
                 echo '          
                 
-                                <div class="cursor-pointer bg-slate-50 rounded-xl w-1/5 shrink-0 shadow-xl hover:shadow-2xl transition-all duration-300"  onclick="concluiTarefa()">
+                                <div class=" bg-slate-50 rounded-xl w-1/5 shrink-0 shadow-xl hover:shadow-2xl transition-all duration-300"  onclick="concluiTarefa()">
                                     <div class="p-4">
                                         <p class="w-full">Mesa:</p>
                                         <span>'. $row["mesa"] .'</span>
@@ -192,7 +193,7 @@
                                         <span>' . $row["problema"] . '</span>
                                     </div>
 
-                                    <div id="tarefa" data-estado="'.$situacao.'" class="reporte bg-slate-500 font-semibold text-white rounded-b-xl pl-4 pt-2 pb-2">
+                                    <div id="tarefa" data-estado="'.$situacao.'" class="reporte cursor-pointer bg-slate-500 font-semibold text-white rounded-b-xl pl-4 pt-2 pb-2">
                                         <p class="" id="status">' . $situacao . '</p>
                                     </div>
                                 </div> 

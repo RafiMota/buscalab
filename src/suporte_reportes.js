@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', function(){
 })
 
 
-
 function concluiTarefa(elemento, estado) {
  
     if(estado == 'Pendente') {

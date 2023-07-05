@@ -64,7 +64,7 @@
 
     <main id="carrossel">
       <section id="carousel">
-        <h2 id="title" class="mb-8 mt-4 text-2xl">Conheça os laboratórios</h2>
+        <h2 id="title" class="mb-4 mt-4 text-2xl">Conheça os laboratórios</h2>
         <!-- Article abaixo representa o Carrossel -->
         <article class="mb-8 flex flex-col justify-center">
           <div class="carousel">
@@ -186,7 +186,7 @@
         </script>
       </section>
 
-      <section id="report" class="flex h-full flex-col bg-rose-400 p-10">
+      <section id="report" class="flex h-full flex-col bg-rose-400 p-8">
         <img
           id="megafone"
           src="./assets/cyberpunk/megafone-cyberpunk.svg"
@@ -215,7 +215,7 @@
         >
       </section>
 
-      <section class="flex h-full flex-col bg-rose-50 p-10 text-rose-500">
+      <section class="flex h-full flex-col bg-rose-50 p-8 text-rose-500">
         <img
           id="regras"
           src="./assets/cyberpunk/regras-cyberpunk.svg"
