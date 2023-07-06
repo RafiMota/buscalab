@@ -76,7 +76,7 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
             <a href="main.php">
                 <p class="transition-all cursor-pointer font-medium hover:font-semibold" id="reportes">Reportes</p>
             </a>
-            <a href="lab.php?l=1">
+            <a href="labs/lab.soft.php?l=1">
                 <p class="transition-all cursor-pointer font-medium hover:font-semibold" id="laboratorio">Laboratório</p>
             </a>
             <img src="../../assets/logout.svg" class="w-5 hover:w-6 transition-all" alt="">
@@ -91,7 +91,7 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
             $aux = 0;
 
             for ($i = 1; $i < 7; $i++) {
-                echo '<a class="transition-all hover:font-semibold flex flex-row flex-nowrap gap-4" href="lab.php?l=' . $i . '">
+                echo '<a class="transition-all hover:font-semibold flex flex-row flex-nowrap gap-4" href="labs/lab.soft.php?l=' . $i . '">
                             <p>Laboratorio ' . $i . '</p>';
 
                 if ($row[$aux][1] == $i) {
