@@ -79,7 +79,7 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
             <a href="labs/lab.soft.php?l=1">
                 <p class="transition-all cursor-pointer font-medium hover:font-semibold" id="laboratorio">Laboratório</p>
             </a>
-            <img src="../../assets/logout.svg" class="w-5 hover:w-6 transition-all" alt="">
+            <a href="../../src/models/logout.php"><img src="../../assets/logout.svg" class="w-5 hover:w-6 transition-all" alt=""></a>
         </section>
     </header>
 
