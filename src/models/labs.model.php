@@ -43,7 +43,7 @@ if(isset($_GET['Sadd']) && !empty($_GET['Sadd'])){
 
     ");
     $query_add_software->execute();
-    header('location: ../../html/suporte/lab.php?l='.$id_lab);
+    header('location: ../../html/suporte/labs/lab.soft.php?l='.$id_lab);
 }
 // -------------- REMOVER SOFTWARES---------------------------------------------
 
@@ -59,7 +59,7 @@ if(isset($_GET['Sre']) && !empty($_GET['Sre'])){
 
     ");
     $query_remove_software->execute();
-    header('location: ../../html/suporte/lab.php?l='.$id_lab);
+    header('location: ../../html/suporte/labs/lab.soft.php?l='.$id_lab);
 }
 
 // -------------- CADASTRAR SOFTWARES---------------------------------------------
@@ -86,7 +86,7 @@ if(isset($_GET['Madd']) && !empty($_GET['Madd'])){
 
     ");
     $query_add_modelo->execute();
-    header('location: ../../html/suporte/lab.php?l='.$id_lab);
+    header('location: ../../html/suporte/labs/lab.modelos.php?l='.$id_lab);
 
 }
 
@@ -105,7 +105,7 @@ if(isset($_GET['Mre']) && !empty($_GET['Mre'])){
 
     ");
     $query_remove_modelo->execute();
-    header('location: ../../html/suporte/lab.php?l='.$id_lab);
+    header('location: ../../html/suporte/labs/lab.modelos.php?l='.$id_lab);
 
 }
 
@@ -122,9 +122,10 @@ if(isset($_GET['Eadd']) && !empty($_GET['Eadd'])){
 
     ");
     $query_add_equip->execute();
-    header('location: ../../html/suporte/lab.php?l='.$id_lab);
+    header('location: ../../html/suporte/labs/lab.equip.php?l='.$id_lab);
 }
 
+// -------------- REMOVER EQUIPAMENTOS ---------------------------------------------
 if(isset($_GET['Ere']) && !empty($_GET['Ere'])){
     $id_equip = $_GET['Ere'];
     
@@ -138,7 +139,7 @@ if(isset($_GET['Ere']) && !empty($_GET['Ere'])){
 
     ");
     $query_remove_equip->execute();
-    header('location: ../../html/suporte/lab.php?l='.$id_lab);
+    header('location: ../../html/suporte/labs/lab.equip.php?l='.$id_lab);
 
 }
 ?>

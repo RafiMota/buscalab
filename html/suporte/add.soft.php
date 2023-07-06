@@ -1,5 +1,6 @@
 <?php
-    require 'lab.php';
+    require '../../src/models/labs.model.php';
+    require '../../src/models/login_seguranca.php';
 ?>
 
 <!DOCTYPE html>
