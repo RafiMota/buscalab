@@ -48,7 +48,7 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
             <a href="lab.modelos.php?l=1">
                 <p class="transition-all cursor-pointer font-medium hover:font-semibold">Laboratório</p>
             </a>
-            <img src="../../../assets/logout.svg" class="w-5 hover:w-6 transition-all" alt="">
+            <a href="../../../src/models/logout.php"><img src="../../../assets/logout.svg" class="w-5 hover:w-6 transition-all" alt=""></a>
         </section>
     </header>
 
@@ -131,7 +131,11 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                                                 <div class="h-full w-1/3 rounded-l-xl bg-rose-50 "></div>
                                                 <div class="w-full p-4">
                                                     <h3 class="text-xl font-bold"><?= $dados_modelos[$key]['modelo']; ?></h3>
-                                                    <p>Quantidade: <span><?= $dados_modelos[$key]['lab' . $id_lab]; ?></span></p>
+                                                    <span>Quantidade: <?= $dados_modelos[$key]['lab' . $id_lab]; ?></span>
+                                                    <a href="../../../src/models/labs.model.php?l=<?=$id_lab.'&mc='.$id_modelo;?>"><button><span class="bg-red-400 p-2 rounded-md">+</span></button></a>
+                                                    <a href="../../../src/models/labs.model.php?l=<?=$id_lab.'&lc='.$id_modelo;?>"><button><span class="bg-red-400 p-2 rounded-md">-</span></button></a>
+                                                    
+                                                    
                                                     <a href="../../../src/models/labs.model.php?l=<?=$id_lab.'&Mre='.$id_modelo ?>"><p>remover</p></a>
                                                 </div>
                                             </div>
