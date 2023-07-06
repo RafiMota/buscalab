@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 04-Jul-2023 às 13:15
+-- Tempo de geração: 06-Jul-2023 às 02:35
 -- Versão do servidor: 8.0.33-0ubuntu0.22.04.2
--- versão do PHP: 8.1.2-1ubuntu2.11
+-- versão do PHP: 8.1.2-1ubuntu2.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -72,11 +72,11 @@ CREATE TABLE `tabela_softwares` (
 --
 
 INSERT INTO `tabela_softwares` (`id`, `software`, `lab1`, `lab2`, `lab3`, `lab4`, `lab5`, `lab6`, `imagem`) VALUES
-(1, 'Altium', b'1', b'1', b'1', b'0', b'1', b'1', 'img_software/logo-altium.png'),
-(2, 'Android Studio', b'1', b'0', b'1', b'1', b'0', b'0', 'img_software/logo-android-studio.svg'),
-(3, 'Arduino', b'1', b'1', b'1', b'0', b'0', b'1', 'img_software/logo-arduino.png'),
-(4, 'Blender', b'1', b'0', b'1', b'0', b'0', b'0', 'img_software/logo-blender.svg'),
-(5, 'Gimp', b'1', b'1', b'1', b'0', b'1', b'0', 'img_software/logo-gimp.png'),
+(1, 'Altium', b'1', b'0', b'1', b'1', b'1', b'1', 'img_software/logo-altium.png'),
+(2, 'Android Studio', b'1', b'1', b'1', b'1', b'0', b'1', 'img_software/logo-android-studio.svg'),
+(3, 'Arduino', b'1', b'0', b'1', b'1', b'0', b'0', 'img_software/logo-arduino.png'),
+(4, 'Blender', b'1', b'1', b'1', b'0', b'0', b'1', 'img_software/logo-blender.svg'),
+(5, 'Gimp', b'1', b'1', b'1', b'1', b'1', b'1', 'img_software/logo-gimp.png'),
 (6, 'Processing', b'1', b'1', b'0', b'1', b'0', b'1', 'img_software/logo-processing.svg'),
 (17, 'vs code', b'1', b'1', b'1', b'1', b'1', b'1', 'img_software/logo-vscode.png');
 
@@ -97,7 +97,7 @@ CREATE TABLE `tb_cadastro` (
 --
 
 INSERT INTO `tb_cadastro` (`id`, `email`, `senha`) VALUES
-(1, 'suporte01@teste.com', 'senhatestesuporte1'),
+(1, 'teste', '1234'),
 (2, 'suporte02@teste.com', 'senhatestesuporte2');
 
 -- --------------------------------------------------------
@@ -151,7 +151,7 @@ CREATE TABLE `tb_equipamentos` (
 
 INSERT INTO `tb_equipamentos` (`id`, `modelo`, `patrimonio`, `fabricante`, `lab1`, `lab2`, `lab3`, `lab4`, `lab5`, `lab6`) VALUES
 (1, 'projetor', '2885677', 'Epson', 1, 1, 0, 1, 1, 0),
-(2, 'Ar-condicionar', '2345677', 'Philco', 0, 1, 0, 0, 1, 0);
+(2, 'Ar-condicionar', '2345677', 'Philco', 1, 1, 0, 1, 1, 0);
 
 -- --------------------------------------------------------
 
@@ -235,12 +235,12 @@ CREATE TABLE `tb_modelos` (
 --
 
 INSERT INTO `tb_modelos` (`modelo`, `lab1`, `lab2`, `lab3`, `lab4`, `lab5`, `lab6`, `id`) VALUES
-('imac', 0, 20, 0, 0, 18, 87, 1),
-('lenovo', 0, 25, 0, 34, 0, 0, 2),
+('imac', 1, 20, 0, 0, 18, 87, 1),
+('lenovo', 1, 25, 0, 34, 0, 0, 2),
 ('sansung', 0, 0, 0, 0, 0, 0, 7),
-('Dell optilex 780', 17, 15, 15, 0, 0, 0, 16),
+('Dell optilex 780', 0, 15, 15, 0, 0, 0, 16),
 ('Positivo D610', 0, 0, 0, 0, 0, 0, 17),
-('imac 16,2', 25, 0, 0, 0, 0, 0, 18);
+('imac 16,2', 1, 0, 0, 0, 0, 0, 18);
 
 -- --------------------------------------------------------
 

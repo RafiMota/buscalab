@@ -133,7 +133,7 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
             <section>
                 <div class="flex flex-row justify-between items-center">
                     <h2 class="text-2xl font-semibold">Laboratório <?php echo $id_lab; ?></h2>
-                    <p onclick="openDialog()" class="text-xl font-semibold hover:underline transition-all">Adicionar +</p>
+                    
                 </div>
             </section>
 
@@ -162,21 +162,29 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                                     align-items: start;
                                     gap: 1.5rem;
                                     margin: auto;
+                                    
                                 }
                             </style>
-                            <article id="Softwares" class="justify-start p-8 w-100">
+                            <article id="Softwares">
+                            <!--onclick="openDialog()"-->
+                                <a href="add.soft.php?l=<?=$id_lab?>">
+                                    <div  class="text-xl font-semibold hover:underline transition-all ">Adicionar+</div>
+                                </a>
+                                <div id="Softwares" class="justify-start p-8 w-100">
+                               
+                                    <?php foreach ($dados_soft as $key => $value) {
+                                        if ($dados_soft[$key]['lab' . $id_lab] != 0) {
+                                        $id_soft = $dados_soft[$key]['id'];
+                                    ?> 
+                                            <div class="flex flex-col items-center justify-center h-32 w-32 rounded-xl  p-4 text-center hover:brightness-50 transition-all">
+                                                <img src="../../assets/<?= $dados_soft[$key]['imagem']; ?>" alt="" />
+                                                <p class="text-xs font-bold"><?= $dados_soft[$key]['software']; ?></p>
+                                                <a href="../../src/models/labs.model.php?l=<?=$id_lab.'&Sre='.$id_soft ?>"><span>remover</span></a>
 
-                                <?php foreach ($dados_soft as $key => $value) {
-                                    if ($dados_soft[$key]['lab' . $id_lab] != 0) {
-                                ?>
-
-                                        <div class="flex flex-col items-center justify-center h-32 w-32 rounded-xl  p-4 text-center hover:brightness-50 transition-all">
-                                            <img src="../../assets/<?= $dados_soft[$key]['imagem']; ?>" alt="" />
-                                            <p class="text-xs font-bold"><?= $dados_soft[$key]['software']; ?></p>
-                                        </div>
-
-                                <?php }
-                                }; ?>
+                                            </div>
+                                    <?php }
+                                    }; ?>
+                                </div>
                             </article>
 
 
@@ -184,19 +192,24 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                         </li>
                         <li>
                             <article id="Computadores" class="flex flex-col gap-10 p-8">
-                                <?php foreach ($dados_modelos as $key => $value) {
-                                    if ($dados_modelos[$key]['lab' . $id_lab] != 0) {
-                                ?>
-                                        <div class="flex h-20 w-full rounded-xl ">
-
-                                            <div class="h-full w-1/3 rounded-l-xl bg-rose-50 "></div>
-                                            <div class="w-full p-4">
-                                                <h3 class="text-xl font-bold"><?= $dados_modelos[$key]['modelo']; ?></h3>
-                                                <p>Quantidade: <span><?= $dados_modelos[$key]['lab' . $id_lab]; ?></span></p>
+                            <a href="add.comp.php?l=<?=$id_lab?>">
+                                    <div  class="text-xl font-semibold hover:underline transition-all ">Adicionar+</div>
+                            </a>
+                                <div id="Computadores" >
+                                    <?php foreach ($dados_modelos as $key => $value) {
+                                        $id_modelo = $dados_modelos[$key]['id'];
+                                        if ($dados_modelos[$key]['lab' . $id_lab] != 0) {
+                                    ?>
+                                            <div class="flex h-20 w-full rounded-xl ">
+                                                <div class="h-full w-1/3 rounded-l-xl bg-rose-50 "></div>
+                                                <div class="w-full p-4">
+                                                    <h3 class="text-xl font-bold"><?= $dados_modelos[$key]['modelo']; ?></h3>
+                                                    <p>Quantidade: <span><?= $dados_modelos[$key]['lab' . $id_lab]; ?></span></p>
+                                                    <a href="../../src/models/labs.model.php?l=<?=$id_lab.'&Mre='.$id_modelo ?>"><p>remover</p></a>
+                                                </div>
                                             </div>
-                                        </div>
-                                <?php }
-                                }; ?>
+                                    <?php }}; ?>
+                                </div>
                             </article>
 
 
@@ -206,18 +219,25 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
 
 
                             <article id="Equipamentos" class="flex flex-col gap-10  p-8">
-                                <?php foreach ($dados_equip as $key => $value) {
-                                    if ($dados_equip[$key]['lab' . $id_lab] != 0) {
-                                ?>
-                                        <div class="flex h-20 w-full rounded-xl ">
-                                            <div class="h-full w-1/3 rounded-l-xl bg-black"></div>
-                                            <div class="w-full p-4">
-                                                <h3 class="text-xl font-bold">Projetor</h3>
-                                                <p><?= $dados_equip[$key]['modelo']; ?> <span><?= $dados_equip[$key]['lab' . $id_lab]; ?></span></p>
+                            <a href="add.equip.php?l=<?=$id_lab?>">
+                                    <div  class="text-xl font-semibold hover:underline transition-all ">Adicionar+</div>
+                            </a>
+                                <div>
+                                    <?php foreach ($dados_equip as $key => $value) {
+                                        $id_equip = $dados_equip[$key]['id'];
+                                        if ($dados_equip[$key]['lab' . $id_lab] != 0) {
+                                    ?>
+                                            <div class="flex h-20 w-full rounded-xl ">
+                                                <div class="h-full w-1/3 rounded-l-xl bg-black"></div>
+                                                <div class="w-full p-4">
+                                                    <h3 class="text-xl font-bold"><?= $dados_equip[$key]['modelo']; ?></h3>
+                                                     <span>Quantidade: <?= $dados_equip[$key]['lab' . $id_lab]; ?></span>
+                                                     <a href="../../src/models/labs.model.php?l=<?=$id_lab.'&Ere='.$id_equip ?>"><span>remover</span></a>
+                                                </div>
                                             </div>
-                                        </div>
-                                <?php }
-                                }; ?>
+                                    <?php }
+                                    }; ?>
+                                </div>
                             </article>
 
                         </li>
