@@ -36,11 +36,6 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
 </head>
 
 <body class="font-montserrat h-screen flex flex-col justify-between">
-    <style>
-        * {
-            /* outline: dashed 1px red; */
-        }
-    </style>
     <header class="flex justify-between pt-2 pb-2 pr-8 pl-8 items-center shadow-lg border-b-2 border-slate-200">
         <section>
             <a href="main.php"><img src="../../assets/cyberpunk/logo-cyberpunk.svg" alt="" class="w-1/4"></a>
@@ -56,7 +51,64 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
             <img src="../../assets/logout.svg" class="w-5 hover:w-6 transition-all" alt="">
         </section>
     </header>
-    <section class="flex align-start bg-slate-100 p-8 m-h-screen">
+
+    <div id="dialog" class="hidden h-screen w-full">
+        <div class="flex flex-col gap-10 p-8 pl-0 pr-0 absolute items-center justify-center bg-slate-300 w-screen">
+            <div class="flex flex-col justify-between items-center bg-slate-100 shadow-xl w-1/2 rounded-xl h-80 p-8">
+                <header class="w-full text-center">
+                    <h2 class="text-xl font-semibold">
+                        Qual software você deseja cadastrar?
+                    </h2>
+                </header>
+                <main class="flex">
+
+                    <div>
+                        <p>Softwares vão estar aqui</p>
+                    </div>
+
+                </main>
+                <footer>
+                    <a href="adicionarSoftware.php" class="">
+                        <p class="bg-slate-300 hover:bg-slate-500 shadow-md hover:text-slate-100 font-semibold transition-all p-2 rounded-md">Adicionar novo</p>
+                    </a>
+                </footer>
+            </div>
+
+            <div id="formAdicionar" class="flex flex-col items-center justify-between bg-slate-100 shadow-xl w-1/2 rounded-xl h-80 p-8">
+                <header class="w-full text-center mb-4">
+                    <h2 class="text-xl font-semibold">
+                        Cadastre um software novo
+                    </h2>
+                </header>
+                <main class="flex flex-col w-full">
+
+                    <form action="" class="flex flex-col justify-center items-center gap-4 w-full">
+                        <div class="flex flex-col w-2/3">
+                            <label class="ml-2" for="nome">Nome do software</label>
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="nome" name="nome">
+                        </div>
+                        <div class="flex flex-col w-2/3">
+                            <label class="ml-2" for="categoria">Categoria</label>
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="categoria" name="categoria">
+                        </div>
+
+                    </form>
+
+                </main>
+                <footer>
+                    <a href="#" class="">
+                        <p class="bg-slate-300 hover:bg-slate-500 shadow-md hover:text-slate-100 font-semibold transition-all p-2 rounded-md">Concluir</p>
+                    </a>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <section class="flex align-start bg-slate-100 p-8 h-screen">
         <nav class="flex flex-col gap-3 w-1/5 p-4 bg-slate-50 rounded-lg shadow-lg">
             <h3 class="text-lg font-semibold">Laboratórios</h3>
             <?php
@@ -77,10 +129,11 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
             ?>
         </nav>
 
-        <main class="flex flex-col  p-4 gap-8 w-3/4 ">
+        <main class="flex flex-col p-8 pt-4 gap-8 w-3/4 ">
             <section>
-                <div class="flex flex-row justify-between">
+                <div class="flex flex-row justify-between items-center">
                     <h2 class="text-2xl font-semibold">Laboratório <?php echo $id_lab; ?></h2>
+                    <p onclick="openDialog()" class="text-xl font-semibold hover:underline transition-all">Adicionar +</p>
                 </div>
             </section>
 
@@ -117,7 +170,7 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                                     if ($dados_soft[$key]['lab' . $id_lab] != 0) {
                                 ?>
 
-                                        <div class="flex flex-col items-center justify-center h-32 w-32 rounded-xl  p-4 text-center hover:brightness-50">
+                                        <div class="flex flex-col items-center justify-center h-32 w-32 rounded-xl  p-4 text-center hover:brightness-50 transition-all">
                                             <img src="../../assets/<?= $dados_soft[$key]['imagem']; ?>" alt="" />
                                             <p class="text-xs font-bold"><?= $dados_soft[$key]['software']; ?></p>
                                         </div>

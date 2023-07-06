@@ -25,3 +25,12 @@ function concluiTarefa(elemento, estado) {
     }
     
 }
+
+let dialog = document.getElementById('dialog')
+
+function openDialog() {
+    console.log('clicado')
+
+    dialog.style.display = 'flex'
+
+}
