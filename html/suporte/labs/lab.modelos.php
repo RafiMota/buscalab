@@ -105,42 +105,52 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                     </a>
                 </div>
                 <div>
-                    <ul>
+                    <ul >
                         <li>
                             <style>
-                                #Softwares {
-                                    display: flex;
-                                    flex-flow: row wrap;
-                                    justify-content: start;
-                                    align-items: start;
-                                    gap: 1.5rem;
-                                    margin: auto;
-                                    
+                                *{
+                                    outline: dashed 1px red;
                                 }
                             </style>
-                            <article  class="flex flex-col gap-10 p-8">
                             <a href="../add.comp.php?l=<?=$id_lab?>">
-                                    <div  class="text-xl font-semibold hover:underline transition-all ">Adicionar+</div>
+                                        <div  class="text-xl font-semibold hover:underline transition-all ">Adicionar+</div>
                             </a>
-                                <div >
-                                    <?php foreach ($dados_modelos as $key => $value) {
-                                        $id_modelo = $dados_modelos[$key]['id'];
-                                        if ($dados_modelos[$key]['lab' . $id_lab] != 0) {
-                                    ?>
-                                            <div class="flex h-20 w-full rounded-xl ">
-                                                <div class="h-full w-1/3 rounded-l-xl bg-rose-50 "></div>
-                                                <div class="w-full p-4">
-                                                    <h3 class="text-xl font-bold"><?= $dados_modelos[$key]['modelo']; ?></h3>
-                                                    <span>Quantidade: <?= $dados_modelos[$key]['lab' . $id_lab]; ?></span>
-                                                    <a href="../../../src/models/labs.model.php?l=<?=$id_lab.'&mc='.$id_modelo;?>"><button><span class="bg-red-400 p-2 rounded-md">+</span></button></a>
-                                                    <a href="../../../src/models/labs.model.php?l=<?=$id_lab.'&lc='.$id_modelo;?>"><button><span class="bg-red-400 p-2 rounded-md">-</span></button></a>
-                                                    
-                                                    
-                                                    <a href="../../../src/models/labs.model.php?l=<?=$id_lab.'&Mre='.$id_modelo ?>"><p>remover</p></a>
-                                                </div>
+                            <article id="Modelos"  class="flex flex-col gap-4 p-8">                                
+                                
+                                <?php foreach ($dados_modelos as $key => $value) {
+                                    $id_modelo = $dados_modelos[$key]['id'];
+                                    if ($dados_modelos[$key]['lab' . $id_lab] != 0) {
+                                ?>
+                                        <div class="flex w-full rounded-xl ">
+                                            <div class="h-50 w-1/3 rounded-l-xl bg-rose-50 ">
+                                                FOTO
                                             </div>
-                                    <?php }}; ?>
-                                </div>
+                                            <div class="w-full p-4">
+                                                <h3 class="text-xl font-bold">
+                                                    <?= $dados_modelos[$key]['modelo']; ?>
+                                                </h3>
+                                                <span>
+                                                    Quantidade: <?= $dados_modelos[$key]['lab' . $id_lab]; ?>
+                                                </span>
+                                                <a href="../../../src/models/labs.model.php?l=<?=$id_lab.'&mc='.$id_modelo;?>">
+                                                    <button>
+                                                        <span class="bg-red-400 p-2 rounded-md">+</span>
+                                                    </button>
+                                                </a>
+                                                <a href="../../../src/models/labs.model.php?l=<?=$id_lab.'&lc='.$id_modelo;?>">
+                                                    <button>
+                                                        <span class="bg-red-400 p-2 rounded-md">-</span>
+                                                    </button>
+                                                </a>
+                                                
+                                                
+                                                <a href="../../../src/models/labs.model.php?l=<?=$id_lab.'&Mre='.$id_modelo ?>">
+                                                    <p>remover</p>
+                                                </a>
+                                            </div>
+                                        </div>
+                                <?php }}; ?>
+                                
                             </article>
 
 

@@ -15,18 +15,19 @@ if (isset($_POST) && !empty($_POST)){
     } else {
         $mesa = 0;
     }
+    // query para cadastrar os reportes na tabela "problemas" no banco de dados
+    $query_add_report = $conexao->prepare(
+        "INSERT INTO problemas (laboratorio, categoria, software, equipamento, problema, outro_problema, mesa, situação)
+         VALUES('$laboratorio', '$categoria', '$soft', '$equip', '$problema','$outro_prob', $mesa, $situacao)"
+         );
     
+    $query_add_report->execute();
+    
+    header("Location: ../../html/sucesso.html");
 }
 
-// query para cadastrar os reportes na tabela "problemas" no banco de dados
-$query_add_report = $conexao->prepare(
-    "INSERT INTO problemas (laboratorio, categoria, software, equipamento, problema, outro_problema, mesa, situação)
-     VALUES('$laboratorio', '$categoria', '$soft', '$equip', '$problema','$outro_prob', $mesa, $situacao)"
-     );
 
-$query_add_report->execute();
 
-header("Location: ../../html/sucesso.html");
 
 
 

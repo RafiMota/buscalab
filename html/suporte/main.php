@@ -24,7 +24,7 @@ if (!$result) {
 }
 
 if (mysqli_num_rows($result) == 0) {
-    echo "Nao foram encontradas linhas, nada para mostrar<br><br>";
+    // echo "Nao foram encontradas linhas, nada para mostrar<br><br>";
 }
 $result_labs_c_problemas = mysqli_query($conn, $slq_labs_c_problemas);
 if (!$result_labs_c_problemas) {
@@ -33,7 +33,7 @@ if (!$result_labs_c_problemas) {
 }
 
 if (mysqli_num_rows($result_labs_c_problemas) == 0) {
-    echo "Nao foram encontradas linhas, nada para mostrar<br><br>";
+    // echo "Nao foram encontradas linhas, nada para mostrar<br><br>";
 }
 $result_num_report_lab = mysqli_query($conn, $sql_num_report_lab);
 if (!$result_num_report_lab) {
@@ -42,7 +42,7 @@ if (!$result_num_report_lab) {
 }
 
 if (mysqli_num_rows($result_num_report_lab) == 0) {
-    echo "Nao foram encontradas linhas, nada para mostrar<br><br>";
+    // echo "Nao foram encontradas linhas, nada para mostrar<br><br>";
 }
 
 
@@ -62,6 +62,9 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
     <title>Buscalab</title>
     <link rel="stylesheet" href="../../src/css/output.css" />
 
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="../../src/suporte_reportes.js" defer></script>
     <script src="../../src/novo.js"></script>
 </head>
@@ -82,6 +85,22 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
             <a href="../../src/models/logout.php"><img src="../../assets/logout.svg" class="w-5 hover:w-6 transition-all" alt=""></a>
         </section>
     </header>
+    <style>
+        #lixo{
+            display: none;
+            position: fixed; 
+            right: 30px;
+            bottom: 30px;
+            background: grey;
+            /* width: 40px; */
+            height: 40px;
+            border-radius: 5px;
+            padding: 4px;
+        }
+    </style>
+    <button  id="lixo">
+        Excluir Concluídos
+    </button>
 
     <section class="flex bg-slate-100 p-8">
         <!-- <nav class="flex flex-col gap-3 w-1/4 p-4 bg-slate-50 rounded-lg shadow-lg">
@@ -187,7 +206,7 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                                         <span>' . $row["problema"] . '</span>
                                     </div>
 
-                                    <div id="tarefa" data-estado="' . $situacao . '" class="reporte cursor-pointer bg-slate-500 font-semibold text-white rounded-b-xl pl-4 pt-2 pb-2">
+                                    <div id="tarefa" data-estado="' . $situacao . '" data-id="' . $row["id"] . '" class="reporte cursor-pointer bg-slate-500 font-semibold text-white rounded-b-xl pl-4 pt-2 pb-2">
                                         <p class="" id="status">' . $situacao . '</p>
                                     </div>
                                 </div> 
