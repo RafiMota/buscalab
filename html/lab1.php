@@ -21,8 +21,40 @@
     outline: dashed 1px red;
   }
 </style>-->
+<style>
+      #reportar_facil{   
+          font-size: 14px; 
+          
+          position: fixed;
+          display: flex;
+          flex-flow: column nowrap; 
+          justify-content: center;
+          align-items: center;
 
+          right: 30px;
+          bottom: 30px;
+
+          
+          width: 83px;
+          height: 83px;
+          border-radius: 50%;
+          padding: 4px;
+          color: #ffffff;
+          z-index: 1;
+      }
+      .megafone{
+        width: 25px;
+        height: 25px;
+      }
+  </style>
+  <a href="reportar.html" id="reportar_facil" class="font-montserrat">    
+    <img src="../assets/megafone_branco.svg" alt="Megafone de reporte" class="megafone">
+    Reportar
+  </a>
 <body class="font-montserrat">
+
+  
+
   <header class="flex items-center justify-between border-b-2 border-red-300 p-8 pb-2 pt-2">
     <a href="../index.php">
       <img id="logo" src="../assets/cyberpunk/logo-cyberpunk.svg" alt="" class="w-16" />

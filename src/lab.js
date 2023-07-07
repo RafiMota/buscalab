@@ -1,15 +1,8 @@
-document.addEventListener('DOMContentLoaded', () => {
-    // function fetchData(){
-    //     fetch('../src/models/labs.model.php')
-    //     .then(response => response.json())
-    //     .then(data => console.log(data))
-    // }
-    // fetchData();
+document.addEventListener('DOMContentLoaded', () => {    
 
     let params = new URLSearchParams(location.search);
     let lab = params.get('l')
-    console.log(lab);
-
+   
     function labCor(lab_id){
         lab = lab_id;
         rgb = [
@@ -71,6 +64,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let logo = document.getElementById("logo");
         logo.src = rgb[lab-1]["logo"];
+
+        let report_button = document.getElementById("reportar_facil");
+
+        // console.log(report_button);
+
+        report_button.style.backgroundColor = rgb[lab-1]
+        ["base-color"];
+
+        // console.log(report_button);
 
         let buttons = document.querySelectorAll("button")
         for(let button of buttons){
