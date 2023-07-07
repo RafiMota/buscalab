@@ -82,7 +82,9 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
             <section>
                 <div class="flex flex-row justify-between items-center">
                     <h2 class="text-2xl font-semibold">Laboratório <?php echo $id_lab; ?></h2>
-                    
+                    <a href="../add.equip.php?l=<?=$id_lab?>">
+                                    <div  class="text-xl font-semibold hover:underline transition-all ">Adicionar+</div>
+                            </a>
                 </div>
             </section>
 
@@ -120,9 +122,7 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                             </style>
                             
                             <article id="Equipamentos" class="flex flex-col gap-10  p-8">
-                            <a href="../add.equip.php?l=<?=$id_lab?>">
-                                    <div  class="text-xl font-semibold hover:underline transition-all ">Adicionar+</div>
-                            </a>
+
                                 <div>
                                     <?php foreach ($dados_equip as $key => $value) {
                                         $id_equip = $dados_equip[$key]['id'];

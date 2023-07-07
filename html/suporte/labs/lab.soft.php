@@ -82,7 +82,9 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
             <section>
                 <div class="flex flex-row justify-between items-center">
                     <h2 class="text-2xl font-semibold">Laboratório <?php echo $id_lab; ?></h2>
-                    
+                    <a href="../add.soft.php?l=<?=$id_lab?>">
+                                    <div  class="text-xl font-semibold hover:underline transition-all ">Adicionar+</div>
+                                </a>
                 </div>
             </section>
 
@@ -120,9 +122,7 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                             </style>
                             <article id="Softwares">
                             <!--onclick="openDialog()"-->
-                                <a href="../add.soft.php?l=<?=$id_lab?>">
-                                    <div  class="text-xl font-semibold hover:underline transition-all ">Adicionar+</div>
-                                </a>
+                                
                                 <div id="Softwares" class="justify-start p-8 w-100">
                                
                                     <?php foreach ($dados_soft as $key => $value) {

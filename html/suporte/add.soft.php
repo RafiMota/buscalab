@@ -16,7 +16,7 @@
 </head>
 <body>
 <div class="flex flex-col gap-10 p-8 pl-0 pr-0 absolute items-center justify-center bg-slate-300 w-screen">
-            <div class="flex flex-col justify-between items-center bg-slate-100 shadow-xl w-1/2 rounded-xl h-80 p-8">
+            <div class="flex flex-col justify-between items-center bg-slate-100 shadow-xl w-1/2 rounded-xl h-full p-8">
                 <header class="w-full text-center">
                     <h2 class="text-xl font-semibold">
                         Qual software você deseja adicionar?
@@ -25,7 +25,7 @@
                 <main class="flex">
 
                    
-                    <div id="Softwares" class="justify-start p-8 w-100">
+                    <div id="Softwares" class="justify-start p-8 w-full">
                                
                         <?php foreach ($dados_soft as $key => $value) {
                             $id_soft = $dados_soft[$key]['id'];
@@ -46,7 +46,7 @@
                 
             </div>
 
-            <div id="formAdicionar" class="flex flex-col items-center justify-between bg-slate-100 shadow-xl w-1/2 rounded-xl h-80 p-8">
+            <div id="formAdicionar" class="flex flex-col items-center justify-between bg-slate-100 shadow-xl w-1/2 rounded-xl h-full p-8">
                 <header class="w-full text-center mb-4">
                     <h2 class="text-xl font-semibold">
                         Cadastre um software novo
