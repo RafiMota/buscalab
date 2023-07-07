@@ -54,15 +54,52 @@
                 </header>
                 <main class="flex flex-col w-full h-full">
 
-                    <form action="../../src/models/labs.model.php?Scad=1&l=<?=$id_lab?>" method="post" class="flex flex-col justify-center items-center gap-4 w-full h-full">
+                    <form action="../../src/models/labs.model.php?Scad=1&l=<?=$id_lab?>" method="post" enctype="multipart/form-data" class="flex flex-col justify-center items-center gap-4 w-full h-full">
                         <div class="flex flex-col w-2/3">
                             <label class="ml-2" for="nome">Nome do software</label>
                             <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="nome" name="nome">
                         </div>
                         <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="categoria">lab1</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="lab1" name="lab1">
+                            <label class="ml-2" for="categoria">Categoria</label>
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="categoria" name="categoria">
                         </div>
+                        <div class="flex flex-col w-2/3">
+                            <label class="ml-2" for="categoria">Licença</label>
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="licenca" name="linceca">
+                        </div>
+                        <div class="flex flex-col w-2/3">
+                            <label class="ml-2" for="categoria">Versão</label>
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="versao" name="versao">
+                        </div>
+                        <div class="flex flex-col w-2/3">
+                            <label class="ml-2" for="categoria">Lab 1  (1 = adicionar / 0 = não adicionar)</label>
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="number" id="lab1" name="lab1">
+                        </div>
+                        <div class="flex flex-col w-2/3">
+                            <label class="ml-2" for="categoria">Lab 2  (1 = adicionar / 0 = não adicionar)</label>
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="number" id="lab2" name="lab2">
+                        </div>
+                        <div class="flex flex-col w-2/3">
+                            <label class="ml-2" for="categoria">Lab 3  (1 = adicionar / 0 = não adicionar)</label>
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="number" id="lab3" name="lab3">
+                        </div>
+                        <div class="flex flex-col w-2/3">
+                            <label class="ml-2" for="categoria">Lab 4  (1 = adicionar / 0 = não adicionar)</label>
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="number" id="lab4" name="lab4">
+                        </div>
+                        <div class="flex flex-col w-2/3">
+                            <label class="ml-2" for="categoria">Lab 6 ( 1 = adicionar / 0 = não adicionar)</label>
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="number" id="lab6" name="lab6">
+                        </div>
+                        <div class="flex flex-col w-2/3">
+                            <label class="ml-2" for="categoria">Lab 6 (1 = adicionar / 0 = não adicionar)</label>
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="number" id="lab6" name="lab6">
+                        </div>
+                        <div class="flex flex-col w-2/3">
+                            <label class="ml-2" for="imagem">ícone do software</label>
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="file" id="imagem" name="imagem" accept="image/*">
+                        </div>
+                        
                         
                             <button type="submit" class="bg-slate-300 hover:bg-slate-500 shadow-md hover:text-slate-100 font-semibold transition-all p-2 rounded-md">Concluir</button>
                     </form>

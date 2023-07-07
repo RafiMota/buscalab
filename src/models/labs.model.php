@@ -67,7 +67,30 @@
     if(isset($_GET['Scad']) && !empty($_GET['Scad'])){
         if(isset($_POST)){
             $nome_soft = $_POST['nome'];
-            print_r($_POST);
+            $categoria = $_POST['categoria'];
+            $licenca = $_POST['licenca'];
+            $versao = $_POST['versao'];
+            $lab1 = (int)$_POST['lab1'];
+            $lab2 = (int)$_POST['lab2'];
+            $lab3 = (int)$_POST['lab3'];
+            $lab4 = (int)$_POST['lab4'];
+            $lab5 = (int)$_POST['lab5'];
+            $lab6 = (int)$_POST['lab6'];
+            if(isset($_FILES['imagem']) && !empty($_FILES['imagem'])){
+                $imagem = "img_software/".$_FILES['imagem']['name'];
+                move_uploaded_file($_FILES['imagem']['tmp_name'], "../../assets/".$imagem);
+            } else {
+                $imagem = "";
+            }
+            // Cadastrar os softwares no banco de dados
+            $query_cadastrar_soft = $conexao->prepare( "INSERT INTO tabela_softwares(software,lab1,lab2,lab3,lab4,lab5,lab6,imagem)  VALUES('$nome_soft',$lab1,$lab2,$lab3,$lab4,$lab5,$lab6,'$imagem')");
+            $query_cadastrar_soft->execute();
+
+            // Cadastrar o detalhament dos softwares na tabela 'info_softwares' do banco dados
+
+            $query_info_software = $conexao->prepare("INSERT INTO tb_info_softwares(software,categoria,licenca,versao) VALUES ('$nome_soft','$categoria','$licenca','$versao')");
+            $query_info_software->execute();
+            header('location: ../../html/suporte/labs/lab.soft.php?l='.$id_lab);
         }
 
     }
@@ -123,6 +146,44 @@
         $query_less_modelo = $conexao->prepare("UPDATE tb_modelos SET lab".$id_lab."=lab".$id_lab."-1 WHERE id =".$id_modelo);
         $query_less_modelo->execute();
         header('location: ../../html/suporte/labs/lab.modelos.php?l='.$id_lab);
+    }
+
+    // -------------- CADASTRAR MODELOS  ---------------------------------------------
+    
+    if(isset($_GET['Mcad']) && !empty($_GET['Mcad'])){
+        $fabricante = $_POST['fabricante'];
+        $modelo = $_POST['modelo'];
+        $processador = $_POST['processador'];
+        $cpu_mark = $_POST['cpu_mark'];
+        $mem_capacidade = $_POST['mem_capacidade'];
+        $mem_tipo = $_POST['mem_tipo'];
+        $disco1_capacidade = $_POST['disc1_capacidade'];
+        $disco1_tipo = $_POST['disc1_tipo'];
+        $disco1_modelo = $_POST['disc1_modelo'];
+        $disco2_capacidade = $_POST['disc2_capacidade'];
+        $disco2_tipo = $_POST['disc2_tipo'];
+        $disco2_modelo = $_POST['disc2_modelo'];
+        $so_nome = $_POST['so_nome'];
+        $so_comp = $_POST['so_comp'];
+        $qnt_lab1 = (int)$_POST['lab1'];
+        $qnt_lab2 = (int)$_POST['lab2'];
+        $qnt_lab3 = (int)$_POST['lab3'];
+        $qnt_lab4 = (int)$_POST['lab4'];
+        $qnt_lab5 = (int)$_POST['lab5'];
+        $qnt_lab6 = (int)$_POST['lab6'];
+
+        $query_cadastrar_modelo = $conexao->prepare("INSERT INTO tb_modelos(modelo,lab1,lab2,lab3,lab4,lab5,lab6) VALUES('$modelo',$qnt_lab1,$qnt_lab2,$qnt_lab3,$qnt_lab4,$qnt_lab5,$qnt_lab6)");
+        $query_cadastrar_modelo->execute();
+
+        $query_info_modelos = $conexao->prepare(
+        "INSERT INTO 
+        tb_info_modelos(fabricante,modelo,processador,cpu_mark,mem_capacidade,mem_tipo,disco1_capacidade,disco1_tipo,disco1_modelo,disco2_capacidade,disco2_tipo,disco2_modelo,so_nome,so_compilacao)
+        VALUES('$fabricante','$modelo','$processador','$cpu_mark','$mem_capacidade','$mem_tipo','$disco1_capacidade','$disco1_tipo','$disco1_modelo','$disco2_capacidade','$disco2_tipo','$disco2_modelo','$so_nome','$so_comp')");
+       
+        $query_info_modelos->execute();
+        header('location: ../../html/suporte/labs/lab.modelos.php?l='.$id_lab);
+        
+
     }
 
     // -------------- ADICIONAR EQUIPAMENTOS ---------------------------------------------
