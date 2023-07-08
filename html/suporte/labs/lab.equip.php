@@ -128,12 +128,29 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                                         $id_equip = $dados_equip[$key]['id'];
                                         if ($dados_equip[$key]['lab' . $id_lab] != 0) {
                                     ?>
+<<<<<<< Updated upstream
                                             <div class="flex h-20 w-full rounded-xl ">
                                                 <div class="h-full w-1/3 rounded-l-xl bg-black"></div>
                                                 <div class="w-full p-4">
                                                     <h3 class="text-xl font-bold"><?= $dados_equip[$key]['modelo']; ?></h3>
                                                      <span>Quantidade: <?= $dados_equip[$key]['lab' . $id_lab]; ?></span>
                                                      <a href="../../../src/models/labs.model.php?l=<?=$id_lab.'&Ere='.$id_equip ?>"><span>remover</span></a>
+=======
+                                            <div class="flex h-full w-1/2 rounded-xl border-2 border-slate-300">
+                                                <div class="flex items-center justify-center h-42 w-1/3 rounded-l-xl border-r-2 border-slate-300">
+                                                    <img src="../../../assets/suporte/projetor.png" alt="" class="h-5/6">
+                                                </div>
+                                                <div class="flex w-full p-4 items-center justify-between">
+                                                    <div class="flex flex-col">
+                                                        <h3 class="text-xl font-bold"><?= $dados_equip[$key]['modelo']; ?></h3>
+                                                        <span>Quantidade: <?= $dados_equip[$key]['lab' . $id_lab]; ?></span>
+                                                    </div>
+
+                                                    <a href="../../../src/models/labs.model.php?l=<?= $id_lab . '&Ere=' . $id_equip ?>" class="">
+                                                        <img src="../../../assets/suporte/lixo.svg" alt="" class="h-10 mt-4 ml-4 hover:h-12 transition-all duration-200">
+                                                    </a>
+
+>>>>>>> Stashed changes
                                                 </div>
                                             </div>
                                     <?php }

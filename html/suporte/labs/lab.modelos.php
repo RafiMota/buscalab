@@ -127,6 +127,7 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                                         $id_modelo = $dados_modelos[$key]['id'];
                                         if ($dados_modelos[$key]['lab' . $id_lab] != 0) {
                                     ?>
+<<<<<<< Updated upstream
                                             <div class="flex h-20 w-full rounded-xl ">
                                                 <div class="h-full w-1/3 rounded-l-xl bg-rose-50 "></div>
                                                 <div class="w-full p-4">
@@ -137,6 +138,32 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                                                     
                                                     
                                                     <a href="../../../src/models/labs.model.php?l=<?=$id_lab.'&Mre='.$id_modelo ?>"><p>remover</p></a>
+=======
+                                            <div class="flex h-full w-1/2 rounded-xl border-2 border-slate-300">
+                                                <div class="h-42 w-1/3 rounded-l-xl border-r-2 border-slate-300">
+                                                    <img src="../../../assets/suporte/laptop.png" alt="">
+                                                </div>
+                                                <div class="flex w-full p-4">
+                                                    <div class="flex w-full items-center gap-4 justify-between">
+                                                        <div>
+                                                            <h3 class="text-xl font-bold"><?= $dados_modelos[$key]['modelo']; ?></h3>
+                                                            <span>Quantidade: <?= $dados_modelos[$key]['lab' . $id_lab]; ?></span>
+                                                        </div>
+
+                                                        <div class="flex items-center gap-2">
+                                                            <a href="../../../src/models/labs.model.php?l=<?= $id_lab . '&mc=' . $id_modelo; ?>"><button><span class="transition-all bg-slate-100 hover:bg-slate-300 p-1 font-bold text-xl rounded-md">+</span></button></a>
+                                                            <a href="../../../src/models/labs.model.php?l=<?= $id_lab . '&lc=' . $id_modelo; ?>"><button><span class="transition-all bg-slate-100 hover:bg-slate-300 p-1 font-bold text-xl rounded-md">-</span></button></a>
+                                                            <a href="../../../src/models/labs.model.php?l=<?= $id_lab . '&Mre=' . $id_modelo ?>" class="">
+                                                                <img src="../../../assets/suporte/lixo.svg" alt="" class="h-10 mt-4 ml-4 hover:h-12 transition-all duration-200">
+                                                            </a>
+                                                        </div>
+
+                                                    </div>
+
+
+
+
+>>>>>>> Stashed changes
                                                 </div>
                                             </div>
                                     <?php }}; ?>

@@ -158,4 +158,28 @@
         header('location: ../../html/suporte/labs/lab.equip.php?l='.$id_lab);
 
     }
+
+        // -------------- CADASTRAR EQUIPAMENTOS ---------------------------------------------
+
+        if(isset($_GET['Ecad']) && !empty($_GET['Ecad'])){
+            $fabricante = $_POST['fabricante'];
+            $modelo = $_POST['modelo'];
+            $patrimonio = $_POST['patrimonio'];
+            $qnt_lab1 = (int)$_POST['lab1'];
+            $qnt_lab2 = (int)$_POST['lab2'];
+            $qnt_lab3 = (int)$_POST['lab3'];
+            $qnt_lab4 = (int)$_POST['lab4'];
+            $qnt_lab5 = (int)$_POST['lab5'];
+            $qnt_lab6 = (int)$_POST['lab6'];
+    
+    
+            $query_cadastrar_equip = $conexao->prepare(
+                "INSERT INTO tb_equipamentos(modelo,patrimonio,fabricante,lab1,lab2,lab3,lab4,lab5,lab6)
+                 VALUES('$modelo','$patrimonio','$fabricante',$qnt_lab1,$qnt_lab2,$qnt_lab3,$qnt_lab4,$qnt_lab5,$qnt_lab6)");
+            $query_cadastrar_equip->execute();
+            header('location: ../../html/suporte/labs/lab.equip.php?l='.$id_lab);
+    
+         }
+
+    
 ?>
