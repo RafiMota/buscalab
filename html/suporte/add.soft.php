@@ -15,10 +15,10 @@
     <title>Adicionar Software</title>
 </head>
 <body>
-<div class="flex flex-col gap-10 p-8 pl-0 pr-0 absolute items-center justify-center bg-slate-300 w-screen">
+<div class="flex flex-col gap-10 p-8 pl-0 pr-0 absolute items-center justify-center bg-slate-200 w-full">
             <div class="flex flex-col justify-between items-center bg-slate-100 shadow-xl w-1/2 rounded-xl h-full p-8">
                 <header class="w-full text-center">
-                    <h2 class="text-xl font-semibold">
+                    <h2 class="text-2xl font-semibold">
                         Qual software você deseja adicionar?
                     </h2>
                 </header>
@@ -101,7 +101,7 @@
                         </div>
                         
                         
-                            <button type="submit" class="bg-slate-300 hover:bg-slate-500 shadow-md hover:text-slate-100 font-semibold transition-all p-2 rounded-md">Concluir</button>
+                        <button type="submit" class="bg-slate-300 hover:bg-slate-500 shadow-md hover:text-slate-100 font-semibold transition-all p-2 rounded-md">Concluir</button>
                     </form>
 
                 </main>

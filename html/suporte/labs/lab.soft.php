@@ -52,14 +52,9 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
         </section>
     </header>
 
-    
-
-
-
-
-    <section class="flex align-start bg-slate-100 p-8 h-screen">
-        <nav class="flex flex-col gap-3 w-1/5 p-4 bg-slate-50 rounded-lg shadow-lg">
-            <h3 class="text-lg font-semibold">Laboratórios</h3>
+    <section class="flex align-start bg-slate-100 p-8 h-full">
+        <nav class="flex flex-col gap-3 w-1/5 h-2/3 p-8 bg-slate-50 rounded-lg shadow-lg">
+            <h3 class="text-xl font-semibold mb-2">Laboratórios</h3>
             <?php
             $row = mysqli_fetch_all($result_num_report_lab);
             $aux = 0;
@@ -69,7 +64,7 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                                 <p>Laboratório ' . $i . '</p>';
 
                 if ($row[$aux][1] == $i) {
-                    echo "<div class='bg-orange-400 w-4 rounded-md text-center'>" . $row[$aux][0] . "</div>";
+                    // echo "<div class='bg-orange-400 w-4 rounded-md text-center'>" . $row[$aux][0] . "</div>";
                     $aux++;
                 }
                 echo '</a>';
@@ -82,9 +77,9 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
             <section>
                 <div class="flex flex-row justify-between items-center">
                     <h2 class="text-2xl font-semibold">Laboratório <?php echo $id_lab; ?></h2>
-                    <a href="../add.soft.php?l=<?=$id_lab?>">
-                                    <div  class="text-xl font-semibold hover:underline transition-all ">Adicionar+</div>
-                                </a>
+                    <a href="../add.soft.php?l=<?= $id_lab ?>">
+                        <div class="text-xl font-semibold hover:underline transition-all ">Adicionar+</div>
+                    </a>
                 </div>
             </section>
 
@@ -92,16 +87,16 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
             <section class="flex flex-col w-100">
 
                 <div class="flex h-10 items-center justify-around mt-2 mb-2 w-100">
-                    <button class="bg-white text-rose-600" data-page="Softwares">
+                    <button class="text-lg font-bold underline" data-page="Softwares">
                         Softwares
                     </button>
-                    <a href="lab.modelos.php?l=<?=$id_lab;?>">
-                        <button class="bg-white text-rose-600" data-page="Computadores">
+                    <a href="lab.modelos.php?l=<?= $id_lab; ?>">
+                        <button class="text-lg" data-page="Computadores">
                             Computadores
                         </button>
                     </a>
-                    <a href="lab.equip.php?l=<?=$id_lab;?>">
-                        <button class="bg-white text-rose-600" data-page="Equipamentos">
+                    <a href="lab.equip.php?l=<?= $id_lab; ?>">
+                        <button class="text-lg" data-page="Equipamentos">
                             Equipamentos
                         </button>
                     </a>
@@ -117,23 +112,25 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                                     align-items: start;
                                     gap: 1.5rem;
                                     margin: auto;
-                                    
+
                                 }
                             </style>
                             <article id="Softwares">
-                            <!--onclick="openDialog()"-->
-                                
+                                <!--onclick="openDialog()"-->
+
                                 <div id="Softwares" class="justify-start p-8 w-100">
-                               
+
                                     <?php foreach ($dados_soft as $key => $value) {
                                         if ($dados_soft[$key]['lab' . $id_lab] != 0) {
-                                        $id_soft = $dados_soft[$key]['id'];
-                                    ?> 
-                                            <div class="flex flex-col items-center justify-center h-32 w-32 rounded-xl  p-4 text-center hover:brightness-50 transition-all">
-                                                <img src="../../../assets/<?= $dados_soft[$key]['imagem']; ?>" alt="" />
-                                                <p class="text-xs font-bold"><?= $dados_soft[$key]['software']; ?></p>
-                                                <a href="../../../src/models/labs.model.php?l=<?=$id_lab.'&Sre='.$id_soft ?>"><span>remover</span></a>
+                                            $id_soft = $dados_soft[$key]['id'];
+                                    ?>
+                                            <div class="flex flex-col items-center justify-center h-42 w-32 rounded-xl  p-4 text-center transition-all">
 
+                                                <img src="../../../assets/<?= $dados_soft[$key]['imagem']; ?>" alt="" class="h-24 mb-2 hover:brightness-50"/>
+                                                <p class="text-xs font-bold"><?= $dados_soft[$key]['software']; ?></p>
+                                                <a href="../../../src/models/labs.model.php?l=<?= $id_lab . '&Sre=' . $id_soft ?>">
+                                                    <img src="../../../assets/suporte/lixo.svg" alt="" class="h-10 mt-4">
+                                                </a>
                                             </div>
                                     <?php }
                                     }; ?>
@@ -142,7 +139,7 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
 
 
 
-                       
+
                     </ul>
                 </div>
 
