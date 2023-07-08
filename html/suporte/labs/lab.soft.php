@@ -64,7 +64,6 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                                 <p>Laboratório ' . $i . '</p>';
 
                 if ($row[$aux][1] == $i) {
-                    // echo "<div class='bg-orange-400 w-4 rounded-md text-center'>" . $row[$aux][0] . "</div>";
                     $aux++;
                 }
                 echo '</a>';

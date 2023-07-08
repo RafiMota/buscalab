@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         lab = lab_id;
         rgb = [
             {
+                // Lab 1
                 "base-color": "#B81F1F",
                 "secondary-color": "#FB7185",
                 "complementary-color": "#063448",
@@ -16,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "capa": "../assets/cyberpunk/capa-cyberpunk.png"
             },
             {
+                // Lab 2
                 "base-color": "#193E1D",
                 "secondary-color": "#A0C592",
                 "complementary-color": "#152314",
@@ -25,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "capa": "../assets/solarpunk/capa-solarpunk.png"
             },
             {
+                // Lab 3
                 "base-color": "#469AAF",
                 "secondary-color": "#A1AAA9",
                 "complementary-color": "#D0BABB",
@@ -34,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "capa": "../assets/magicworld/capa-magicworld.png"
             },
             {
+                // Lab 4
                 "base-color": "#F24422",
                 "secondary-color": "#FD9D51",
                 "complementary-color": "#44DF19",
@@ -43,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "capa": "../assets/medieval/capa-medieval.png"
             },
             {
+                // Lab 5
                 "base-color": "#3E1FB5",
                 "secondary-color": "#2F2BD0",
                 "complementary-color": "#FD9F0B",
@@ -52,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "capa": "../assets/spaceopera/capa-spaceopera.png"
             },        
             {
+                // Lab 6
                 "base-color": "#C35221",
                 "secondary-color": "#EB975F",
                 "complementary-color": "#C35221",

@@ -16,44 +16,46 @@
   <link rel="stylesheet" href="../src/css/output.css" />
   <script src="../src/lab.js"></script>
 </head>
-<!--<style>
+<!-- <style>
   * {
-    outline: dashed 1px red;
+    outline: dashed 1px #00000044;
   }
-</style>-->
+</style> -->
 <style>
-      #reportar_facil{   
-          font-size: 14px; 
-          
-          position: fixed;
-          display: flex;
-          flex-flow: column nowrap; 
-          justify-content: center;
-          align-items: center;
+  #reportar_facil {
+    font-size: 14px;
 
-          right: 30px;
-          bottom: 30px;
+    position: fixed;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
 
-          
-          width: 83px;
-          height: 83px;
-          border-radius: 50%;
-          padding: 4px;
-          color: #ffffff;
-          z-index: 1;
-      }
-      .megafone{
-        width: 25px;
-        height: 25px;
-      }
-  </style>
-  <a href="reportar.html" id="reportar_facil" class="font-montserrat">    
-    <img src="../assets/megafone_branco.svg" alt="Megafone de reporte" class="megafone">
-    Reportar
-  </a>
+    right: 30px;
+    bottom: 30px;
+
+
+    width: 83px;
+    height: 83px;
+    border-radius: 50%;
+    padding: 4px;
+    color: #ffffff;
+    z-index: 1;
+  }
+
+  .megafone {
+    width: 25px;
+    height: 25px;
+  }
+</style>
+<a href="reportar.html" id="reportar_facil" class="font-montserrat">
+  <img src="../assets/megafone_branco.svg" alt="Megafone de reporte" class="megafone">
+  Reportar
+</a>
+
 <body class="font-montserrat">
 
-  
+
 
   <header class="flex items-center justify-between border-b-2 border-red-300 p-8 pb-2 pt-2">
     <a href="../index.php">
@@ -84,22 +86,21 @@
             <ul class="glide__slides">
               <li class="glide__slide">
 
-                <style>
+                <!-- <style>
                   #softwares {
                     display: flex;
                     flex-flow: row wrap;
                     justify-content: space-around;
                     align-items: start;
-                    gap: 2.5rem;
                   }
-                </style>
-                <section id="softwares" class="justify-center p-8 ">
+                </style> -->
+                <section id="softwares" class="flex flex-row flex-wrap justify-center items-start p-4 gap-4">
 
                   <?php foreach ($dados_soft as $key => $value) {
                     if ($dados_soft[$key]['lab' . $id_lab] != 0) {
                   ?>
-                      
-                      <div class="flex flex-col items-center justify-center h-32 w-32 rounded-xl bg-rose-50 p-4 text-center hover:brightness-50">
+
+                      <div class="flex flex-col items-center justify-center border-2 border-slate-700 h-36 w-36 rounded-lg bg-rose-50 mb-2 p-4 text-center hover:brightness-50">
                         <img src="../assets/<?= $dados_soft[$key]['imagem']; ?>" alt="" />
                         <p class="text-xs font-bold"><?= $dados_soft[$key]['software']; ?></p>
                       </div>
@@ -117,9 +118,12 @@
                   <?php foreach ($dados_modelos as $key => $value) {
                     if ($dados_modelos[$key]['lab' . $id_lab] != 0) {
                   ?>
-                      <div class="flex h-20 w-full rounded-xl bg-rose-50">
-
-                        <div class="h-full w-1/3 rounded-l-xl bg-violet-500"></div>
+                      <div class="flex h-20 w-full rounded-xl bg-rose-50 border-2 border-slate-700">
+                        <div class="flex justify-center items-center h-full w-1/3 rounded-l-xl border-r-2 border-slate-700">
+                          <div class="h-fit w-full rounded-l-xl ">
+                            <img src="../assets/suporte/laptop.png" alt="">
+                          </div>
+                        </div>
                         <div class="w-full p-4">
                           <h3 class="text-xl font-bold"><?= $dados_modelos[$key]['modelo']; ?></h3>
                           <p>Quantidade: <span><?= $dados_modelos[$key]['lab' . $id_lab]; ?></span></p>
@@ -139,8 +143,12 @@
                   <?php foreach ($dados_equip as $key => $value) {
                     if ($dados_equip[$key]['lab' . $id_lab] != 0) {
                   ?>
-                      <div class="flex h-20 w-full rounded-xl bg-rose-50">
-                        <div class="h-full w-1/3 rounded-l-xl bg-violet-500"></div>
+                      <div class="flex h-20 w-full rounded-xl bg-rose-50 border-2 border-slate-700">
+                        <div class="flex justify-center items-center h-full w-1/3 rounded-l-xl border-r-2 border-slate-700">
+                          <div class="h-fit w-5/6 rounded-l-xl ">
+                            <img src="../assets/suporte/projetor.png" alt="">
+                          </div>
+                        </div>
                         <div class="w-full p-4">
                           <h3 class="text-xl font-bold"><?= $dados_equip[$key]['modelo']; ?></h3>
                           <p> <span>Quantidade: <?= $dados_equip[$key]['lab' . $id_lab]; ?></span></p>

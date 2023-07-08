@@ -27,7 +27,7 @@
     <header
       class="flex items-center justify-between border-b-2 border-red-300 p-8 pb-2 pt-2"
     >
-      <a href="../index.php">
+      <a href=".z/index.php">
         <img
           id="logo"
           src="./assets/cyberpunk/logo-cyberpunk.svg"
