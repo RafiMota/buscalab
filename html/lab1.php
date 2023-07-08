@@ -93,12 +93,12 @@
                     gap: 2.5rem;
                   }
                 </style>
-                <section id="softwares" class="justify-center bg-rose-200 p-8 ">
+                <section id="softwares" class="justify-center p-8 ">
 
                   <?php foreach ($dados_soft as $key => $value) {
                     if ($dados_soft[$key]['lab' . $id_lab] != 0) {
                   ?>
-
+                      
                       <div class="flex flex-col items-center justify-center h-32 w-32 rounded-xl bg-rose-50 p-4 text-center hover:brightness-50">
                         <img src="../assets/<?= $dados_soft[$key]['imagem']; ?>" alt="" />
                         <p class="text-xs font-bold"><?= $dados_soft[$key]['software']; ?></p>
@@ -113,7 +113,7 @@
               </li>
               <li class="glide__slide">
 
-                <section id="computadores" class="flex flex-col gap-10 bg-rose-200 p-8">
+                <section id="computadores" class="flex flex-col gap-10 p-8">
                   <?php foreach ($dados_modelos as $key => $value) {
                     if ($dados_modelos[$key]['lab' . $id_lab] != 0) {
                   ?>
@@ -135,15 +135,15 @@
               <li class="glide__slide">
 
 
-                <section id="equipamentos" class="flex flex-col gap-10 bg-rose-200 p-8">
+                <section id="equipamentos" class="flex flex-col gap-10 p-8">
                   <?php foreach ($dados_equip as $key => $value) {
                     if ($dados_equip[$key]['lab' . $id_lab] != 0) {
                   ?>
                       <div class="flex h-20 w-full rounded-xl bg-rose-50">
                         <div class="h-full w-1/3 rounded-l-xl bg-violet-500"></div>
                         <div class="w-full p-4">
-                          <h3 class="text-xl font-bold">Projetor</h3>
-                          <p><?= $dados_equip[$key]['modelo']; ?> <span><?= $dados_equip[$key]['lab' . $id_lab]; ?></span></p>
+                          <h3 class="text-xl font-bold"><?= $dados_equip[$key]['modelo']; ?></h3>
+                          <p> <span>Quantidade: <?= $dados_equip[$key]['lab' . $id_lab]; ?></span></p>
                         </div>
                       </div>
                   <?php }

@@ -72,46 +72,58 @@
               <div data-glide-el="track" class="glide__track">
                 <ul class="glide__slides">
                   <a href="html/lab1.php?l=1" class="glide__slide">
+                    
                     <img
                       src="./assets/cyberpunk/cyberpunk.png"
                       alt=""
                       class="rounded-xl"
                     />
+                    <p class="text-center mt-2 text-xl font-semibold">Laboratório 1</p>
                   </a>
                   <a href="html/lab1.php?l=2" class="glide__slide">
+                  
                     <img
                       src="./assets/solarpunk/solarpunk.png"
                       alt=""
                       class="rounded-xl"
                     />
+                    <p class="text-center mt-2 text-xl font-semibold">Laboratório 2</p>
                   </a>
                   <a href="html/lab1.php?l=3" class="glide__slide">
+                  
                     <img
                       src="./assets/magicworld/magicworld.png"
                       alt=""
                       class="rounded-xl"
                     />
+                    <p class="text-center mt-2 text-xl font-semibold">Laboratório 3</p>
                   </a>
                   <a href="html/lab1.php?l=4" class="glide__slide">
+                  
                     <img
                       src="./assets/medieval/medieval.png"
                       alt=""
                       class="rounded-xl"
                     />
+                    <p class="text-center mt-2 text-xl font-semibold">Laboratório 4</p>
                   </a>
                   <a href="html/lab1.php?l=5" class="glide__slide">
+                  
                     <img
                       src="./assets/steampunk/steampunk.png"
                       alt=""
                       class="rounded-xl"
                     />
+                    <p class="text-center mt-2 text-xl font-semibold">Laboratório 5</p>
                   </a>
                   <a href="html/lab1.php?l=6" class="glide__slide">
+                  
                     <img
                       src="./assets/spaceopera/spaceopera.png"
                       alt=""
                       class="rounded-xl"
                     />
+                    <p class="text-center mt-2 text-xl font-semibold">Laboratório 6</p>
                   </a>
                 </ul>
               </div>
@@ -205,7 +217,7 @@
           </p>
         </div>
 
-        <a href="html/reportar.html" class="self-start"
+        <a href="html/reportar.html" class="self-center"
           ><button
             id="report_button"
             class="mt-8 rounded-md bg-cyan-950 p-4 text-xl font-bold text-slate-50"
@@ -232,7 +244,7 @@
           <p class="mb-1">Informe-se aqui!</p>
         </div>
 
-        <a href="html/regras.html" class="self-start"
+        <a href="html/regras.html" class="self-center"
           ><button
             id="regras_button"
             class="mt-8 rounded-md bg-cyan-950 p-4 text-xl font-bold text-slate-50"

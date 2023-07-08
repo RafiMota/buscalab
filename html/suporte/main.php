@@ -87,18 +87,18 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
     </header>
     <style>
         #lixo{
-            display: none;
+            /* display: none;
             position: fixed; 
             right: 30px;
             bottom: 30px;
             background: grey;
-            /* width: 40px; */
+            width: 40px;
             height: 40px;
             border-radius: 5px;
-            padding: 4px;
+            padding: 4px; */
         }
     </style>
-    <button  id="lixo">
+    <button class="font-semibold text-slate-50 p-2 rounded-md h-10 fixed hidden right-8 bottom-8" id="lixo">
         Excluir Concluídos
     </button>
 
@@ -196,7 +196,7 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
 
                     echo '          
                 
-                                <div class=" bg-slate-50 rounded-xl w-1/5 shrink-0 shadow-xl hover:shadow-2xl transition-all duration-300"  onclick="concluiTarefa()">
+                                <div class=" bg-slate-50 rounded-xl w-1/5 h-full shrink-0 shadow-xl hover:shadow-2xl transition-all duration-300"  onclick="concluiTarefa()">
                                     <div class="p-4">
                                         <p class="w-full">Mesa:</p>
                                         <span>' . $row["mesa"] . '</span>

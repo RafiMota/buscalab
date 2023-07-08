@@ -2,7 +2,7 @@
 module.exports = {
   content: ["./src/**/*.{html,js,php}",
     "./html/**/*.{html,js,php}",
-    "./*.{html,js}",
+    "./*.{html,js,php}",
     "./html/*.{html,js}"],
   theme: {
     fontFamily: {

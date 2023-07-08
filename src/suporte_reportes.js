@@ -36,7 +36,7 @@ function concluiTarefa(elemento, estado, id) {
         sessionStorage.setItem("ids",JSON.stringify(reports_id))
 
         lixo = document.getElementById("lixo")
-        lixo.style.backgroundColor = "#22dd22"
+        lixo.style.backgroundColor = "#dd2222"
         lixo.style.display = "block"
 
     } else {
