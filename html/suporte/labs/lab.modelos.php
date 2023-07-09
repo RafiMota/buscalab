@@ -132,8 +132,12 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                                                             <a href="../../../src/models/labs.model.php?l=<?= $id_lab . '&mc=' . $id_modelo; ?>"><button><span class="transition-all bg-slate-100 hover:bg-slate-300 p-1 font-bold text-xl rounded-md">+</span></button></a>
                                                             <a href="../../../src/models/labs.model.php?l=<?= $id_lab . '&lc=' . $id_modelo; ?>"><button><span class="transition-all bg-slate-100 hover:bg-slate-300 p-1 font-bold text-xl rounded-md">-</span></button></a>
                                                             <a href="../../../src/models/labs.model.php?l=<?= $id_lab . '&Sre=' . $id_modelo ?>" class="">
-                                                                <img src="../../../assets/suporte/lixo.svg" alt="" class="h-10 mt-4 ml-4 hover:h-12 transition-all duration-200">
+                                                                <img src="../../../assets/suporte/lixo.png" alt="" class="h-7 w-6 mt-4 ml-4 hover:h-9 hover:w-8 transition-all duration-200">
                                                             </a>
+                                                            <a href="">
+                                                                <img src="../../../assets/suporte/editar.png" alt="" class="h-7 w-7 mt-4 ml-4 hover:h-10 hover:w-10 transition-all duration-200">
+                                                            </a>
+                                                            
                                                         </div>
 
                                                     </div>
@@ -144,8 +148,36 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                                                             Detalhes
                                                         </summary>
 
-                                                        <p class="p-4">
+                                                        <p class="p-4 pt-2 pb-2">
                                                             Conteúdo:
+                                                        </p>
+
+                                                        <p class="p-4 pt-2 pb-2">
+                                                            Placa de vídeo:
+                                                        </p>
+
+                                                        <p class="p-4 pt-2 pb-2">
+                                                            Conteúdo:
+                                                        </p>
+
+                                                        <p class="p-4 pt-2 pb-2">
+                                                            Placa de vídeo:
+                                                        </p>
+
+                                                        <p class="p-4 pt-2 pb-2">
+                                                            Conteúdo:
+                                                        </p>
+
+                                                        <p class="p-4 pt-2 pb-2">
+                                                            Placa de vídeo:
+                                                        </p>
+
+                                                        <p class="p-4 pt-2 pb-2">
+                                                            Conteúdo:
+                                                        </p>
+
+                                                        <p class="p-4 pt-2 pb-2">
+                                                            Placa de vídeo:
                                                         </p>
                                                     </details>
                                                 </div>
