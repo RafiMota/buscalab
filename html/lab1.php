@@ -57,21 +57,22 @@
 
 
 
-  <header class="flex items-center justify-between border-b-2 border-red-300 p-8 pb-2 pt-2">
+  <header id="header" class="flex items-center justify-between border-b-2 p-8 pb-2 pt-2">
     <a href="../index.php">
       <img id="logo" src="../assets/cyberpunk/logo-cyberpunk.svg" alt="" class="w-16" />
     </a>
   </header>
 
   <section>
-    <img id="logo" src="../assets/cyberpunk/capa-lab-cyberpunk.png" alt="">
+    <img id="capa" src="../assets/cyberpunk/capa-cyberpunk.png" alt="">
   </section>
 
   <main>
     <article class="flex w-screen">
       <div class="carousel m-0">
         <div class="glide2 w-screen">
-          <div class="flex h-10 items-center justify-around mt-2 mb-2" data-glide-el="controls[nav]">
+          
+          <div id="abas" class="flex h-10 items-center justify-around mt-2 mb-2" data-glide-el="controls[nav]">
             <button class="bg-white text-rose-600" data-number="0" data-glide-dir="= 0" onclick="">
               Softwares
             </button>

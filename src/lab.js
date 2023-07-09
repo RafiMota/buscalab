@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         lab = lab_id;
         rgb = [
             {
-                // Lab 1
+                
                 "base-color": "#B81F1F",
                 "secondary-color": "#FB7185",
                 "complementary-color": "#063448",
@@ -17,7 +17,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 "capa": "../assets/cyberpunk/capa-cyberpunk.png"
             },
             {
-                // Lab 2
+                
+                "base-color": "#1F0653",
+                "secondary-color": "#7560BA",
+                "complementary-color": "#1F0653",
+                "logo": "../assets/spaceopera/logo-spaceopera.svg",
+                "lupa": "../assets/spaceopera/lupa-spaceopera.svg",
+                "megafone": "../assets/spaceopera/megafone-spaceopera.svg",
+                "capa": "../assets/spaceopera/capa-spaceopera.png"
+            },
+            {
+                "base-color": "#EF2E00",
+                "secondary-color": "#EAAD4E",
+                "complementary-color": "#EF2E00",
+                "logo": "../assets/medieval/logo-medieval.svg",
+                "lupa": "../assets/medieval/lupa-medieval.svg",
+                "megafone": "../assets/medieval/megafone-medieval.svg",
+                "capa": "../assets/medieval/capa-medieval.png"
+            }, 
+            {
                 "base-color": "#193E1D",
                 "secondary-color": "#A0C592",
                 "complementary-color": "#152314",
@@ -27,7 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 "capa": "../assets/solarpunk/capa-solarpunk.png"
             },
             {
-                // Lab 3
+                
                 "base-color": "#469AAF",
                 "secondary-color": "#A1AAA9",
                 "complementary-color": "#D0BABB",
@@ -35,29 +53,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 "lupa": "../assets/magicworld/lupa-magicworld.svg",
                 "megafone": "../assets/magicworld/megafone-magicworld.svg",
                 "capa": "../assets/magicworld/capa-magicworld.png"
-            },
+            },                  
             {
-                // Lab 4
-                "base-color": "#F24422",
-                "secondary-color": "#FD9D51",
-                "complementary-color": "#44DF19",
-                "logo": "../assets/medieval/logo-medieval.svg",
-                "lupa": "../assets/medieval/lupa-medieval.svg",
-                "megafone": "../assets/medieval/megafone-medieval.svg",
-                "capa": "../assets/medieval/capa-medieval.png"
-            },
-            {
-                // Lab 5
-                "base-color": "#3E1FB5",
-                "secondary-color": "#2F2BD0",
-                "complementary-color": "#FD9F0B",
-                "logo": "../assets/spaceopera/logo-spaceopera.svg",
-                "lupa": "../assets/spaceopera/lupa-spaceopera.svg",
-                "megafone": "../assets/spaceopera/megafone-spaceopera.svg",
-                "capa": "../assets/spaceopera/capa-spaceopera.png"
-            },        
-            {
-                // Lab 6
+                
                 "base-color": "#C35221",
                 "secondary-color": "#EB975F",
                 "complementary-color": "#C35221",
@@ -67,9 +65,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 "capa": "../assets/steampunk/capa-steampunk.png"
             }
         ]
-
+        console.log("capa carregada");
         let logo = document.getElementById("logo");
         logo.src = rgb[lab-1]["logo"];
+        
+        let capa = document.getElementById("capa");
+        capa.src = rgb[lab-1]["capa"];
+        
+        let header = document.getElementById("header")
+        header.style.borderBottomColor = rgb[lab-1]["secondary-color"]
+
+        let abas = document.getElementById("abas")
+        abas.style.color = rgb[lab-1]["base-color"]
+        
+        let aba_selec = document.getElementsByClassName("glide__bullet--active")
+        aba_selec[0].style.borderBottomColor = rgb[lab-1]["base-color"]        
 
         let report_button = document.getElementById("reportar_facil");
 
