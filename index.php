@@ -253,9 +253,9 @@
       </section>
     </main>
 
-    <footer id="footer" class="flex justify-between p-4 text-sm border-t-2 ">
-      <p>UFC</p>
-      <p>Desenvolvido por Techplan©</p>
+    <footer id="footer" class="flex flex-row  justify-between items-center p-4 text-sm border-t-2 ">
+      <a href="https://www.ufc.br"><img src="assets\redes_techplan\logo-ufc.svg" alt=""></a>
+      <a href="html\projeto.html" class="text-xs">Desenvolvido por TechPlan</a>
     </footer>
   </body>
   <script src="src/main.js"></script>

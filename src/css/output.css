@@ -558,8 +558,16 @@ video {
   margin: 0px;
 }
 
+.m-1 {
+  margin: 0.25rem;
+}
+
 .m-10 {
   margin: 2.5rem;
+}
+
+.m-4 {
+  margin: 1rem;
 }
 
 .m-auto {
@@ -582,16 +590,32 @@ video {
   margin-bottom: 2rem;
 }
 
+.ml-0 {
+  margin-left: 0px;
+}
+
 .ml-2 {
   margin-left: 0.5rem;
+}
+
+.ml-3 {
+  margin-left: 0.75rem;
 }
 
 .ml-4 {
   margin-left: 1rem;
 }
 
+.mt-16 {
+  margin-top: 4rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
+}
+
+.mt-24 {
+  margin-top: 6rem;
 }
 
 .mt-4 {
@@ -600,14 +624,6 @@ video {
 
 .mt-8 {
   margin-top: 2rem;
-}
-
-.mt-6 {
-  margin-top: 1.5rem;
-}
-
-.mb-6 {
-  margin-bottom: 1.5rem;
 }
 
 .block {
@@ -654,8 +670,20 @@ video {
   height: 9rem;
 }
 
+.h-4 {
+  height: 1rem;
+}
+
 .h-5\/6 {
   height: 83.333333%;
+}
+
+.h-6 {
+  height: 1.5rem;
+}
+
+.h-7 {
+  height: 1.75rem;
 }
 
 .h-80 {
@@ -683,26 +711,6 @@ video {
   min-height: 24rem;
 }
 
-.h-8 {
-  height: 2rem;
-}
-
-.h-6 {
-  height: 1.5rem;
-}
-
-.h-9 {
-  height: 2.25rem;
-}
-
-.h-4 {
-  height: 1rem;
-}
-
-.h-7 {
-  height: 1.75rem;
-}
-
 .w-1\/2 {
   width: 50%;
 }
@@ -717,6 +725,10 @@ video {
 
 .w-1\/5 {
   width: 20%;
+}
+
+.w-12 {
+  width: 3rem;
 }
 
 .w-16 {
@@ -763,6 +775,10 @@ video {
   width: 83.333333%;
 }
 
+.w-8 {
+  width: 2rem;
+}
+
 .w-\[87\%\] {
   width: 87%;
 }
@@ -773,34 +789,6 @@ video {
 
 .w-screen {
   width: 100vw;
-}
-
-.w-36 {
-  width: 9rem;
-}
-
-.w-40 {
-  width: 10rem;
-}
-
-.w-3 {
-  width: 0.75rem;
-}
-
-.w-10 {
-  width: 2.5rem;
-}
-
-.w-8 {
-  width: 2rem;
-}
-
-.w-6 {
-  width: 1.5rem;
-}
-
-.w-7 {
-  width: 1.75rem;
 }
 
 .shrink-0 {
@@ -879,12 +867,12 @@ video {
   justify-self: end;
 }
 
-.justify-self-center {
-  justify-self: center;
-}
-
 .overflow-hidden {
   overflow: hidden;
+}
+
+.rounded-full {
+  border-radius: 9999px;
 }
 
 .rounded-lg {
@@ -918,12 +906,20 @@ video {
   border-width: 2px;
 }
 
+.border-\[1px\] {
+  border-width: 1px;
+}
+
 .border-b-2 {
   border-bottom-width: 2px;
 }
 
 .border-r-2 {
   border-right-width: 2px;
+}
+
+.border-t-2 {
+  border-top-width: 2px;
 }
 
 .border-none {
@@ -950,6 +946,16 @@ video {
   border-color: rgb(51 65 85 / var(--tw-border-opacity));
 }
 
+.bg-\[\#BDBDBD\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(189 189 189 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#FACACA\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(250 202 202 / var(--tw-bg-opacity));
+}
+
 .bg-\[rgba\(239\2c 239\2c 239\2c 0\.8\)\] {
   background-color: rgba(239,239,239,0.8);
 }
@@ -967,11 +973,6 @@ video {
 .bg-orange-400 {
   --tw-bg-opacity: 1;
   background-color: rgb(251 146 60 / var(--tw-bg-opacity));
-}
-
-.bg-red-300 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(252 165 165 / var(--tw-bg-opacity));
 }
 
 .bg-red-400 {
@@ -1049,16 +1050,6 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
-.bg-green-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(34 197 94 / var(--tw-bg-opacity));
-}
-
-.bg-blue-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
-}
-
 .bg-\[url\(\'\/assets\/bgLogin\.jpg\'\)\] {
   background-image: url('/assets/bgLogin.jpg');
 }
@@ -1071,8 +1062,8 @@ video {
   background-position: center;
 }
 
-.p-1 {
-  padding: 0.25rem;
+.p-0 {
+  padding: 0px;
 }
 
 .p-2 {
@@ -1085,6 +1076,10 @@ video {
 
 .p-4 {
   padding: 1rem;
+}
+
+.p-6 {
+  padding: 1.5rem;
 }
 
 .p-8 {
@@ -1143,12 +1138,20 @@ video {
   padding-top: 1rem;
 }
 
+.pt-6 {
+  padding-top: 1.5rem;
+}
+
 .text-left {
   text-align: left;
 }
 
 .text-center {
   text-align: center;
+}
+
+.text-justify {
+  text-align: justify;
 }
 
 .font-montserrat {
@@ -1200,6 +1203,11 @@ video {
 
 .font-semibold {
   font-weight: 600;
+}
+
+.text-\[\#03ACF7\] {
+  --tw-text-opacity: 1;
+  color: rgb(3 172 247 / var(--tw-text-opacity));
 }
 
 .text-\[\#278C31\] {
@@ -1314,32 +1322,16 @@ video {
   transition-duration: 300ms;
 }
 
-.hover\:h-12:hover {
-  height: 3rem;
-}
-
-.hover\:h-10:hover {
-  height: 2.5rem;
-}
-
 .hover\:h-8:hover {
   height: 2rem;
-}
-
-.hover\:h-9:hover {
-  height: 2.25rem;
 }
 
 .hover\:w-6:hover {
   width: 1.5rem;
 }
 
-.hover\:w-10:hover {
-  width: 2.5rem;
-}
-
-.hover\:w-8:hover {
-  width: 2rem;
+.hover\:border-2:hover {
+  border-width: 2px;
 }
 
 .hover\:bg-red-600:hover {
