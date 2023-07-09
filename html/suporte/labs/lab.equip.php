@@ -152,6 +152,7 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                                                 </div>
                                                 
                                             </div>
+                                            
                                     <?php }
                                     }; ?>
                                 </div>

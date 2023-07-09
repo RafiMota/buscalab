@@ -159,12 +159,8 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                                                             <a href="../add.comp.php?l=<?=$id_lab.'&edit='.$modelo; ?>">
                                                                 <img src="../../../assets/suporte/editar.png" alt="" class="h-6 mt-4 ml-4 hover:h-8 transition-all duration-200">
                                                             </a>
-                                                        </div>
-                                                            
+                                                        </div>                                            
                                                         
-                                                        
-                                                        
-
                                                     </div>
                                                 </div>
                                                 <?php

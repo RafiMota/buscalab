@@ -11,13 +11,17 @@
         WHERE software LIKE '%{$Search_Query}%' AND (lab1 > 0 OR lab2 > 0 OR lab3 > 0 OR lab4 > 0 OR lab5 > 0 OR lab6 > 0 );";
         $result_soft = $conn->query($query_soft) or die($conn->error);
         
+        $query_equip = "SELECT * FROM tb_equipamentos
+        WHERE modelo LIKE '%{$Search_Query}%' AND (lab1 > 0 OR lab2 > 0 OR lab3 > 0 OR lab4 > 0 OR lab5 > 0 OR lab6 > 0 );";
+        $result_equip = $conn->query($query_equip) or die($conn->error);
+
         $html ='<ul>';
-        if (mysqli_num_rows($result) > 0 || mysqli_num_rows($result_soft) > 0) {
+        if (mysqli_num_rows($result) > 0 || mysqli_num_rows($result_soft) > 0 || mysqli_num_rows($result_equip) > 0) {
             while ($row = mysqli_fetch_array($result,MYSQLI_NUM)) {                
                 $html .= "" .ucfirst($row[0])." | "; 
                 $html .= "<li class='search_item'>";
                 
-                for ($i = 1; $i < 8;$i++) { 
+                for ($i = 1; $i < 7;$i++) { 
                     // print_r(count($row));
                     if($row[$i] > 0){  
                         // $html .= "<li class='list-group-item'><a>".print_r($row)."</a></li>";
@@ -33,10 +37,26 @@
                 $html .= "" .ucfirst($row_soft[1])." | "; 
                 $html .= "<li class='search_item'>";
                 
-                for ($i = 1; $i < 8;$i++) { 
+                for ($i = 1; $i < 7;$i++) { 
                     
                     if($row_soft[$i] > 0){  
                         
+                        $href = "html/lab1.php?l=".$i."";                                     
+                        $html .= "<a href=".$href."> Laboratório ".$i."</a>";
+                        // $html .= " | ";                        
+                    }                    
+                    
+                }    
+                $html .= "</li></br>";
+            }
+            while ($row = mysqli_fetch_array($result_equip,MYSQLI_NUM)) {                
+                $html .= "" .ucfirst($row[1])." | "; 
+                $html .= "<li class='search_item'>";
+                
+                for ($i = 1; $i < 7;$i++) { 
+                    // print_r(count($row));
+                    if($row[$i] > 0){  
+                        // $html .= "<li class='list-group-item'><a>".print_r($row)."</a></li>";
                         $href = "html/lab1.php?l=".$i."";                                     
                         $html .= "<a href=".$href."> Laboratório ".$i."</a>";
                         // $html .= " | ";                        
