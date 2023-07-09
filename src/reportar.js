@@ -1,23 +1,24 @@
+var divCategoria = document.getElementById("divCategoria");
+var categoria = document.getElementById("categoria");
+
+var software = document.getElementById("software");
+var divSoftware = document.getElementById("divSoftware");
+
+var equipamento = document.getElementById("equipamento");
+var divEquipamento = document.getElementById("divEquipamento");
+
+var problema = document.getElementById("problema");
+var divProblema = document.getElementById("divProblema");
+
+var mesa = document.getElementById("mesa");
+var divMesa = document.getElementById("divMesa");
+
+var outroProblema = document.getElementById("outroProblema");
+var divOutro = document.getElementById("divOutro");
+
 // Função para atualizar as opções do campo "Tipo de Problema"
 function atualizarOpcoes() {
-    var categoria = document.getElementById("categoria");
-
-    var software = document.getElementById("software");
-    var divSoftware = document.getElementById("divSoftware");
     
-    var equipamento = document.getElementById("equipamento");
-    var divEquipamento = document.getElementById("divEquipamento");
-
-    var problema = document.getElementById("problema");
-    var divProblema = document.getElementById("divProblema");
-
-    var mesa = document.getElementById("mesa");
-    var divMesa = document.getElementById("divMesa");
-
-    var outroProblema = document.getElementById("outroProblema");
-    var divOutro = document.getElementById("divOutro");
-
-
     // Limpar as opções anteriores
     problema.innerHTML = ""
     software.value = ""
@@ -33,6 +34,12 @@ function atualizarOpcoes() {
     divMesa.style.display = 'none';
     divOutro.style.display = 'none';
 
+    software.required = false
+    equipamento.required = false
+    problema.required = false
+    mesa.required = false
+    outroProblema.required = false
+
     
 
     // Obter o valor selecionado no campo "Categoria"
@@ -44,9 +51,14 @@ function atualizarOpcoes() {
         var opcoesComputador = ["Selecione um problema", "Sem internet", "Não liga", "Monitor quebrado", "Periféricos não funcionam"];
           for (var i = 0; i < opcoesComputador.length; i++) {
             var option = document.createElement("option");
-            if(i==0)option.hidden = "hidden"
+            if(i==0){
+                option.hidden = "hidden"
+                option.value = "";
+            } else{
+                option.value = opcoesComputador[i];
+            }
             option.text = opcoesComputador[i];
-            option.value = opcoesComputador[i];
+            
             if(i%2==0){
                 option.classList = "bg-rose-100"
             } else{
@@ -55,19 +67,20 @@ function atualizarOpcoes() {
             problema.add(option);
         }
         
-        
-        divProblema.style.display = 'flex';
-        divMesa.style.display = 'flex';
-        
+        mostrarProblema()
 
     } else if (problemaSelecionado === "Equipamento") {
 
         var opcoesEquipamento = ["Selecione um problema", "Nâo liga", "Não conecta", "Pingando"];
         for (var i = 0; i < opcoesEquipamento.length; i++) {
             var option = document.createElement("option");
-            if(i==0)option.hidden = "hidden"
+            if(i==0){
+                option.hidden = "hidden"
+                option.value = "";
+            } else{
+                option.value = opcoesEquipamento[i];
+            }
             option.text = opcoesEquipamento[i];
-            option.value = opcoesEquipamento[i];
             if(i%2==0){
                 option.classList = "bg-rose-100"
             } else{
@@ -77,16 +90,24 @@ function atualizarOpcoes() {
         }
         
         
-        divProblema.style.display = 'flex';
+        
         divEquipamento.style.display = 'flex';
+        equipamento.required = true
+        
+        
 
     } else if (problemaSelecionado === "Software") {
         var opcoesSoftware = ["Selecione um problema", "Não foi instalado", "Não abre", "Expirou a licença"];
         for (var i = 0; i < opcoesSoftware.length; i++) {
             var option = document.createElement("option");
-            if(i==0)option.hidden = "hidden"
+            if(i==0){
+                option.hidden = "hidden"
+                option.value = "";
+            } else{
+                option.value = opcoesSoftware[i];
+            }
             option.text = opcoesSoftware[i];
-            option.value = opcoesSoftware[i];
+            
             if(i%2==0){
                 option.classList = "bg-rose-100"
             } else{
@@ -96,11 +117,24 @@ function atualizarOpcoes() {
         }
         
         divSoftware.style.display = 'flex';
-        divProblema.style.display = 'flex';
-        divMesa.style.display = 'flex';
+        software.required = true
         
+
     } else if (problemaSelecionado === "Outro") {
 
         divOutro.style.display = 'flex';
+        outroProblema.required = true
     } 
+}
+
+function mostrarMesa(){
+    if(categoria.value !="Equipamento"){
+        divMesa.style.display = 'flex';   
+        mesa.required = true
+    }
+}
+
+function mostrarProblema(){
+    divProblema.style.display = 'flex';
+    problema.required = true
 }
