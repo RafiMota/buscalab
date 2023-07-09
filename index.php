@@ -64,7 +64,7 @@
 
     <main id="carrossel">
       <section id="carousel">
-        <h2 id="title" class="mb-4 mt-4 text-2xl">Conheça os laboratórios</h2>
+        <h2 id="title" class="mb-8 mt-8 text-2xl">Conheça os laboratórios</h2>
         <!-- Article abaixo representa o Carrossel -->
         <article class="mb-8 flex flex-col justify-center">
           <div class="carousel">

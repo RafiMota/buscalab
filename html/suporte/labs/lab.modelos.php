@@ -116,12 +116,13 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                                         $id_modelo = $dados_modelos[$key]['id'];
                                         if ($dados_modelos[$key]['lab' . $id_lab] != 0) {
                                     ?>
-                                            <div class="flex h-full w-1/2 rounded-xl border-2 border-slate-300">
-                                                <div class="h-42 w-1/3 rounded-l-xl border-r-2 border-slate-300">
-                                                    <img src="../../../assets/suporte/laptop.png" alt="">
-                                                </div>
-                                                <div class="flex w-full p-4">
-                                                    <div class="flex w-full items-center gap-4 justify-between">
+                                            <div class="flex flex-col h-full w-1/2 rounded-xl border-2 border-slate-300">
+                                                <div class="flex flex-row border-b-2 border-slate-300">
+                                                    <div class="h-42 w-1/3 rounded-l-xl border-r-2 border-slate-300">
+                                                        <img src="../../../assets/suporte/laptop.png" alt="">
+                                                    </div>
+
+                                                    <div class="flex w-full items-center gap-4 p-4 justify-between">
                                                         <div>
                                                             <h3 class="text-xl font-bold"><?= $dados_modelos[$key]['modelo']; ?></h3>
                                                             <span>Quantidade: <?= $dados_modelos[$key]['lab' . $id_lab]; ?></span>
@@ -136,11 +137,19 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                                                         </div>
 
                                                     </div>
-
-
-
-
                                                 </div>
+                                                <div class="flex items-center justify-center h-fit">
+                                                    <details class="flex justify-center items-center w-full p-2 cursor-pointer">
+                                                        <summary class="">
+                                                            Detalhes
+                                                        </summary>
+
+                                                        <p class="p-4">
+                                                            Conteúdo:
+                                                        </p>
+                                                    </details>
+                                                </div>
+
                                             </div>
                                     <?php }
                                     }; ?>

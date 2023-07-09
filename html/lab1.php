@@ -100,7 +100,7 @@
                     if ($dados_soft[$key]['lab' . $id_lab] != 0) {
                   ?>
 
-                      <div class="flex flex-col items-center justify-center border-2 border-slate-700 h-36 w-36 rounded-lg bg-rose-50 mb-2 p-4 text-center hover:brightness-50">
+                      <div class="flex flex-col items-center justify-center border-2 border-slate-700 h-36 w-36 rounded-lg mb-2 p-4 text-center hover:brightness-50">
                         <img src="../assets/<?= $dados_soft[$key]['imagem']; ?>" alt="" />
                         <p class="text-xs font-bold"><?= $dados_soft[$key]['software']; ?></p>
                       </div>
@@ -118,15 +118,21 @@
                   <?php foreach ($dados_modelos as $key => $value) {
                     if ($dados_modelos[$key]['lab' . $id_lab] != 0) {
                   ?>
-                      <div class="flex h-20 w-full rounded-xl bg-rose-50 border-2 border-slate-700">
-                        <div class="flex justify-center items-center h-full w-1/3 rounded-l-xl border-r-2 border-slate-700">
-                          <div class="h-fit w-full rounded-l-xl ">
+                      <div class="flex flex-col h-fit w-full rounded-xl border-2 border-slate-700">
+                        <div class="flex flex-row border-b-2 border-slate-700">
+                          <div class="flex justify-center items-center h-full w-1/3 rounded-l-xl border-r-2 border-slate-700">
                             <img src="../assets/suporte/laptop.png" alt="">
                           </div>
+                          <div class="w-2/3 p-4">
+                            <h3 class="text-xl font-bold"><?= $dados_modelos[$key]['modelo']; ?></h3>
+                            <p>Quantidade: <span><?= $dados_modelos[$key]['lab' . $id_lab]; ?></span></p>
+                          </div>
                         </div>
-                        <div class="w-full p-4">
-                          <h3 class="text-xl font-bold"><?= $dados_modelos[$key]['modelo']; ?></h3>
-                          <p>Quantidade: <span><?= $dados_modelos[$key]['lab' . $id_lab]; ?></span></p>
+                        <div class="flex items-center justify-center h-fit">
+                          <details class="p-2">
+                            <summary>Detalhes</summary>
+                            <p class="p-4">Conteúdo Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque eaque et totam excepturi est sunt quia in nobis id, quam fuga odio sed nihil consequuntur beatae impedit, perferendis unde repellendus?</p>
+                          </details>
                         </div>
                       </div>
                   <?php }
@@ -143,7 +149,7 @@
                   <?php foreach ($dados_equip as $key => $value) {
                     if ($dados_equip[$key]['lab' . $id_lab] != 0) {
                   ?>
-                      <div class="flex h-20 w-full rounded-xl bg-rose-50 border-2 border-slate-700">
+                      <div class="flex h-20 w-full rounded-xl border-2 border-slate-700">
                         <div class="flex justify-center items-center h-full w-1/3 rounded-l-xl border-r-2 border-slate-700">
                           <div class="h-fit w-5/6 rounded-l-xl ">
                             <img src="../assets/suporte/projetor.png" alt="">
