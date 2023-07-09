@@ -26,5 +26,7 @@
     }
     $con = new Conexao;
     $conexao = $con ->conectar();
+    $con2 = new Conexao;
+    $conexao2 = $con2->conectar();
     
 ?>
