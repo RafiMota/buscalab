@@ -35,8 +35,8 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
 
 </head>
 
-<body class="font-montserrat h-screen flex flex-col justify-between">
-    <header class="flex justify-between pt-2 pb-2 pr-8 pl-8 items-center shadow-lg border-b-2 border-slate-200">
+<body class="font-montserrat h-screen flex flex-col justify-between bg-slate-100">
+    <header class="flex justify-between pt-2 pb-2 pr-8 pl-8 items-center shadow-lg border-b-2 border-slate-200 bg-white">
         <section>
             <a href="../main.php"><img src="../../../assets/cyberpunk/logo-cyberpunk.svg" alt="" class="w-1/4"></a>
         </section>
@@ -105,16 +105,19 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                             Equipamentos
                         </button>
                     </a>
+                    
                 </div>
                 <div>
                     <ul>
                         <li>
                             <article id="Equipamentos" class="flex flex-col gap-10 p-8">
 
-                                <div class="flex flex-wrap gap-4 ">
+                                <div class="flex flex-wrap gap-4">
                                     <?php foreach ($dados_modelos as $key => $value) {
                                         $id_modelo = $dados_modelos[$key]['id'];
                                         if ($dados_modelos[$key]['lab' . $id_lab] != 0) {
+                                            $modelo = $dados_modelos[$key]['modelo'];
+                                            
                                     ?>
                                             <div class="flex flex-col h-full w-1/2 rounded-xl border-2 border-slate-300">
                                                 <div class="flex flex-row border-b-2 border-slate-300">
@@ -131,10 +134,10 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                                                         <div class="flex items-center gap-2">
                                                             <a href="../../../src/models/labs.model.php?l=<?= $id_lab . '&mc=' . $id_modelo; ?>"><button><span class="transition-all bg-slate-100 hover:bg-slate-300 p-1 font-bold text-xl rounded-md">+</span></button></a>
                                                             <a href="../../../src/models/labs.model.php?l=<?= $id_lab . '&lc=' . $id_modelo; ?>"><button><span class="transition-all bg-slate-100 hover:bg-slate-300 p-1 font-bold text-xl rounded-md">-</span></button></a>
-                                                            <a href="../../../src/models/labs.model.php?l=<?= $id_lab . '&Sre=' . $id_modelo ?>" class="">
+                                                            <a href="../../../src/models/labs.model.php?l=<?= $id_lab . '&Mre=' . $id_modelo ?>" class="">
                                                                 <img src="../../../assets/suporte/lixo.png" alt="" class="h-7 w-6 mt-4 ml-4 hover:h-9 hover:w-8 transition-all duration-200">
                                                             </a>
-                                                            <a href="">
+                                                            <a href="../add.comp.php?l=<?=$id_lab.'&edit='.$modelo; ?>">
                                                                 <img src="../../../assets/suporte/editar.png" alt="" class="h-7 w-7 mt-4 ml-4 hover:h-10 hover:w-10 transition-all duration-200">
                                                             </a>
                                                             
@@ -142,42 +145,79 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
 
                                                     </div>
                                                 </div>
+                                                <?php
+                                                    $query_detalhes = $conexao2->prepare("SELECT * FROM tb_info_modelos WHERE modelo = '$modelo' ");
+                                                    $query_detalhes->execute();
+                                                    $dados_detalhes = $query_detalhes->fetchAll(PDO::FETCH_ASSOC);
+                                                   
+                                                ?>
                                                 <div class="flex items-center justify-center h-fit">
                                                     <details class="flex justify-center items-center w-full p-2 cursor-pointer">
+                                                        
                                                         <summary class="">
                                                             Detalhes
                                                         </summary>
 
                                                         <p class="p-4 pt-2 pb-2">
-                                                            Conteúdo:
+                                                             <b>Fabricante:</b> <?=$dados_detalhes[0]['fabricante'];?>
                                                         </p>
 
                                                         <p class="p-4 pt-2 pb-2">
-                                                            Placa de vídeo:
+                                                            <b>Modelo:</b> <?=$dados_detalhes[0]['modelo'];?>
                                                         </p>
 
                                                         <p class="p-4 pt-2 pb-2">
-                                                            Conteúdo:
+                                                            <b>Procesador: </b> <?=$dados_detalhes[0]['processador'];?>
                                                         </p>
 
                                                         <p class="p-4 pt-2 pb-2">
-                                                            Placa de vídeo:
+                                                            <b>CPU MARK: </b> <?=$dados_detalhes[0]['cpu_mark'];?>
                                                         </p>
 
                                                         <p class="p-4 pt-2 pb-2">
-                                                            Conteúdo:
+                                                            <b>Memória: </b> <?=$dados_detalhes[0]['mem_capacidade'];?>
                                                         </p>
 
                                                         <p class="p-4 pt-2 pb-2">
-                                                            Placa de vídeo:
+                                                            <b>Tipo de memória: </b> <?=$dados_detalhes[0]['mem_tipo'];?>
                                                         </p>
 
                                                         <p class="p-4 pt-2 pb-2">
-                                                            Conteúdo:
+                                                            <b>Disco: </b> <?=$dados_detalhes[0]['disco1_capacidade'];?>
                                                         </p>
 
                                                         <p class="p-4 pt-2 pb-2">
-                                                            Placa de vídeo:
+                                                            <b>Tipo de disco: </b> <?=$dados_detalhes[0]['disco1_tipo'];?>
+                                                        </p>
+                                                        <p class="p-4 pt-2 pb-2">
+                                                            <b>Modelo do disco: </b> <?=$dados_detalhes[0]['disco1_modelo'];?>
+                                                        </p>
+
+                                                        
+                                                        <?php
+                                                        //condicional para testar se o modelo tem dois discos rígidos
+                                                        if($dados_detalhes[0]['disco2_capacidade'] != ''){ ?>
+
+                                                        <p class="p-4 pt-2 pb-2">
+                                                            <b>Disco 2: </b> <?=$dados_detalhes[0]['disco2_capacidade'];?>
+                                                        </p>
+
+                                                        <p class="p-4 pt-2 pb-2">
+                                                            <b>Tipo de disco2: </b> <?=$dados_detalhes[0]['disco2_tipo'];?>
+                                                        </p>
+
+                                                        <p class="p-4 pt-2 pb-2">
+                                                            <b>Modelo do disco2: </b> <?=$dados_detalhes[0]['disco2_modelo'];?>
+                                                        </p>
+
+                                                        <?php };?>
+
+                                                        <p class="p-4 pt-2 pb-2">
+                                                            <b>Sistema operacional: </b> <?=$dados_detalhes[0]['so_nome'];?>
+                                                        </p>
+
+                                                        <p class="p-4 pt-2 pb-2">
+                                                            <b>Compilação:</b> <?=$dados_detalhes[0]['so_compilacao'];?>
                                                         </p>
                                                     </details>
                                                 </div>

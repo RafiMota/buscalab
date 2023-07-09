@@ -12,6 +12,8 @@
     $dados_modelos = $query_modelos->fetchAll(); 
     $json = json_encode($dados_modelos);
 
+   
+
     // --------------SOFTWARES---------------------------------------------
 
 
@@ -186,7 +188,77 @@
 
     }
 
+    // -------------- EDITAR MODELOS  ---------------------------------------------
+
+    if(isset($_GET['Medit']) && !empty($_GET['Medit'])){
+
+        $fabricante = $_POST['fabricante'];
+        $modelo = $_POST['modelo'];
+        $processador = $_POST['processador'];
+        $cpu_mark = $_POST['cpu_mark'];
+        $mem_capacidade = $_POST['mem_capacidade'];
+        $mem_tipo = $_POST['mem_tipo'];
+        $disco1_capacidade = $_POST['disc1_capacidade'];
+        $disco1_tipo = $_POST['disc1_tipo'];
+        $disco1_modelo = $_POST['disc1_modelo'];
+        $disco2_capacidade = $_POST['disc2_capacidade'];
+        $disco2_tipo = $_POST['disc2_tipo'];
+        $disco2_modelo = $_POST['disc2_modelo'];
+        $so_nome = $_POST['so_nome'];
+        $so_comp = $_POST['so_comp'];
+        $qnt_lab1 = (int)$_POST['lab1'];
+        $qnt_lab2 = (int)$_POST['lab2'];
+        $qnt_lab3 = (int)$_POST['lab3'];
+        $qnt_lab4 = (int)$_POST['lab4'];
+        $qnt_lab5 = (int)$_POST['lab5'];
+        $qnt_lab6 = (int)$_POST['lab6'];
+
+
+        $query_edit_modelo = $conexao->prepare(
+            "UPDATE
+                 tb_modelos
+            SET
+                modelo = '$modelo',
+                lab1 = $qnt_lab1,
+                lab2 = $qnt_lab2,
+                lab3 = $qnt_lab3,
+                lab4 = $qnt_lab4,
+                lab5 = $qnt_lab5,
+                lab6 = $qnt_lab6
+                
+            WHERE
+                modelo = '$modelo'");
+        $query_edit_modelo->execute();
+
+        $query_edit_detalhes = $conexao2->prepare(
+            "UPDATE
+                tb_info_modelos
+            SET
+                fabricante = '$fabricante',
+                modelo = '$modelo',
+                processador = '$processador',
+                cpu_mark = '$cpu_mark',
+                mem_capacidade = '$mem_capacidade',
+                mem_tipo = '$mem_tipo',
+                disco1_capacidade ='$disco1_capacidade',
+                disco1_tipo = '$disco_tipo',
+                disco1_modelo = '$disco1_modelo',
+                disco2_capacidade = '$disco2_capacidade',
+                disco2_tipo = '$disco2_tipo',
+                disco2_modelo = '$disco2_modelo',
+                so_nome = '$so_nome',
+                so_compilacao = '$so_comp'
+                
+            WHERE 
+                modelo = '$modelo'");
+        $query_edit_detalhes->execute();
+        header('location: ../../html/suporte/labs/lab.modelos.php?l='.$id_lab);
+
+
+    }
+
     // -------------- ADICIONAR EQUIPAMENTOS ---------------------------------------------
+
     if(isset($_GET['Eadd']) && !empty($_GET['Eadd'])){
         $id_equip = $_GET['Eadd'];
         $query_add_equip = $conexao->prepare(
@@ -203,6 +275,7 @@
     }
 
     // -------------- REMOVER EQUIPAMENTOS ---------------------------------------------
+    
     if(isset($_GET['Ere']) && !empty($_GET['Ere'])){
         $id_equip = $_GET['Ere'];
         
@@ -219,4 +292,26 @@
         header('location: ../../html/suporte/labs/lab.equip.php?l='.$id_lab);
 
     }
+
+    // -------------- CADASTRAR EQUIPAMENTOS ---------------------------------------------
+
+    if(isset($_GET['Ecad']) && !empty($_GET['Ecad'])){
+        $fabricante = $_POST['fabricante'];
+        $modelo = $_POST['modelo'];
+        $patrimonio = $_POST['patrimonio'];
+        $qnt_lab1 = (int)$_POST['lab1'];
+        $qnt_lab2 = (int)$_POST['lab2'];
+        $qnt_lab3 = (int)$_POST['lab3'];
+        $qnt_lab4 = (int)$_POST['lab4'];
+        $qnt_lab5 = (int)$_POST['lab5'];
+        $qnt_lab6 = (int)$_POST['lab6'];
+
+
+        $query_cadastrar_equip = $conexao->prepare(
+            "INSERT INTO tb_equipamentos(modelo,patrimonio,fabricante,lab1,lab2,lab3,lab4,lab5,lab6)
+             VALUES('$modelo','$patrimonio','$fabricante',$qnt_lab1,$qnt_lab2,$qnt_lab3,$qnt_lab4,$qnt_lab5,$qnt_lab6)");
+        $query_cadastrar_equip->execute();
+        header('location: ../../html/suporte/labs/lab.equip.php?l='.$id_lab);
+
+     }
 ?>
