@@ -139,7 +139,7 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                                                         <span>Quantidade: <?= $dados_equip[$key]['lab' . $id_lab]; ?></span>
                                                     </div>
 
-                                                    <a href="../../../src/models/labs.model.php?l=<?= $id_lab . '&Sre=' . $id_equip ?>" class ="lixo">
+                                                    <a  data-id="../../../src/models/labs.model.php?l=<?= $id_lab . '&Sre=' . $id_equip ?>" class ="lixo">
                                                         <img src="../../../assets/suporte/lixo.png" alt="" class="h-4 mt-4 ml-4 hover:h-8 transition-all duration-200">
                                                         
                                                     </a>
