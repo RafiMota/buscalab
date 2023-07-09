@@ -24,10 +24,10 @@
   </head>
 
   <body class="font-montserrat">
-    <header
+    <header id="header"
       class="flex items-center justify-between border-b-2 border-red-300 p-8 pb-2 pt-2"
     >
-      <a href=".z/index.php">
+      <a href="./index.php">
         <img
           id="logo"
           src="./assets/cyberpunk/logo-cyberpunk.svg"
@@ -64,7 +64,7 @@
 
     <main id="carrossel">
       <section id="carousel">
-        <h2 id="title" class="mb-8 mt-8 text-2xl">Conheça os laboratórios</h2>
+        <h2 id="title" class="mb-4 mt-4 text-2xl">Conheça os laboratórios</h2>
         <!-- Article abaixo representa o Carrossel -->
         <article class="mb-8 flex flex-col justify-center">
           <div class="carousel">
@@ -78,65 +78,63 @@
                       alt=""
                       class="rounded-xl"
                     />
-                    <p class="text-center mt-2 text-xl font-semibold">Laboratório 1</p>
+                    
                   </a>
                   <a href="html/lab1.php?l=2" class="glide__slide">
-                  
-                    <img
-                      src="./assets/solarpunk/solarpunk.png"
-                      alt=""
-                      class="rounded-xl"
-                    />
-                    <p class="text-center mt-2 text-xl font-semibold">Laboratório 2</p>
-                  </a>
-                  <a href="html/lab1.php?l=3" class="glide__slide">
-                  
-                    <img
-                      src="./assets/magicworld/magicworld.png"
-                      alt=""
-                      class="rounded-xl"
-                    />
-                    <p class="text-center mt-2 text-xl font-semibold">Laboratório 3</p>
-                  </a>
-                  <a href="html/lab1.php?l=4" class="glide__slide">
-                  
-                    <img
-                      src="./assets/medieval/medieval.png"
-                      alt=""
-                      class="rounded-xl"
-                    />
-                    <p class="text-center mt-2 text-xl font-semibold">Laboratório 4</p>
-                  </a>
-                  <a href="html/lab1.php?l=5" class="glide__slide">
-                  
-                    <img
-                      src="./assets/steampunk/steampunk.png"
-                      alt=""
-                      class="rounded-xl"
-                    />
-                    <p class="text-center mt-2 text-xl font-semibold">Laboratório 5</p>
-                  </a>
-                  <a href="html/lab1.php?l=6" class="glide__slide">
-                  
                     <img
                       src="./assets/spaceopera/spaceopera.png"
                       alt=""
                       class="rounded-xl"
                     />
-                    <p class="text-center mt-2 text-xl font-semibold">Laboratório 6</p>
+                    
+                    
+                  </a>
+                  <a href="html/lab1.php?l=3" class="glide__slide">
+                    <img
+                      src="./assets/medieval/medieval.png"
+                      alt=""
+                      class="rounded-xl"
+                    />
+                    
+                    
+                  </a>
+                  <a href="html/lab1.php?l=4" class="glide__slide">                  
+                    
+                    <img
+                      src="./assets/solarpunk/solarpunk.png"
+                      alt=""
+                      class="rounded-xl"
+                    />
+                    
+                  </a>
+                  <a href="html/lab1.php?l=5" class="glide__slide">
+                    <img
+                      src="./assets/magicworld/magicworld.png"
+                      alt=""
+                      class="rounded-xl"
+                    />
+                    
+                  </a>
+                  <a href="html/lab1.php?l=6" class="glide__slide">
+                    <img
+                      src="./assets/steampunk/steampunk.png"
+                      alt=""
+                      class="rounded-xl"
+                    />
+                    
                   </a>
                 </ul>
               </div>
-              <div class="glide__arrows" data-glide-el="controls">
+              <div  class="glide__arrows" data-glide-el="controls">
                 <button
-                  class="prev glide__arrow glide__arrow--left"
+                class="setas prev glide__arrow glide__arrow--left"
                   data-glide-dir="<"
                   onclick="showSlides(-1)"
                 >
                   <
                 </button>
                 <button
-                  class="next glide__arrow glide__arrow--right"
+                  class="setas next glide__arrow glide__arrow--right"
                   data-glide-dir=">"
                   onclick="showSlides(-1)"
                 >
@@ -227,18 +225,18 @@
         >
       </section>
 
-      <section class="flex h-full flex-col bg-rose-50 p-8 text-rose-500">
+      <section class="flex h-full flex-col  p-8 text-rose-500">
         <img
           id="regras"
-          src="./assets/cyberpunk/regras-cyberpunk.svg"
+          src="assets/cyberpunk/regras-cyberpunk.svg"
           alt=""
           class="mb-2 w-1/2 self-center"
         />
 
-        <h3 id="h3-regras" class="text-2xl font-bold text-rose-500">
-          O que pode ou não pode fazer nos Laboratórios?
+        <h3 id="h3-regras" class="text-2xl font-bold">O que pode ou não pode fazer nos Laboratórios?
         </h3>
-        <div class="pb-4 pt-4 text-left">
+        
+        <div id="regras_texto" class="pb-4 pt-4 text-left">
           <p class="mb-1">Será que posso comer nos laboratórios?</p>
           <p class="mb-1">É permitido escutar música nos laboratórios?</p>
           <p class="mb-1">Informe-se aqui!</p>
@@ -255,7 +253,7 @@
       </section>
     </main>
 
-    <footer id="footer" class="flex justify-between bg-red-300 p-4 text-sm">
+    <footer id="footer" class="flex justify-between p-4 text-sm border-t-2 ">
       <p>UFC</p>
       <p>Desenvolvido por Techplan©</p>
     </footer>
