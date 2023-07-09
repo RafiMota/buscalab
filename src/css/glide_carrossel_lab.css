@@ -13,7 +13,7 @@
   font-size: larger;
   font-weight: bold;
   color: #831818;
-  border-bottom: 2px solid #a31b1b;
+  border-bottom: 2px solid;
   transition: 150ms;
 }
 
