@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="../src/css/output.css" />
   </head>
 
-  <body class="font-montserrat "><a href="reportar.html">
+  <body class="font-montserrat"><a href="reportar.html">
     <header
       class="flex items-center justify-center border-b-2 border-red-300 p-8 pb-2 pt-2 mb-4"
     >
@@ -30,19 +30,20 @@
     </header>
     
     <main class="flex flex-col items-center justify-center p-4">
+      <div class = "fixed w-full h-full top-0 bottom-0 bg-[rgba(239,239,239,0.8)] z-0 "></div>
       <h2 class="text-2xl font-bold mb-2">REPORTAR</h2>
       
       <section class=" bg-rose-200 rounded-xl shadow-md w-full h-96 p-4">
         <h3 class="text-xl font-semibold mb-2">Descreva o problema</h3>
         
-        <dialog class="rounded-xl shadow-md w-5/6 h-80 p-4" open>
+        <dialog class="rounded-xl shadow-md w-[87%] h-80 p-4 z-10" open>
           <img id="sucesso" src="../assets/checkmark.svg" class="m-auto pb-6 pt-2"/>
-          <h3 class="text-4xl font-bold green-success text-center mb-2">Enviado</h3>
+          <h3 class="text-4xl font-bold text-[#278C31] text-center mb-2">Enviado</h3>
         </dialog>
       </section>
 
       <input type="submit" class="font-semibold text-slate-100 bg-red-500 rounded-xl shadow-md w-3/4 p-4 mt-8" value="Enviar">
-      <p>Cancelar</p>
+      <p class="mt-4 underline text-slate-300">Cancelar</p>
       
       
 

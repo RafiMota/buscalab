@@ -32,15 +32,14 @@
     <main class="flex flex-col items-center justify-center p-4">
       <h2 class="text-2xl font-bold mb-2">REPORTAR</h2>
       
-      <section class="bg-rose-200 rounded-xl shadow-md w-full p-4">
+      <section class="bg-rose-200 rounded-xl shadow-md w-full min-h-[24rem] p-4">
         <h3 class="text-xl font-semibold mb-2">Descreva o problema</h3>
         
         <form autocomplete="off" action="../src/models/reportar.php" method="POST" class="flex flex-col" id="reporte">
           
           <label for="laboratorio" class="font-semibold">Laboratório</label>
-          <select class="p-2 rounded-xl h-10 mb-4" name="lab" id="laboratorio">
-
-            <option class="text-slate-20" hidden>Escolha um laboratório</option>
+          <select class="p-2 rounded-xl h-10 mb-4" name="lab" id="laboratorio" required>
+            <option class="text-slate-20" value="" hidden>Escolha um laboratório</option>
             <option class="" value="1">Laboratório 01</option>
             <option class="bg-rose-100" value="2">Laboratório 02</option>
             <option class="" value="3">Laboratório 03</option>
@@ -51,7 +50,7 @@
 
           <div id="divCategoria" class="flex flex-col">
             <label for="categoria" class="font-semibold">Categoria</label>
-            <select class="p-2 rounded-xl h-10 mb-4" name="categ" id="categoria" onchange="atualizarOpcoes()">
+            <select class="p-2 rounded-xl h-10 mb-4" name="categ" id="categoria" onchange="atualizarOpcoes()" required>
               
               <option class="text-slate-20" hidden value="">Selecione uma categoria</option>
               <option class="" value="Computador">Computador</option>
@@ -61,14 +60,14 @@
             </select>  
           </div>
 
-          <div id="divSoftware" class="flex flex-col hidden">
+          <div id="divSoftware" class="flex-col hidden">
             <label for="software" class="font-semibold">Software</label>
-            <input type="text" name="soft" class="p-2 rounded-xl h-10 mb-4" id="software" placeholder="Qual o software?">
+            <input type="text" name="soft" class="p-2 rounded-xl h-10 mb-4" id="software" placeholder="Qual o software?" oninput="mostrarProblema()">
           </div>
 
-          <div id="divEquipamento" class="flex flex-col hidden">
+          <div id="divEquipamento" class="flex-col hidden">
             <label for="equipamento" class="font-semibold">Equipamento</label>
-            <select class="p-2 rounded-xl h-10 mb-4" name="equip" id="equipamento" >
+            <select class="p-2 rounded-xl h-10 mb-4" name="equip" id="equipamento" onchange="mostrarProblema()">
               
               <option class="text-slate-20" hidden value="">Selecione um equipamento</option>
               <option class="" value="Projetor">Projetor</option>
@@ -77,23 +76,23 @@
             </select>  
           </div>
 
-          <div id="divProblema" class="flex flex-col hidden">
-            <label for="problema" class="font-semibold">Problema</label>
-            <select class="p-2 rounded-xl h-10 mb-4" name="prob" id="problema">
+          <div id="divProblema" class="flex-col hidden">
+            <label for="problema" class="font-semibold" >Problema</label>
+            <select class="p-2 rounded-xl h-10 mb-4" name="prob" id="problema" onchange="mostrarMesa()">
               
             </select>
           </div>
 
-          <div id="divMesa" class="flex flex-col hidden">
+          <div id="divMesa" class="flex-col hidden">
             <label for="mesa" class="font-semibold">Mesa</label>
             <input type="number" name="mesa" class="p-2 rounded-xl h-10 mb-4" id="mesa" placeholder="Informe o número descrito na mesa">
           </div>
 
         
 
-          <div  id="divOutro" class="flex flex-col hidden">
+          <div  id="divOutro" class="flex-col hidden">
             <label for="outroProblema" class="font-semibold">Problema</label>
-            <textarea name="outro" class="p-2 rounded-xl h-10 mb-4" id="outroProblema"></textarea>
+            <textarea name="outro" class="p-2 rounded-xl h-32" id="outroProblema" placeholder="Especifique todos os detalhes do problema que está ocorrendo"></textarea>
           </div>
 
           
