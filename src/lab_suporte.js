@@ -29,7 +29,7 @@ function lixopopup(href_aqui, href_todos){
     button_close.onclick = function(){
         let popup = document.getElementsByClassName("popup");
         console.log(popup);
-        popup.remove();
+        popup[0].remove();
     }
 
     popup.appendChild(button_close)
