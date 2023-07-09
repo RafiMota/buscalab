@@ -8,7 +8,7 @@ function callback(mutationList, observer) {
   mutationList.forEach(function(mutation) {
     if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
         let ball = document.getElementsByClassName("glide__bullet--active");     
-        console.log("bola "+ball[0].dataset.number);
+        
         adjustcolor(ball[0].dataset.number);
     }
   })
@@ -69,7 +69,7 @@ function adjustcolor(n) {
             "megafone": "./assets/steampunk/megafone-steampunk.svg",
         }
     ]
-
+    console.log("Deu certo");
 
     let title = document.getElementById("title");
     let report = document.getElementById("report");
