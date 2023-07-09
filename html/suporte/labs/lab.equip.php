@@ -32,6 +32,7 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Buscalab</title>
     <link rel="stylesheet" href="../../../src/css/output.css" />
+    <script src="../../../src\lab_suporte.js" defer></script>
 
 </head>
 
@@ -121,7 +122,7 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                                 }
                             </style>
 
-                            <article id="Equipamentos" class="flex flex-col gap-10 p-8">
+                            <div id="Equipamentos" class="flex flex-col gap-10 p-8">
 
                                 <div class="flex gap-4">
                                     <?php foreach ($dados_equip as $key => $value) {
@@ -138,8 +139,9 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                                                         <span>Quantidade: <?= $dados_equip[$key]['lab' . $id_lab]; ?></span>
                                                     </div>
 
-                                                    <a href="../../../src/models/labs.model.php?l=<?= $id_lab . '&Sre=' . $id_equip ?>" class="">
-                                                        <img src="../../../assets/suporte/lixo.svg" alt="" class="h-10 mt-4 ml-4 hover:h-12 transition-all duration-200">
+                                                    <a href="../../../src/models/labs.model.php?l=<?= $id_lab . '&Sre=' . $id_equip ?>" class ="lixo">
+                                                        <img src="../../../assets/suporte/lixo.png" alt="" class="h-4 mt-4 ml-4 hover:h-8 transition-all duration-200">
+                                                        
                                                     </a>
 
                                                 </div>
@@ -147,7 +149,7 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                                     <?php }
                                     }; ?>
                                 </div>
-                            </article>
+                                </div>
 
 
                     </ul>

@@ -32,7 +32,7 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Buscalab</title>
     <link rel="stylesheet" href="../../../src/css/output.css" />
-
+    <!-- <script src="../../../src\lab_suporte.js" defer></script> -->
 </head>
 
 <body class="font-montserrat h-screen flex flex-col justify-between">
@@ -129,9 +129,21 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                                                         </div>
 
                                                         <div class="flex items-center gap-2">
-                                                            <a href="../../../src/models/labs.model.php?l=<?= $id_lab . '&mc=' . $id_modelo; ?>"><button><span class="transition-all bg-slate-100 hover:bg-slate-300 p-1 font-bold text-xl rounded-md">+</span></button></a>
-                                                            <a href="../../../src/models/labs.model.php?l=<?= $id_lab . '&lc=' . $id_modelo; ?>"><button><span class="transition-all bg-slate-100 hover:bg-slate-300 p-1 font-bold text-xl rounded-md">-</span></button></a>
-                                                            <a href="../../../src/models/labs.model.php?l=<?= $id_lab . '&Sre=' . $id_modelo ?>" class="">
+                                                            <a href="../../../src/models/labs.model.php?l=<?= $id_lab . '&mc=' . $id_modelo; ?>">
+                                                                <button>
+                                                                    <span class="transition-all bg-slate-100 hover:bg-slate-300 p-1 font-bold text-xl rounded-md">
+                                                                        +
+                                                                    </span>
+                                                                </button>
+                                                            </a>
+                                                            <a href="../../../src/models/labs.model.php?l=<?= $id_lab . '&lc=' . $id_modelo; ?>">
+                                                                <button>
+                                                                    <span class="transition-all bg-slate-100 hover:bg-slate-300 p-1 font-bold text-xl rounded-md">
+                                                                        -
+                                                                    </span>
+                                                                </button>
+                                                            </a>
+                                                            <a href="../../../src/models/labs.model.php?l=<?= $id_lab . '&Sre=' . $id_modelo ?>" class ="lixo">
                                                                 <img src="../../../assets/suporte/lixo.png" alt="" class="h-7 w-6 mt-4 ml-4 hover:h-9 hover:w-8 transition-all duration-200">
                                                             </a>
                                                             <a href="">
