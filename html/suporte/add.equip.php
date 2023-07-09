@@ -1,6 +1,7 @@
 <?php
     require '../../src/models/labs.model.php';
     require '../../src/models/login_seguranca.php';
+   
 ?>
 
 <!DOCTYPE html>
@@ -15,11 +16,86 @@
     <title>Adicionar Software</title>
 </head>
 <body>
+    <?php
+        if(isset($_GET['edit'])&& !empty($_GET['edit'])){
+            $id_equip = $_GET['edit'];
+            $query_edit_equip = $conexao->prepare("SELECT * FROM tb_equipamentos WHERE id = '$id_equip'");
+            $query_edit_equip->execute();
+            $dados_edit_equip = $query_edit_equip->fetchAll(PDO::FETCH_ASSOC);
+            
+
+        
+    ?>
+    
+    <div class="flex flex-col gap-10 p-8 pl-0 pr-0 absolute items-center justify-center bg-slate-200 w-full">
+            
+
+            <div id="formAdicionar" class="flex flex-col items-center justify-between bg-slate-100 shadow-xl w-1/2 rounded-xl h-full p-8">
+                <header class="w-full text-center mb-4">
+                    <h2 class="text-xl font-semibold">
+                        Edite um equipamento
+                    </h2>
+                </header>
+                <main class="flex flex-col w-full h-full">
+
+                    <form action="../../src/models/labs.model.php?Eedit=1&l=<?=$id_lab.'&id='.$id_equip?>" method="post"  class="flex flex-col justify-center items-center gap-4 w-full h-full">
+                        <div class="flex flex-col w-2/3">
+                            <label class="ml-2" for="fabricante">Fabricante</label>
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="fabricante" name="fabricante" value="<?=$dados_edit_equip[0]['fabricante'];?>">
+                        </div>
+                        <div class="flex flex-col w-2/3">
+                            <label class="ml-2" for="modelo">Tipo de equipamento</label>
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="modelo" name="modelo" value="<?=$dados_edit_equip[0]['modelo'];?>">
+                        </div>
+                        <div class="flex flex-col w-2/3">
+                            <label class="ml-2" for="patrimonio">N° de patrimônio</label>
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="patrimonio" name="patrimonio" value="<?=$dados_edit_equip[0]['patrimonio'];?>">
+                        </div>
+                        <div class="flex flex-col w-2/3">
+                            <label class="ml-2" for="lab1">Lab 1 (Adicionar = 1 / Não adicionar = 0)</label>
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="lab1" name="lab1" value="<?=$dados_edit_equip[0]['lab1'];?>">
+                        </div>
+                        <div class="flex flex-col w-2/3">
+                            <label class="ml-2" for="lab2">Lab 2 (Adicionar = 1 / Não adicionar = 0)</label>
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="lab2" name="lab2" value="<?=$dados_edit_equip[0]['lab2'];?>">
+                        </div>   
+                        <div class="flex flex-col w-2/3">
+                            <label class="ml-2" for="lab3">Lab 3 (Adicionar = 1 / Não adicionar = 0)</label>
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="lab3" name="lab3" value="<?=$dados_edit_equip[0]['lab3'];?>">
+                        </div>   
+                        <div class="flex flex-col w-2/3">
+                            <label class="ml-2" for="lab4">Lab 4 (Adicionar = 1 / Não adicionar = 0)</label>
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="lab4" name="lab4" value="<?=$dados_edit_equip[0]['lab4'];?>">
+                        </div>   
+                        <div class="flex flex-col w-2/3">
+                            <label class="ml-2" for="lab5">Lab 5 (Adicionar = 1 / Não adicionar = 0)</label>
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="lab5" name="lab5" value="<?=$dados_edit_equip[0]['lab5'];?>">
+                        </div>   
+                        <div class="flex flex-col w-2/3">
+                            <label class="ml-2" for="lab6">Lab 6 (Adicionar = 1 / Não adicionar = 0)</label>
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="lab6" name="lab6" value="<?=$dados_edit_equip[0]['lab6'];?>">
+                        </div>      
+      
+                        
+                        
+                        
+                        <button type="submit" class="bg-slate-300 hover:bg-slate-500 shadow-md hover:text-slate-100 font-semibold transition-all p-2 rounded-md">Concluir</button>
+                    </form>
+
+                </main>
+               
+            </div>
+        </div>
+    </div>
+
+    <?php
+        } else{
+    ?>
 <div class="flex flex-col gap-10 p-8 pl-0 pr-0 absolute items-center justify-center bg-slate-200 w-full">
             <div class="flex flex-col justify-between items-center bg-slate-100 shadow-xl w-1/2 rounded-xl h-full p-8">
                 <header class="w-full text-center">
                     <h2 class="text-2xl font-semibold">
-                        Qual software você deseja adicionar?
+                        Qual equipamento?
                     </h2>
                 </header>
                 <main class="flex">
@@ -52,7 +128,7 @@
             <div id="formAdicionar" class="flex flex-col items-center justify-between bg-slate-100 shadow-xl w-1/2 rounded-xl h-full p-8">
                 <header class="w-full text-center mb-4">
                     <h2 class="text-xl font-semibold">
-                        Cadastre um software novo
+                        Cadastre um equipamento novo
                     </h2>
                 </header>
                 <main class="flex flex-col w-full h-full">
@@ -106,6 +182,8 @@
             </div>
         </div>
     </div>
+
+    <?php };?>
 
 </body>
 </html>

@@ -111,6 +111,92 @@
 
     }
 
+    // -------------- EDITAR SOFTWARES ---------------------------------------------
+
+    if(isset($_GET['Sedit']) && !empty($_GET['Sedit']) ){
+        if (isset($_GET['soft'])&& !empty($_GET['soft'])){
+            $soft = $_GET['soft'];
+            if(isset($_POST)&& !empty($_POST)){
+                $nome_soft = $_POST['nome'];
+                $categoria = $_POST['categoria'];
+                $licenca = $_POST['licenca'];
+                echo $licenca;
+                echo   'oi';
+                $versao = $_POST['versao'];
+                $lab1 = (int)$_POST['lab1'];
+                $lab2 = (int)$_POST['lab2'];
+                $lab3 = (int)$_POST['lab3'];
+                $lab4 = (int)$_POST['lab4'];
+                $lab5 = (int)$_POST['lab5'];
+                $lab6 = (int)$_POST['lab6'];
+                if(isset($_FILES['imagem']) && $_FILES['imagem']['name'] !== ''){
+                    $imagem = "img_software/".$_FILES['imagem']['name'];
+                    move_uploaded_file($_FILES['imagem']['tmp_name'], "../../assets/".$imagem);
+                }
+                if(isset($imagem)){
+                    $query_edit_soft = $conexao->prepare(
+                        
+                        "UPDATE
+                            tabela_softwares
+                        SET
+                            software = '$nome_soft',
+                            lab1 = $lab1,
+                            lab2 = $lab2,
+                            lab3 = $lab3,
+                            lab4 = $lab4,
+                            lab5 = $lab5,
+                            lab6 = $lab6,
+                            imagem = '$imagem'
+
+                        WHERE software = '$soft'");
+
+                    $query_edit_soft->execute();
+
+                }else{
+                    $query_edit_soft = $conexao->prepare(
+                        
+                        "UPDATE
+                            tabela_softwares
+                        SET
+                            software = '$nome_soft',
+                            lab1 = $lab1,
+                            lab2 = $lab2,
+                            lab3 = $lab3,
+                            lab4 = $lab4,
+                            lab5 = $lab5,
+                            lab6 = $lab6
+                            
+
+                        WHERE software = '$soft'");
+
+                    $query_edit_soft->execute();
+                }
+
+                $query_edit_detalhes_soft = $conexao->prepare(
+                    
+                    "UPDATE
+                        tb_info_softwares
+                    SET
+                        software = '$nome_soft',
+                        categoria = '$categoria',
+                        licenca = '$licenca',
+                        versao = '$versao'
+                        
+                    WHERE
+                        software = '$soft'");
+
+                
+                $query_edit_detalhes_soft->execute();
+                header('location: ../../html/suporte/labs/lab.soft.php?l='.$id_lab);
+
+                
+                
+                
+            }
+
+        }
+    }
+
     // -------------- ADICIONAR MODELOS---------------------------------------------
 
     if(isset($_GET['Madd']) && !empty($_GET['Madd'])){
@@ -326,6 +412,7 @@
     // -------------- CADASTRAR EQUIPAMENTOS ---------------------------------------------
 
     if(isset($_GET['Ecad']) && !empty($_GET['Ecad'])){
+
         $fabricante = $_POST['fabricante'];
         $modelo = $_POST['modelo'];
         $patrimonio = $_POST['patrimonio'];
@@ -346,7 +433,8 @@
      }
 
 
-    // -------------- EXCLUIR EQUIPAMENTOS  DO BANCO DE DADOS---------------------------------------------
+    
+     // -------------- EXCLUIR EQUIPAMENTOS  DO BANCO DE DADOS---------------------------------------------
 
     if(isset($_GET['Edel']) && !empty($_GET['Edel'])){
         $id_equip = $_GET['Edel'];
@@ -359,4 +447,44 @@
 
     }    
 
+     // -------------- EDITAR EQUIPAMENTOS---------------------------------------------
+
+     if(isset($_GET['Eedit']) && !empty($_GET['Eedit'])){
+        if(isset($_GET['id']) && !empty($_GET['id'])){
+            $id_equip = $_GET['id'];
+            if(isset($_POST)&& !empty($_POST)){
+                $fabricante = $_POST['fabricante'];
+                $modelo = $_POST['modelo'];
+                $patrimonio = $_POST['patrimonio'];
+                $lab1 = (int)$_POST['lab1'];
+                $lab2 = (int)$_POST['lab2'];
+                $lab3 = (int)$_POST['lab3'];
+                $lab4 = (int)$_POST['lab4'];
+                $lab5 = (int)$_POST['lab5'];
+                $lab6 = (int)$_POST['lab6'];
+
+                $query_edit_equip = $conexao->prepare(
+                    
+                    "UPDATE
+                        tb_equipamentos
+                    SET
+                        fabricante = '$fabricante',
+                        modelo = '$modelo',
+                        patrimonio ='$patrimonio',
+                        lab1 = $lab1,
+                        lab2 = $lab2,
+                        lab3 = $lab3,
+                        lab4 = $lab4,
+                        lab5 = $lab5,
+                        lab6 = $lab6
+                        
+                    WHERE
+                        id = $id_equip");
+                $query_edit_equip->execute();
+                header('location: ../../html/suporte/labs/lab.equip.php?l='.$id_lab);
+                
+            }
+        }
+
+     }
 ?>

@@ -141,8 +141,11 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
 
                                                     <a  data-id="../../../src/models/labs.model.php?l=<?= $id_lab . '&Sre=' . $id_equip ?>" class ="lixo">
                                                         <img src="../../../assets/suporte/lixo.png" alt="" class="h-4 mt-4 ml-4 hover:h-8 transition-all duration-200">
-                                                        
+    
                                                     </a>
+                                                    <a href="../add.equip.php?l=<?=$id_lab.'&edit='.$id_equip; ?>">
+                                                        <img src="../../../assets/suporte/editar.png" alt="" class="h-7 w-7 mt-4 ml-4 hover:h-10 hover:w-10 transition-all duration-200">
+                                                     </a>
 
                                                 </div>
                                                  <!-- Botão avulso para excluir elemento do banco de dados -->
