@@ -152,8 +152,13 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                                                             <a href="../add.comp.php?l=<?=$id_lab.'&edit='.$modelo; ?>">
                                                                 <img src="../../../assets/suporte/editar.png" alt="" class="h-7 w-7 mt-4 ml-4 hover:h-10 hover:w-10 transition-all duration-200">
                                                             </a>
+
                                                             
                                                         </div>
+                                                        <!-- Botão avulso para excluir elemento do banco de dados -->
+                                                        <a href="../../../src/models/labs.model.php?l=<?= $id_lab . '&Mdel=' . $modelo ?>">
+                                                                <button>Deletar</button>
+                                                            </a>
 
                                                     </div>
                                                 </div>

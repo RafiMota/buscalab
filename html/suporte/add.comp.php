@@ -189,7 +189,7 @@
                         
                         <div class="flex flex-col w-2/3">
                             <label class="ml-2" for="processador">Processador</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="processador" name="procesador">
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="processador" name="processador">
                         </div>
                         <div class="flex flex-col w-2/3">
                             <label class="ml-2" for="cpu_mark">CPU Mark</label>

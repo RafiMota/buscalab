@@ -97,6 +97,20 @@
 
     }
 
+    // -------------- EXCLUIR SOFTWARES DO BANCO DE DADOS---------------------------------------------
+
+    if(isset($_GET['Sdel']) && !empty($_GET['Sdel'])){
+
+        $nome_soft= $_GET['Sdel'];
+        $query_deletar_soft = $conexao->prepare("DELETE FROM tabela_softwares WHERE software = '$nome_soft'");
+        $query_deletar_soft->execute();
+
+        $query_deletar_info_soft = $conexao2->prepare("DELETE FROM  tb_info_softwares WHERE software = '$nome_soft'");
+        $query_deletar_info_soft->execute();
+        header('location: ../../html/suporte/labs/lab.soft.php?l='.$id_lab);
+
+    }
+
     // -------------- ADICIONAR MODELOS---------------------------------------------
 
     if(isset($_GET['Madd']) && !empty($_GET['Madd'])){
@@ -188,6 +202,22 @@
 
     }
 
+
+    // -------------- EXCLUIR MODELOS DO BANCO DE DADOS---------------------------------------------
+
+    if(isset($_GET['Mdel']) && !empty($_GET['Mdel'])){
+        $modelo = $_GET['Mdel'];
+        
+        $query_deletar_modelo = $conexao->prepare("DELETE FROM tb_modelos WHERE modelo = '$modelo'");
+        $query_deletar_modelo->execute();
+        
+        $query_deletar_info_modelo = $conexao2->prepare("DELETE FROM tb_info_modelos WHERE modelo = '$modelo'");
+        $query_deletar_info_modelo->execute();
+
+        header('location: ../../html/suporte/labs/lab.modelos.php?l='.$id_lab);
+
+    }    
+    
     // -------------- EDITAR MODELOS  ---------------------------------------------
 
     if(isset($_GET['Medit']) && !empty($_GET['Medit'])){
@@ -314,4 +344,19 @@
         header('location: ../../html/suporte/labs/lab.equip.php?l='.$id_lab);
 
      }
+
+
+    // -------------- EXCLUIR EQUIPAMENTOS  DO BANCO DE DADOS---------------------------------------------
+
+    if(isset($_GET['Edel']) && !empty($_GET['Edel'])){
+        $id_equip = $_GET['Edel'];
+        
+        $query_deletar_equip = $conexao->prepare("DELETE FROM tb_equipamentos WHERE id = $id_equip");
+        $query_deletar_equip->execute();
+        
+        header('location: ../../html/suporte/labs/lab.equip.php?l='.$id_lab);
+       
+
+    }    
+
 ?>

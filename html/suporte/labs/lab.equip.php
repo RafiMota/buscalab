@@ -145,6 +145,10 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                                                     </a>
 
                                                 </div>
+                                                 <!-- Botão avulso para excluir elemento do banco de dados -->
+                                                 <a href="../../../src/models/labs.model.php?l=<?= $id_lab . '&Edel=' . $id_equip ?>">
+                                                    <button>Deletar</button>
+                                                </a>
                                             </div>
                                     <?php }
                                     }; ?>

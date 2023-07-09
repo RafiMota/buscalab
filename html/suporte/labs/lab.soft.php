@@ -123,6 +123,7 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                                     <?php foreach ($dados_soft as $key => $value) {
                                         if ($dados_soft[$key]['lab' . $id_lab] != 0) {
                                             $id_soft = $dados_soft[$key]['id'];
+                                            $nome_soft = $dados_soft[$key]['software'];
                                     ?>
                                             <div class="flex flex-col items-center justify-center h-42 w-32 rounded-xl  p-4 text-center transition-all">
 
@@ -131,6 +132,11 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                                                 <a class ="lixo" data-id="../../../src/models/labs.model.php?l=<?= $id_lab . '&Sre=' . $id_soft ?>">
                                                 
                                                     <img src="../../../assets/suporte/lixo.png" alt="" class="h-4 mt-4 ml-4 hover:h-8 transition-all duration-200">
+                                                </a>
+
+                                                <!-- Botão avulso para excluir elemento do banco de dados -->
+                                                <a href="../../../src/models/labs.model.php?l=<?= $id_lab . '&Sdel=' . $nome_soft ?>">
+                                                    <button>Deletar</button>
                                                 </a>
                                             </div>
                                     <?php }

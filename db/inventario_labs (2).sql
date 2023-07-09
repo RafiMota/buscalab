@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 07-Jul-2023 às 10:53
+-- Tempo de geração: 09-Jul-2023 às 13:11
 -- Versão do servidor: 8.0.33-0ubuntu0.22.04.2
 -- versão do PHP: 8.1.2-1ubuntu2.13
 
@@ -71,13 +71,16 @@ CREATE TABLE `tabela_softwares` (
 --
 
 INSERT INTO `tabela_softwares` (`id`, `software`, `lab1`, `lab2`, `lab3`, `lab4`, `lab5`, `lab6`, `imagem`) VALUES
-(1, 'Altium', b'1', b'0', b'1', b'1', b'1', b'1', 'img_software/logo-altium.png'),
+(1, 'Altium', b'0', b'0', b'1', b'1', b'1', b'1', 'img_software/logo-altium.png'),
 (2, 'Android Studio', b'1', b'1', b'0', b'0', b'0', b'1', 'img_software/logo-android-studio.svg'),
-(3, 'Arduino', b'0', b'0', b'1', b'0', b'0', b'0', 'img_software/logo-arduino.png'),
-(4, 'Blender', b'0', b'1', b'1', b'0', b'0', b'1', 'img_software/logo-blender.svg'),
+(3, 'Arduino', b'0', b'0', b'1', b'0', b'0', b'1', 'img_software/logo-arduino.png'),
+(4, 'Blender', b'1', b'1', b'1', b'0', b'0', b'1', 'img_software/logo-blender.svg'),
 (5, 'Gimp', b'1', b'1', b'1', b'1', b'1', b'1', 'img_software/logo-gimp.png'),
 (6, 'Processing', b'1', b'1', b'1', b'1', b'0', b'1', 'img_software/logo-processing.svg'),
-(17, 'vs code', b'1', b'1', b'1', b'1', b'1', b'1', 'img_software/logo-vscode.png');
+(17, 'vs code', b'1', b'1', b'1', b'1', b'1', b'0', 'img_software/logo-vscode.png'),
+(24, 'teste', b'1', b'1', b'1', b'1', b'0', b'1', 'img_software/'),
+(25, 'teste2', b'1', b'1', b'1', b'1', b'0', b'1', 'img_software/'),
+(26, 'teste3', b'1', b'1', b'1', b'1', b'0', b'1', 'img_software/');
 
 -- --------------------------------------------------------
 
@@ -150,7 +153,9 @@ CREATE TABLE `tb_equipamentos` (
 
 INSERT INTO `tb_equipamentos` (`id`, `modelo`, `patrimonio`, `fabricante`, `lab1`, `lab2`, `lab3`, `lab4`, `lab5`, `lab6`) VALUES
 (1, 'projetor', '2885677', 'Epson', 1, 1, 1, 1, 1, 1),
-(2, 'Ar-condicionar', '2345677', 'Philco', 0, 1, 0, 1, 1, 0);
+(2, 'Ar-condicionar', '2345677', 'Philco', 1, 1, 0, 1, 1, 0),
+(3, 'epson', 'ar-condicionado massa', '12343', 0, 1, 1, 1, 1, 0),
+(4, 'teste', '12323', 'epson', 1, 1, 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -181,9 +186,11 @@ CREATE TABLE `tb_info_modelos` (
 --
 
 INSERT INTO `tb_info_modelos` (`fabricante`, `modelo`, `processador`, `cpu_mark`, `mem_capacidade`, `mem_tipo`, `disco1_capacidade`, `disco1_tipo`, `disco1_modelo`, `disco2_capacidade`, `disco2_tipo`, `disco2_modelo`, `so_nome`, `so_compilacao`, `id`) VALUES
-('aaaaaa', 'cc', 'aa', 'aa', 'aa', 'aa', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 1),
-('aa', 'aa', 'aa', 'aa', 'aa', 'aa', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 'a', 2),
-('Dell', 'Dell optilex 780', 'intel core 2 QuadCPU 2.8GHz', '229', '4gb', 'ddr3-10600', '244GB', 'SSD', 'ADATA SU630', '500GB', 'HDD', 'ST500', 'Windows 10 pro', '19004', 3);
+('Dell', 'OPtiplex 780', 'Intel(R) Core(TM)2 Quad CPU Q9550 @ 2.83GHz', '2290', '4GB', 'DDR3-10600', '240GB', '', 'ADATA SU630', '', '', '', 'Microsoft Windows 10 Pro', '19044', 7),
+('Dell', 'Inspiron 5400 AIO', '11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz', '10548', '8 GB', 'DDR4 2666MHz', '256GB', 'M2', 'SSD', '', '', '', 'Microsoft Windows 11 Home Single Language', '22000', 8),
+('', 'teste', '', '', '', '', '', '', '', '', '', '', '', '', 11),
+('', 'teste2', '', '', '', '', '', '', '', '', '', '', '', '', 12),
+('', 'teste3', '', '', '', '', '1', '', '', '', '', '', '', '', 13);
 
 -- --------------------------------------------------------
 
@@ -210,7 +217,10 @@ INSERT INTO `tb_info_softwares` (`id`, `software`, `categoria`, `licenca`, `vers
 (4, 'Blender', 'Animação', 'gratuita', '3.3'),
 (5, 'Gimp', 'Mídia', 'open source', '2.10'),
 (6, 'Processing', 'IDE', 'gratuita', '3.5.4'),
-(7, 'Visual Studio Code', 'Editor', 'gratuita', '');
+(7, 'Visual Studio Code', 'Editor', 'gratuita', ''),
+(11, 'teste', '', '', ''),
+(12, 'teste2', '', '', ''),
+(13, 'teste3', '1', '', '1');
 
 -- --------------------------------------------------------
 
@@ -234,11 +244,11 @@ CREATE TABLE `tb_modelos` (
 --
 
 INSERT INTO `tb_modelos` (`modelo`, `lab1`, `lab2`, `lab3`, `lab4`, `lab5`, `lab6`, `id`) VALUES
-('imac', 1, 20, 0, 0, 18, 87, 1),
-('lenovo', 0, 24, 0, 29, 0, 0, 2),
-('Dell optilex 780', 6, 14, 17, 0, 0, 0, 16),
-('Positivo D610', 0, 0, 0, 0, 0, 0, 17),
-('imac 16,2', 1, 0, 0, 0, 0, 0, 18);
+('OPtiplex 780', 0, 16, 0, 0, 3, 2, 22),
+('Inspiron 5400 AIO', 15, 10, 0, 0, 0, 0, 23),
+('teste', 1, 1, 1, 1, 1, 1, 26),
+('teste2', 1, 1, 1, 1, 1, 1, 27),
+('teste3', 1, 11, 1, 1, 11, 1, 28);
 
 -- --------------------------------------------------------
 
@@ -338,7 +348,7 @@ ALTER TABLE `problemas`
 -- AUTO_INCREMENT de tabela `tabela_softwares`
 --
 ALTER TABLE `tabela_softwares`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT de tabela `tb_cadastro`
@@ -356,25 +366,25 @@ ALTER TABLE `tb_comp`
 -- AUTO_INCREMENT de tabela `tb_equipamentos`
 --
 ALTER TABLE `tb_equipamentos`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de tabela `tb_info_modelos`
 --
 ALTER TABLE `tb_info_modelos`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de tabela `tb_info_softwares`
 --
 ALTER TABLE `tb_info_softwares`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT de tabela `tb_modelos`
 --
 ALTER TABLE `tb_modelos`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT de tabela `tb_modelos-bkp`

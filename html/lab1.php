@@ -99,6 +99,7 @@
 
                   <?php foreach ($dados_soft as $key => $value) {
                     if ($dados_soft[$key]['lab' . $id_lab] != 0) {
+                      $modelo = $dados_modelos[$key]['modelo'];
                   ?>
 
                       <div class="flex flex-col items-center justify-center border-2 border-slate-700 h-36 w-36 rounded-lg mb-2 p-4 text-center hover:brightness-50">
@@ -118,6 +119,12 @@
                 <section id="computadores" class="flex flex-col gap-10 p-8">
                   <?php foreach ($dados_modelos as $key => $value) {
                     if ($dados_modelos[$key]['lab' . $id_lab] != 0) {
+                        $modelo = $dados_modelos[$key]['modelo'];
+                        $query_detalhes = $conexao2->prepare("SELECT * FROM tb_info_modelos WHERE modelo = '$modelo' ");
+                        $query_detalhes->execute();
+                        $dados_detalhes = $query_detalhes->fetchAll(PDO::FETCH_ASSOC);
+                     
+                        
                   ?>
                       <div class="flex flex-col h-fit w-full rounded-xl border-2 border-slate-700">
                         <div class="flex flex-row border-b-2 border-slate-700">
@@ -129,10 +136,15 @@
                             <p>Quantidade: <span><?= $dados_modelos[$key]['lab' . $id_lab]; ?></span></p>
                           </div>
                         </div>
+                        
                         <div class="flex items-center justify-center h-fit">
                           <details class="p-2">
                             <summary>Detalhes</summary>
-                            <p class="p-4">Conteúdo Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque eaque et totam excepturi est sunt quia in nobis id, quam fuga odio sed nihil consequuntur beatae impedit, perferendis unde repellendus?</p>
+                            
+                            <p class="p-4"><b>Fabricante:</b> <?=$dados_detalhes[0]['fabricante'];?> </p>
+                            <p class="p-4"><b>processador:</b> <?=$dados_detalhes[0]['processador'];?> </p>
+                            <p class="p-4"><b>Memória:</b> <?=$dados_detalhes[0]['mem_capacidade'];?> </p>
+                            <p class="p-4"><b>Disco rígido:</b> <?=$dados_detalhes[0]['disco1_tipo'];?> </p>
                           </details>
                         </div>
                       </div>
