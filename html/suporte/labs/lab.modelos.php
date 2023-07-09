@@ -32,7 +32,7 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Buscalab</title>
     <link rel="stylesheet" href="../../../src/css/output.css" />
-    <!-- <script src="../../../src\lab_suporte.js" defer></script> -->
+    <script src="../../../src\lab_suporte.js" defer></script>
 </head>
 
 <body class="font-montserrat h-screen flex flex-col justify-between bg-slate-100">
@@ -110,7 +110,7 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                 <div>
                     <ul>
                         <li>
-                            <article id="Equipamentos" class="flex flex-col gap-10 p-8">
+                            <div id="Equipamentos" class="flex flex-col gap-10 p-8">
 
                                 <div class="flex flex-wrap gap-4">
                                     <?php foreach ($dados_modelos as $key => $value) {
@@ -119,46 +119,51 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                                             $modelo = $dados_modelos[$key]['modelo'];
                                             
                                     ?>
-                                            <div class="flex flex-col h-full w-1/2 rounded-xl border-2 border-slate-300">
+                                            <div class="flex flex-col h-full w-3/4 rounded-xl border-2 border-slate-300">
                                                 <div class="flex flex-row border-b-2 border-slate-300">
                                                     <div class="h-42 w-1/3 rounded-l-xl border-r-2 border-slate-300">
                                                         <img src="../../../assets/suporte/laptop.png" alt="">
                                                     </div>
 
                                                     <div class="flex w-full items-center gap-4 p-4 justify-between">
-                                                        <div>
+                                                        <div >
                                                             <h3 class="text-xl font-bold"><?= $dados_modelos[$key]['modelo']; ?></h3>
-                                                            <span>Quantidade: <?= $dados_modelos[$key]['lab' . $id_lab]; ?></span>
-                                                        </div>
-
-                                                        <div class="flex items-center gap-2">
-                                                            <a href="../../../src/models/labs.model.php?l=<?= $id_lab . '&mc=' . $id_modelo; ?>">
-                                                                <button>
-                                                                    <span class="transition-all bg-slate-100 hover:bg-slate-300 p-1 font-bold text-xl rounded-md">
-                                                                        +
-                                                                    </span>
-                                                                </button>
-                                                            </a>
-                                                            <a href="../../../src/models/labs.model.php?l=<?= $id_lab . '&lc=' . $id_modelo; ?>">
-                                                                <button>
-                                                                    <span class="transition-all bg-slate-100 hover:bg-slate-300 p-1 font-bold text-xl rounded-md">
-                                                                        -
-                                                                    </span>
-                                                                </button>
-                                                            </a>
-                                                            <a class ="lixo" data-id="../../../src/models/labs.model.php?l=<?= $id_lab . '&Sre=' . $id_modelo ?>" style="outline: dashed 1px red;">
-                                                                <img src="../../../assets/suporte/lixo.png" alt="" class="h-7 w-6 mt-4 ml-4 hover:h-9 hover:w-8 transition-all duration-200">
+                                                            <div class="flex flex-row flex-nowrap gap-4 justify-center align-center"> 
+                                                                <span>Quantidade: <?= $dados_modelos[$key]['lab' . $id_lab]; ?></span>
+                                                                <a href="../../../src/models/labs.model.php?l=<?= $id_lab . '&mc=' . $id_modelo; ?>">
+                                                                    <button>
+                                                                        <span class="transition-all bg-slate-100 hover:bg-slate-300 p-0 font-bold text-xl rounded-md">
+                                                                            +
+                                                                        </span>
+                                                                    </button>
+                                                                </a>
+                                                                <a href="../../../src/models/labs.model.php?l=<?= $id_lab . '&lc=' . $id_modelo; ?>">
+                                                                    <button>
+                                                                        <span class="transition-all bg-slate-100 hover:bg-slate-300 p-0 font-bold text-xl rounded-md">
+                                                                            -
+                                                                        </span>
+                                                                    </button>
+                                                                </a>
+                                                            </div>
+                                                        </div>                                                        
+                                                            
+                                                        <div class="flex flex-row items-center gap-2">
+                                                            <style>
+                                                                .lixo{
+                                                                    width: 50px;
+                                                                }
+                                                            </style>
+                                                            <a class ="lixo" data-id="../../../src/models/labs.model.php?l=<?php $id_lab . '&Mre=' . $id_modelo ?>" data-todos="../../../src/models/labs.model.php?l=<?php $id_lab . '&Mdel=' . $modelo ?>" >
+                                                                <img src="../../../assets/suporte/lixo.png" alt="" class="h-6 mt-4 ml-4 hover:h-8 transition-all duration-200">
                                                             </a><br>
                                                             <a href="../add.comp.php?l=<?=$id_lab.'&edit='.$modelo; ?>">
-                                                                <img src="../../../assets/suporte/editar.png" alt="" class="h-7 w-7 mt-4 ml-4 hover:h-10 hover:w-10 transition-all duration-200">
+                                                                <img src="../../../assets/suporte/editar.png" alt="" class="h-6 mt-4 ml-4 hover:h-8 transition-all duration-200">
                                                             </a>
-
-                                                            
                                                         </div>
-                                                        <!-- Botão avulso para excluir elemento do banco de dados -->
-                                                        <a href="../../../src/models/labs.model.php?l=<?= $id_lab . '&Mdel=' . $modelo ?>">
-                                                                <button>Deletar</button>
-                                                            </a>
+                                                            
+                                                        
+                                                        
+                                                        
 
                                                     </div>
                                                 </div>
@@ -243,7 +248,7 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                                     <?php }
                                     }; ?>
                                 </div>
-                            </article>
+                                </div>
 
 
 

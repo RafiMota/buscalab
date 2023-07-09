@@ -129,18 +129,25 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
 
                                                 <img src="../../../assets/<?= $dados_soft[$key]['imagem']; ?>" alt="" class="h-24 mb-2 hover:brightness-50"/>
                                                 <p class="text-xs font-bold"><?= $dados_soft[$key]['software']; ?></p>
-                                                <a class ="lixo" data-id="../../../src/models/labs.model.php?l=<?= $id_lab . '&Sre=' . $id_soft ?>">
                                                 
-                                                    <img src="../../../assets/suporte/lixo.png" alt="" class="h-4 mt-4 ml-4 hover:h-8 transition-all duration-200">
-                                                </a>
-                                                <a href="../add.soft.php?l=<?=$id_lab.'&edit='.$nome_soft; ?>">
-                                                    <img src="../../../assets/suporte/editar.png" alt="" class="h-7 w-7 mt-4 ml-4 hover:h-10 hover:w-10 transition-all duration-200">
-                                                </a>
-
-                                                <!-- Botão avulso para excluir elemento do banco de dados -->
-                                                <a href="../../../src/models/labs.model.php?l=<?= $id_lab . '&Sdel=' . $nome_soft ?>">
-                                                    <button>Deletar</button>
-                                                </a>
+                                                <style>
+                                                    .isso{
+                                                        /* outline: dashed 1px red; */
+                                                        display: flex;
+                                                        flex-flow: row nowrap;
+                                                        justify-content: center;
+                                                        align-items: center;
+                                                    }
+                                                </style>
+                                                <div class="isso">
+                                                    <a class ="lixo isso flex justify-center align-center" data-id="../../../src/models/labs.model.php?l=<?= $id_lab . '&Sre=' . $id_soft ?>" data-todos="../../../src/models/labs.model.php?l=<?= $id_lab . '&Sdel=' . $nome_soft ?>">
+                                                    
+                                                        <img src="../../../assets/suporte/lixo.png" alt="" class="isso h-4 w-full mt-4 ml-4 hover:h-8 transition-all duration-200">
+                                                    </a>
+                                                    <a class="isso" href="../add.soft.php?l=<?=$id_lab.'&edit='.$nome_soft; ?>">
+                                                        <img src="../../../assets/suporte/editar.png" alt="" class="isso h-4 w-full mt-4 ml-4 hover:h-8 transition-all duration-200">
+                                                    </a>
+                                                </div>
                                             </div>
                                     <?php }
                                     }; ?>

@@ -124,12 +124,12 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
 
                             <div id="Equipamentos" class="flex flex-col gap-10 p-8">
 
-                                <div class="flex gap-4">
+                                <div class="flex flex-row flex-wrap gap-4">
                                     <?php foreach ($dados_equip as $key => $value) {
                                         $id_equip = $dados_equip[$key]['id'];
                                         if ($dados_equip[$key]['lab' . $id_lab] != 0) {
                                     ?>
-                                            <div class="flex h-full w-1/2 rounded-xl border-2 border-slate-300">
+                                            <div class="flex h-full w-3/4 rounded-xl border-2 border-slate-300">
                                                 <div class="flex items-center justify-center h-42 w-1/3 rounded-l-xl border-r-2 border-slate-300">
                                                     <img src="../../../assets/suporte/projetor.png" alt="" class="h-5/6">
                                                 </div>
@@ -139,19 +139,18 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                                                         <span>Quantidade: <?= $dados_equip[$key]['lab' . $id_lab]; ?></span>
                                                     </div>
 
-                                                    <a  data-id="../../../src/models/labs.model.php?l=<?= $id_lab . '&Sre=' . $id_equip ?>" class ="lixo">
-                                                        <img src="../../../assets/suporte/lixo.png" alt="" class="h-4 mt-4 ml-4 hover:h-8 transition-all duration-200">
-    
-                                                    </a>
-                                                    <a href="../add.equip.php?l=<?=$id_lab.'&edit='.$id_equip; ?>">
-                                                        <img src="../../../assets/suporte/editar.png" alt="" class="h-7 w-7 mt-4 ml-4 hover:h-10 hover:w-10 transition-all duration-200">
-                                                     </a>
+                                                    <div class="flex flex-row gap-4">
+                                                        <a  data-id="../../../src/models/labs.model.php?l=<?= $id_lab . '&Ere=' . $id_equip ?>" data-todos="../../../src/models/labs.model.php?l=<?= $id_lab . '&Edel=' . $id_equip ?>" class ="lixo">
+                                                            <img src="../../../assets/suporte/lixo.png" alt="" class="h-7 mt-4 ml-4 hover:h-8 transition-all duration-200">
+        
+                                                        </a>
+                                                        <a href="../add.equip.php?l=<?=$id_lab.'&edit='.$id_equip; ?>">
+                                                            <img src="../../../assets/suporte/editar.png" alt="" class="h-7 mt-4 ml-4 hover:h-8 transition-all duration-200">
+                                                        </a>
+                                                    </div>
 
                                                 </div>
-                                                 <!-- Botão avulso para excluir elemento do banco de dados -->
-                                                 <a href="../../../src/models/labs.model.php?l=<?= $id_lab . '&Edel=' . $id_equip ?>">
-                                                    <button>Deletar</button>
-                                                </a>
+                                                
                                             </div>
                                     <?php }
                                     }; ?>

@@ -52,14 +52,10 @@
     if(isset($_GET['Sre']) && !empty($_GET['Sre'])){
         $id_soft = $_GET['Sre'];
         $query_remove_software = $conexao->prepare(
-            "UPDATE
-                tabela_softwares
-            SET 
-                lab".$id_lab." = 0
-            WHERE
-                id = $id_soft
-
-        ");
+            "UPDATE tabela_softwares
+            SET lab".$id_lab." = 0
+            WHERE id = $id_soft "
+        );
         $query_remove_software->execute();
         header('location: ../../html/suporte/labs/lab.soft.php?l='.$id_lab);
     }
