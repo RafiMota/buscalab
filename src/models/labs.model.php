@@ -25,7 +25,7 @@
     // -------------- EQUIPAMENTOS---------------------------------------------
 
 
-    $query_equip = $conexao->prepare("SELECT id,modelo,lab".$id_lab." FROM tb_equipamentos");
+    $query_equip = $conexao->prepare("SELECT id,patrimonio,modelo,lab1 FROM tb_equipamentos");
     $query_equip->execute();
     $dados_equip = $query_equip->fetchAll();
     $json = json_encode($dados_equip);
@@ -65,9 +65,9 @@
     if(isset($_GET['Scad']) && !empty($_GET['Scad'])){
         if(isset($_POST)){
             $nome_soft = $_POST['nome'];
-            $categoria = $_POST['categoria'];
-            $licenca = $_POST['licenca'];
-            $versao = $_POST['versao'];
+            //$categoria = $_POST['categoria'];
+            //$licenca = $_POST['licenca'];
+            //$versao = $_POST['versao'];
             $lab1 = (int)$_POST['lab1'];
             $lab2 = (int)$_POST['lab2'];
             $lab3 = (int)$_POST['lab3'];
@@ -86,8 +86,8 @@
 
             // Cadastrar o detalhament dos softwares na tabela 'info_softwares' do banco dados
 
-            $query_info_software = $conexao->prepare("INSERT INTO tb_info_softwares(software,categoria,licenca,versao) VALUES ('$nome_soft','$categoria','$licenca','$versao')");
-            $query_info_software->execute();
+            //$query_info_software = $conexao->prepare("INSERT INTO tb_info_softwares(software,categoria,licenca,versao) VALUES ('$nome_soft','$categoria','$licenca','$versao')");
+           // $query_info_software->execute();
             header('location: ../../html/suporte/labs/lab.soft.php?l='.$id_lab);
         }
 
@@ -114,17 +114,7 @@
             $soft = $_GET['soft'];
             if(isset($_POST)&& !empty($_POST)){
                 $nome_soft = $_POST['nome'];
-                $categoria = $_POST['categoria'];
-                $licenca = $_POST['licenca'];
-                echo $licenca;
-                echo   'oi';
-                $versao = $_POST['versao'];
-                $lab1 = (int)$_POST['lab1'];
-                $lab2 = (int)$_POST['lab2'];
-                $lab3 = (int)$_POST['lab3'];
-                $lab4 = (int)$_POST['lab4'];
-                $lab5 = (int)$_POST['lab5'];
-                $lab6 = (int)$_POST['lab6'];
+                
                 if(isset($_FILES['imagem']) && $_FILES['imagem']['name'] !== ''){
                     $imagem = "img_software/".$_FILES['imagem']['name'];
                     move_uploaded_file($_FILES['imagem']['tmp_name'], "../../assets/".$imagem);
@@ -136,12 +126,6 @@
                             tabela_softwares
                         SET
                             software = '$nome_soft',
-                            lab1 = $lab1,
-                            lab2 = $lab2,
-                            lab3 = $lab3,
-                            lab4 = $lab4,
-                            lab5 = $lab5,
-                            lab6 = $lab6,
                             imagem = '$imagem'
 
                         WHERE software = '$soft'");
@@ -154,13 +138,8 @@
                         "UPDATE
                             tabela_softwares
                         SET
-                            software = '$nome_soft',
-                            lab1 = $lab1,
-                            lab2 = $lab2,
-                            lab3 = $lab3,
-                            lab4 = $lab4,
-                            lab5 = $lab5,
-                            lab6 = $lab6
+                            software = '$nome_soft'
+            
                             
 
                         WHERE software = '$soft'");
@@ -168,21 +147,7 @@
                     $query_edit_soft->execute();
                 }
 
-                $query_edit_detalhes_soft = $conexao->prepare(
-                    
-                    "UPDATE
-                        tb_info_softwares
-                    SET
-                        software = '$nome_soft',
-                        categoria = '$categoria',
-                        licenca = '$licenca',
-                        versao = '$versao'
-                        
-                    WHERE
-                        software = '$soft'");
-
                 
-                $query_edit_detalhes_soft->execute();
                 header('location: ../../html/suporte/labs/lab.soft.php?l='.$id_lab);
 
                 
@@ -412,17 +377,11 @@
         $fabricante = $_POST['fabricante'];
         $modelo = $_POST['modelo'];
         $patrimonio = $_POST['patrimonio'];
-        $qnt_lab1 = (int)$_POST['lab1'];
-        $qnt_lab2 = (int)$_POST['lab2'];
-        $qnt_lab3 = (int)$_POST['lab3'];
-        $qnt_lab4 = (int)$_POST['lab4'];
-        $qnt_lab5 = (int)$_POST['lab5'];
-        $qnt_lab6 = (int)$_POST['lab6'];
-
+        $lab1 = $id_lab;
 
         $query_cadastrar_equip = $conexao->prepare(
-            "INSERT INTO tb_equipamentos(modelo,patrimonio,fabricante,lab1,lab2,lab3,lab4,lab5,lab6)
-             VALUES('$modelo','$patrimonio','$fabricante',$qnt_lab1,$qnt_lab2,$qnt_lab3,$qnt_lab4,$qnt_lab5,$qnt_lab6)");
+            "INSERT INTO tb_equipamentos(modelo,patrimonio,fabricante,lab1)
+             VALUES('$modelo','$patrimonio','$fabricante',$id_lab)");
         $query_cadastrar_equip->execute();
         header('location: ../../html/suporte/labs/lab.equip.php?l='.$id_lab);
 
@@ -452,12 +411,7 @@
                 $fabricante = $_POST['fabricante'];
                 $modelo = $_POST['modelo'];
                 $patrimonio = $_POST['patrimonio'];
-                $lab1 = (int)$_POST['lab1'];
-                $lab2 = (int)$_POST['lab2'];
-                $lab3 = (int)$_POST['lab3'];
-                $lab4 = (int)$_POST['lab4'];
-                $lab5 = (int)$_POST['lab5'];
-                $lab6 = (int)$_POST['lab6'];
+                
 
                 $query_edit_equip = $conexao->prepare(
                     
@@ -466,18 +420,13 @@
                     SET
                         fabricante = '$fabricante',
                         modelo = '$modelo',
-                        patrimonio ='$patrimonio',
-                        lab1 = $lab1,
-                        lab2 = $lab2,
-                        lab3 = $lab3,
-                        lab4 = $lab4,
-                        lab5 = $lab5,
-                        lab6 = $lab6
+                        patrimonio ='$patrimonio'
+                        
                         
                     WHERE
                         id = $id_equip");
-                $query_edit_equip->execute();
-                header('location: ../../html/suporte/labs/lab.equip.php?l='.$id_lab);
+                        $query_edit_equip->execute();
+                        header('location: ../../html/suporte/labs/lab.equip.php?l='.$id_lab);
                 
             }
         }

@@ -1,7 +1,7 @@
 <?php
     $servername='localhost';
     $username='root';
-    $password='';
+    $password='150e240e';
     $dbname = 'inventario_labs';
     $conn=mysqli_connect($servername,$username,$password,"$dbname");
     if(!$conn){
