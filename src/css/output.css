@@ -910,6 +910,10 @@ video {
   border-width: 1px;
 }
 
+.border {
+  border-width: 1px;
+}
+
 .border-b-2 {
   border-bottom-width: 2px;
 }
@@ -1104,6 +1108,10 @@ video {
 
 .pl-0 {
   padding-left: 0px;
+}
+
+.pl-2 {
+  padding-left: 0.5rem;
 }
 
 .pl-4 {
@@ -1328,10 +1336,6 @@ video {
 
 .hover\:w-6:hover {
   width: 1.5rem;
-}
-
-.hover\:border-2:hover {
-  border-width: 2px;
 }
 
 .hover\:bg-red-600:hover {
