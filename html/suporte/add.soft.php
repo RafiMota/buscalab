@@ -69,7 +69,7 @@
         } else{
     ?>
 <div class="flex flex-col gap-10 p-8 pl-0 pr-0 absolute items-center justify-center bg-slate-200 w-full">
-            <div class="flex flex-col justify-between items-center bg-slate-100 shadow-xl w-1/2 rounded-xl h-full p-8">
+            <div class="flex flex-col justify-between items-center bg-slate-100 shadow-xl w-3/4 rounded-xl h-full p-8">
                 <header class="w-full text-center">
                     <h2 class="text-2xl font-semibold">
                         Qual software você deseja adicionar?
@@ -78,7 +78,7 @@
                 <main class="flex">
 
                    
-                    <div id="Softwares" class="justify-start p-8 w-full">
+                    <div id="Softwares" class="flex flex-row flex-wrap gap-4 justify-start p-8 w-full">
                                
                         <?php foreach ($dados_soft as $key => $value) {
                             $id_soft = $dados_soft[$key]['id'];
@@ -99,7 +99,7 @@
                 
             </div>
 
-            <div id="formAdicionar" class="flex flex-col items-center justify-between bg-slate-100 shadow-xl w-1/2 rounded-xl h-full p-8">
+            <div id="formAdicionar" class="flex flex-col items-center justify-between bg-slate-100 shadow-xl w-3/4 rounded-xl h-full p-8">
                 <header class="w-full text-center mb-4">
                     <h2 class="text-xl font-semibold">
                         Cadastre um software novo
@@ -108,41 +108,47 @@
                 <main class="flex flex-col w-full h-full">
 
                     <form action="../../src/models/labs.model.php?Scad=1&l=<?=$id_lab?>" method="post" enctype="multipart/form-data" class="flex flex-col justify-center items-center gap-4 w-full h-full">
-                        <div class="flex flex-col w-2/3">
+                        <div class="flex flex-col w-3/4">
                             <label class="ml-2" for="nome">Nome do software</label>
                             <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="nome" name="nome">
                         </div>
-                       
-                        <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="categoria">Lab 1</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab1" name="lab1" value="1">
+                        <style>
+                            .check{
+                                border: solid 1px black;
+                                padding: 0px 8px 0px 0px;
+                            }
+                        </style>
+                        <div class="flex flex-row gap-4">
+                            <div class="check flex flex-row w-2/3 gap-4">
+                                <label class="ml-2" for="categoria">Lab 1</label>
+                                <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab1" name="lab1" value="1">
+                            </div>
+                            <div class="check flex flex-row w-2/3 gap-4">
+                                <label class="ml-2" for="categoria">Lab 2</label>
+                                <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab2" name="lab2" value="1">
+                            </div>
+                            <div class="check flex flex-row w-2/3 gap-4">
+                                <label class="ml-2" for="categoria">Lab 3</label>
+                                <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab3" name="lab3" value="1">
+                            </div>
+                            <div class="check flex flex-row w-2/3 gap-4">
+                                <label class="ml-2" for="categoria">Lab 4</label>
+                                <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab4" name="lab4" value="1">
+                            </div>
+                            <div class="check flex flex-row w-2/3 gap-4">
+                                <label class="ml-2" for="categoria">Lab 5</label>
+                                <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab5" name="lab5" value="1">
+                            </div>
+                            <div class="check flex flex-row w-2/3 gap-4">
+                                <label class="ml-2" for="categoria">Lab 6 </label>
+                                <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab6" name="lab6" value="1">
+                            </div>
+                            
                         </div>
-                        <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="categoria">Lab 2</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab2" name="lab2" value="1">
-                        </div>
-                        <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="categoria">Lab 3</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab3" name="lab3" value="1">
-                        </div>
-                        <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="categoria">Lab 4</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab4" name="lab4" value="1">
-                        </div>
-                        <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="categoria">Lab 5</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab5" name="lab5" value="1">
-                        </div>
-                        <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="categoria">Lab 6 </label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab6" name="lab6" value="1">
-                        </div>
-                        <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="imagem">ícone do software</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="file" id="imagem" name="imagem" accept="image/*">
-                        </div>
-                        
-                        
+                        <div class="flex flex-col w-3/4">
+                                <label class="ml-2" for="imagem">ícone do software</label>
+                                <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="file" id="imagem" name="imagem" accept="image/*">
+                            </div>
                         <button type="submit" class="bg-slate-300 hover:bg-slate-500 shadow-md hover:text-slate-100 font-semibold transition-all p-2 rounded-md">Concluir</button>
                     </form>
 
