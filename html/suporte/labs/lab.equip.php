@@ -127,7 +127,8 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                                 <div class="flex flex-row flex-wrap gap-4">
                                     <?php foreach ($dados_equip as $key => $value) {
                                         $id_equip = $dados_equip[$key]['id'];
-                                        if ($dados_equip[$key]['lab' . $id_lab] != 0) {
+                                        
+                                        if ($dados_equip[$key]['lab1'] == $id_lab) {
                                     ?>
                                             <div class="flex h-full w-3/4 rounded-xl border-2 border-slate-300">
                                                 <div class="flex items-center justify-center h-42 w-1/3 rounded-l-xl border-r-2 border-slate-300">
@@ -136,7 +137,9 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                                                 <div class="flex w-full p-4 items-center justify-between">
                                                     <div class="flex flex-col">
                                                         <h3 class="text-xl font-bold"><?= $dados_equip[$key]['modelo']; ?></h3>
-                                                        <span>Quantidade: <?= $dados_equip[$key]['lab' . $id_lab]; ?></span>
+                                                        
+                                                        
+                                                        <p>Patrimônio: <?=$dados_equip[$key]['patrimonio'];?></p>
                                                     </div>
 
                                                     <div class="flex flex-row gap-4">

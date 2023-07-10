@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 09-Jul-2023 às 13:11
+-- Tempo de geração: 09-Jul-2023 às 21:33
 -- Versão do servidor: 8.0.33-0ubuntu0.22.04.2
 -- versão do PHP: 8.1.2-1ubuntu2.13
 
@@ -74,13 +74,21 @@ INSERT INTO `tabela_softwares` (`id`, `software`, `lab1`, `lab2`, `lab3`, `lab4`
 (1, 'Altium', b'0', b'0', b'1', b'1', b'1', b'1', 'img_software/logo-altium.png'),
 (2, 'Android Studio', b'1', b'1', b'0', b'0', b'0', b'1', 'img_software/logo-android-studio.svg'),
 (3, 'Arduino', b'0', b'0', b'1', b'0', b'0', b'1', 'img_software/logo-arduino.png'),
-(4, 'Blender', b'1', b'1', b'1', b'0', b'0', b'1', 'img_software/logo-blender.svg'),
-(5, 'Gimp', b'1', b'1', b'1', b'1', b'1', b'1', 'img_software/logo-gimp.png'),
+(4, 'Blender', b'0', b'1', b'1', b'0', b'0', b'1', 'img_software/logo-blender.svg'),
 (6, 'Processing', b'1', b'1', b'1', b'1', b'0', b'1', 'img_software/logo-processing.svg'),
 (17, 'vs code', b'1', b'1', b'1', b'1', b'1', b'0', 'img_software/logo-vscode.png'),
-(24, 'teste', b'1', b'1', b'1', b'1', b'0', b'1', 'img_software/'),
-(25, 'teste2', b'1', b'1', b'1', b'1', b'0', b'1', 'img_software/'),
-(26, 'teste3', b'1', b'1', b'1', b'1', b'0', b'1', 'img_software/');
+(24, 'teste20', b'1', b'1', b'1', b'1', b'0', b'1', 'img_software/Captura de tela de 2023-07-08 15-38-50.png'),
+(27, 'Draw.io', b'0', b'1', b'0', b'0', b'0', b'0', 'img_software/draw.io-logo.png'),
+(28, 'Helflo', b'0', b'1', b'0', b'0', b'0', b'1', 'img_software/logo-helflo.png'),
+(29, 'Inkscape', b'0', b'1', b'0', b'1', b'0', b'0', 'img_software/loog-inkscape.png'),
+(30, 'Wick editor', b'0', b'0', b'1', b'0', b'0', b'0', 'img_software/logo-wick-editor.png'),
+(32, 'Eclipse C++', b'0', b'0', b'0', b'0', b'1', b'0', 'img_software/cdt_logo_icon_0-removebg-preview.png'),
+(33, 'Natron', b'0', b'0', b'0', b'0', b'1', b'1', 'img_software/Natron_icon.svg-removebg-preview.png'),
+(34, 'PyCharm', b'1', b'0', b'0', b'1', b'1', b'1', 'img_software/PyCharm_Icon.svg-removebg-preview.png'),
+(35, 'PostgreSQL', b'1', b'0', b'0', b'1', b'1', b'0', 'img_software/download-removebg-preview.png'),
+(37, 'gimp 2', b'1', b'0', b'0', b'0', b'0', b'0', 'img_software/'),
+(38, 'gimp 22', b'0', b'0', b'0', b'0', b'0', b'0', 'img_software/'),
+(39, 'teste 444', b'1', b'1', b'1', b'0', b'0', b'1', 'img_software/');
 
 -- --------------------------------------------------------
 
@@ -139,23 +147,19 @@ CREATE TABLE `tb_equipamentos` (
   `modelo` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
   `patrimonio` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
   `fabricante` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
-  `lab1` tinyint(1) NOT NULL,
-  `lab2` tinyint(1) NOT NULL,
-  `lab3` tinyint(1) NOT NULL,
-  `lab4` tinyint(1) NOT NULL,
-  `lab5` tinyint(1) NOT NULL,
-  `lab6` tinyint(1) NOT NULL
+  `lab1` tinyint NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Extraindo dados da tabela `tb_equipamentos`
 --
 
-INSERT INTO `tb_equipamentos` (`id`, `modelo`, `patrimonio`, `fabricante`, `lab1`, `lab2`, `lab3`, `lab4`, `lab5`, `lab6`) VALUES
-(1, 'projetor', '2885677', 'Epson', 1, 1, 1, 1, 1, 1),
-(2, 'Ar-condicionar', '2345677', 'Philco', 1, 1, 0, 1, 1, 0),
-(3, 'epson', 'ar-condicionado massa', '12343', 0, 1, 1, 1, 1, 0),
-(4, 'teste', '12323', 'epson', 1, 1, 1, 1, 1, 1);
+INSERT INTO `tb_equipamentos` (`id`, `modelo`, `patrimonio`, `fabricante`, `lab1`) VALUES
+(1, 'projetor', '2885677', 'Epson', 2),
+(2, 'Ar-condicionar', '2345677', 'Philco', 1),
+(6, 'projetor', '2885677', 'Epson', 1),
+(7, 'dell alienware', '1221', 'epson', 1),
+(8, 'qwqww', '1212', 'epson', 6);
 
 -- --------------------------------------------------------
 
@@ -187,10 +191,12 @@ CREATE TABLE `tb_info_modelos` (
 
 INSERT INTO `tb_info_modelos` (`fabricante`, `modelo`, `processador`, `cpu_mark`, `mem_capacidade`, `mem_tipo`, `disco1_capacidade`, `disco1_tipo`, `disco1_modelo`, `disco2_capacidade`, `disco2_tipo`, `disco2_modelo`, `so_nome`, `so_compilacao`, `id`) VALUES
 ('Dell', 'OPtiplex 780', 'Intel(R) Core(TM)2 Quad CPU Q9550 @ 2.83GHz', '2290', '4GB', 'DDR3-10600', '240GB', '', 'ADATA SU630', '', '', '', 'Microsoft Windows 10 Pro', '19044', 7),
-('Dell', 'Inspiron 5400 AIO', '11th Gen Intel(R) Core(TM) i7-1165G7 @ 2.80GHz', '10548', '8 GB', 'DDR4 2666MHz', '256GB', 'M2', 'SSD', '', '', '', 'Microsoft Windows 11 Home Single Language', '22000', 8),
-('', 'teste', '', '', '', '', '', '', '', '', '', '', '', '', 11),
-('', 'teste2', '', '', '', '', '', '', '', '', '', '', '', '', 12),
-('', 'teste3', '', '', '', '', '1', '', '', '', '', '', '', '', 13);
+('Dell', 'Inspiron 5400 AIO', '', '10548', '8 GB', 'DDR4 2666MHz', '256GB', '', 'SSD', '', '', '', 'Microsoft Windows 11 Home Single Language', '22000', 8),
+('Lenovo', 'Lenovo 32091M5', 'Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz', '4664', '8GB', 'DDR3-12800', '240 GB', 'SSD', 'ADATA SU630', '', '', '', 'Microsoft Windows 10 Pro', '19044', 14),
+('Dell', 'OPtiplex 7010', 'Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz', '4664', '8GB', 'DDR3-12800', '240 GB', 'SSD', 'ADATA SU630', '500 GB', 'HDD', 'ST500DM002', 'Microsoft Windows 10 Pro', '19044', 15),
+('Positivo', 'Positivo D610', 'Intel(R) Pentium(R) CPU G4560 @ 3.50GHz', '3515', '8 GB', 'DDR3-10600', '1 TB', 'indefinido', '', '', '', '', 'Microsoft Windows 10 Pro', '19044', 16),
+('Apple', 'iMac16,2', 'Intel(R) Core(TM) i5-5575R CPU @ 2.80GHz', '5095', '8 GB', 'LPDDR3 1867MHz', '512 GB', 'SSD', 'indefinido', '', '', '', 'macOS Monterey', '12.3', 17),
+('HP', 'HP Compaq 6005 Pro SFF PC', 'AMD Phenom(tm) II X4 B95 Processor', '2329', '4GB', 'DDR3-10600', '1 TB', 'HDD', 'ST31000528AS', '', '', '', 'Microsoft Windows 10 Pro', '19044', 18);
 
 -- --------------------------------------------------------
 
@@ -215,12 +221,21 @@ INSERT INTO `tb_info_softwares` (`id`, `software`, `categoria`, `licenca`, `vers
 (2, 'Android Studio', 'IDE', 'gratuita', '2021.2.1'),
 (3, 'Arduino', 'DEV', 'gratuita', '1.8.19'),
 (4, 'Blender', 'Animação', 'gratuita', '3.3'),
-(5, 'Gimp', 'Mídia', 'open source', '2.10'),
 (6, 'Processing', 'IDE', 'gratuita', '3.5.4'),
 (7, 'Visual Studio Code', 'Editor', 'gratuita', ''),
-(11, 'teste', '', '', ''),
-(12, 'teste2', '', '', ''),
-(13, 'teste3', '1', '', '1');
+(11, 'teste20', 'design', '', ''),
+(14, 'Draw.io', 'Design', '', ''),
+(15, 'Helflo', 'Sistemas', '', ''),
+(16, 'Inkscape', 'Design', '', ''),
+(17, 'Wick editor', 'Animação', '', ''),
+(19, 'Eclipse C++', 'Sistemas', '', ''),
+(20, 'Natron', 'Animação', '', ''),
+(21, 'PyCharm', 'Sistemas', '', ''),
+(22, 'PostgreSQL', 'Sistemas', '', ''),
+(23, 'teste', '', '', ''),
+(24, 'gimp 2', '', '', ''),
+(25, 'gimp 22', '', '', ''),
+(26, 'teste 444', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -245,10 +260,12 @@ CREATE TABLE `tb_modelos` (
 
 INSERT INTO `tb_modelos` (`modelo`, `lab1`, `lab2`, `lab3`, `lab4`, `lab5`, `lab6`, `id`) VALUES
 ('OPtiplex 780', 0, 16, 0, 0, 3, 2, 22),
-('Inspiron 5400 AIO', 15, 10, 0, 0, 0, 0, 23),
-('teste', 1, 1, 1, 1, 1, 1, 26),
-('teste2', 1, 1, 1, 1, 1, 1, 27),
-('teste3', 1, 11, 1, 1, 11, 1, 28);
+('Inspiron 5400 AIO', 16, 10, 0, 0, 0, 0, 23),
+('Lenovo 32091M5', 12, 0, 0, 0, 15, 26, 29),
+('OPtiplex 7010', 0, 0, 0, 26, 0, 0, 30),
+('Positivo D610', 0, 0, 0, 0, 0, 10, 31),
+('iMac16,2', 0, 0, 24, 0, 0, 0, 32),
+('HP Compaq 6005 Pro SFF PC', 0, 10, 0, 0, 0, 0, 33);
 
 -- --------------------------------------------------------
 
@@ -348,7 +365,7 @@ ALTER TABLE `problemas`
 -- AUTO_INCREMENT de tabela `tabela_softwares`
 --
 ALTER TABLE `tabela_softwares`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT de tabela `tb_cadastro`
@@ -366,25 +383,25 @@ ALTER TABLE `tb_comp`
 -- AUTO_INCREMENT de tabela `tb_equipamentos`
 --
 ALTER TABLE `tb_equipamentos`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de tabela `tb_info_modelos`
 --
 ALTER TABLE `tb_info_modelos`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de tabela `tb_info_softwares`
 --
 ALTER TABLE `tb_info_softwares`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT de tabela `tb_modelos`
 --
 ALTER TABLE `tb_modelos`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT de tabela `tb_modelos-bkp`
