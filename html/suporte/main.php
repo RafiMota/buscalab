@@ -230,11 +230,7 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
         </main>
     </section>
 
-    <footer class="bg-slate-500 flex flex-row justify-self-end">
-        <p>
-            < footer aqui>
-        </p>
-    </footer>
+   
 
 
 </body>

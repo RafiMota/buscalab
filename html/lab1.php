@@ -99,7 +99,7 @@
 
                   <?php foreach ($dados_soft as $key => $value) {
                     if ($dados_soft[$key]['lab' . $id_lab] != 0) {
-                      $modelo = $dados_modelos[$key]['modelo'];
+                      
                   ?>
 
                       <div class="flex flex-col items-center justify-center border-2 border-slate-700 h-36 w-36 rounded-lg mb-2 p-4 text-center hover:brightness-50">
@@ -170,7 +170,7 @@
                         </div>
                         <div class="w-full p-4">
                           <h3 class="text-xl font-bold"><?= $dados_equip[$key]['modelo']; ?></h3>
-                          <p> <span>Quantidade: <?= $dados_equip[$key]['lab' . $id_lab]; ?></span></p>
+                          
                         </div>
                       </div>
                   <?php }
