@@ -22,9 +22,9 @@
             $query_edit_soft = $conexao->prepare("SELECT * FROM tabela_softwares WHERE software = '$nome_soft'");
             $query_edit_soft->execute();
             $dados_edit_soft = $query_edit_soft->fetchAll(PDO::FETCH_ASSOC);
-            $query_edit_detalhes = $conexao2->prepare("SELECT * FROM tb_info_softwares WHERE software = '$nome_soft'");
-            $query_edit_detalhes->execute();
-            $dados_detalhes = $query_edit_detalhes->fetchAll(PDO::FETCH_ASSOC);
+            //$query_edit_detalhes = $conexao2->prepare("SELECT * FROM tb_info_softwares WHERE software = '$nome_soft'");
+            //$query_edit_detalhes->execute();
+            //$dados_detalhes = $query_edit_detalhes->fetchAll(PDO::FETCH_ASSOC);
             
     
         
@@ -45,44 +45,10 @@
                     <form action="../../src/models/labs.model.php?Sedit=1&l=<?=$id_lab.'&soft='.$nome_soft;?>" method="post" enctype="multipart/form-data" class="flex flex-col justify-center items-center gap-4 w-full h-full">
                         <div class="flex flex-col w-2/3">
                             <label class="ml-2" for="nome">Nome do software</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="nome" name="nome" value="<?=$dados_detalhes[0]['software'];?>">
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="nome" name="nome" value="<?=$dados_edit_soft[0]['software'];?>">
                         </div>
-                        <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="categoria">Categoria</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="categoria" name="categoria" value="<?=$dados_detalhes[0]['categoria'];?>">
-                        </div>
-                        <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="licenca">Licença</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="licenca" name="linceca" value="<?=$dados_detalhes[0]['licenca'];?>">
-                        </div>
-                        <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="versao">Versão</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="versao" name="versao" value="<?=$dados_detalhes[0]['versao'];?>">
-                        </div>
-                        <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="lab1">Lab 1  (1 = adicionar / 0 = não adicionar)</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="number" id="lab1" name="lab1" value="<?=$dados_edit_soft[0]['lab1'];?>">
-                        </div>
-                        <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="lab2">Lab 2  (1 = adicionar / 0 = não adicionar)</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="number" id="lab2" name="lab2" value="<?=$dados_edit_soft[0]['lab2'];?>">
-                        </div>
-                        <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="lab3">Lab 3  (1 = adicionar / 0 = não adicionar)</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="number" id="lab3" name="lab3" value="<?=$dados_edit_soft[0]['lab3'];?>">
-                        </div>
-                        <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="lab4">Lab 4  (1 = adicionar / 0 = não adicionar)</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="number" id="lab4" name="lab4" value="<?=$dados_edit_soft[0]['lab4'];?>">
-                        </div>
-                        <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="lab5">Lab 5 ( 1 = adicionar / 0 = não adicionar)</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="number" id="lab5" name="lab5" value="<?=$dados_edit_soft[0]['lab5'];?>">
-                        </div>
-                        <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="lab6">Lab 6 (1 = adicionar / 0 = não adicionar)</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="number" id="lab6" name="lab6" value="<?=$dados_edit_soft[0]['lab6'];?>">
-                        </div>
+                        
+                        
                         <div class="flex flex-col w-2/3">
                             <label class="ml-2" for="imagem">ícone do software</label>
                             <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="file" id="imagem" name="imagem" accept="image/*">
@@ -146,41 +112,30 @@
                             <label class="ml-2" for="nome">Nome do software</label>
                             <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="nome" name="nome">
                         </div>
+                       
                         <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="categoria">Categoria</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="categoria" name="categoria">
+                            <label class="ml-2" for="categoria">Lab 1</label>
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab1" name="lab1" value="1">
                         </div>
                         <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="categoria">Licença</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="licenca" name="linceca">
+                            <label class="ml-2" for="categoria">Lab 2</label>
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab2" name="lab2" value="1">
                         </div>
                         <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="categoria">Versão</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="versao" name="versao">
+                            <label class="ml-2" for="categoria">Lab 3</label>
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab3" name="lab3" value="1">
                         </div>
                         <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="categoria">Lab 1  (1 = adicionar / 0 = não adicionar)</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="number" id="lab1" name="lab1">
+                            <label class="ml-2" for="categoria">Lab 4</label>
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab4" name="lab4" value="1">
                         </div>
                         <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="categoria">Lab 2  (1 = adicionar / 0 = não adicionar)</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="number" id="lab2" name="lab2">
+                            <label class="ml-2" for="categoria">Lab 5</label>
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab5" name="lab5" value="1">
                         </div>
                         <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="categoria">Lab 3  (1 = adicionar / 0 = não adicionar)</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="number" id="lab3" name="lab3">
-                        </div>
-                        <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="categoria">Lab 4  (1 = adicionar / 0 = não adicionar)</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="number" id="lab4" name="lab4">
-                        </div>
-                        <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="categoria">Lab 6 ( 1 = adicionar / 0 = não adicionar)</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="number" id="lab6" name="lab6">
-                        </div>
-                        <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="categoria">Lab 6 (1 = adicionar / 0 = não adicionar)</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="number" id="lab6" name="lab6">
+                            <label class="ml-2" for="categoria">Lab 6 </label>
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab6" name="lab6" value="1">
                         </div>
                         <div class="flex flex-col w-2/3">
                             <label class="ml-2" for="imagem">ícone do software</label>
