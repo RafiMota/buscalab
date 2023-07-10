@@ -153,7 +153,7 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                                                                     width: 50px;
                                                                 }
                                                             </style>
-                                                            <a class ="lixo" data-id="../../../src/models/labs.model.php?l=<?php $id_lab . '&Mre=' . $id_modelo ?>" data-todos="../../../src/models/labs.model.php?l=<?php $id_lab . '&Mdel=' . $modelo ?>" >
+                                                            <a class ="lixo" data-id="../../../src/models/labs.model.php?l=<?=$id_lab . '&Mre=' . $id_modelo ?>" data-todos="../../../src/models/labs.model.php?l=<?= $id_lab . '&Mdel=' . $modelo ?>" >
                                                                 <img src="../../../assets/suporte/lixo.png" alt="" class="h-6 mt-4 ml-4 hover:h-8 transition-all duration-200">
                                                             </a><br>
                                                             <a href="../add.comp.php?l=<?=$id_lab.'&edit='.$modelo; ?>">
