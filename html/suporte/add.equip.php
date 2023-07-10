@@ -65,7 +65,7 @@
         } else{
     ?>
 <div class="flex flex-col gap-10 p-8 pl-0 pr-0 absolute items-center justify-center bg-slate-200 w-full">
-            <div class="flex flex-col justify-between items-center bg-slate-100 shadow-xl w-1/2 rounded-xl h-full p-8">
+            <div class="flex flex-col justify-between items-center bg-slate-100 shadow-xl w-3/4 rounded-xl h-full p-8">
                 <header class="w-full text-center">
                     <h2 class="text-2xl font-semibold">
                         Adicione um equipamento existente
@@ -98,7 +98,7 @@
                 
             </div>
 
-            <div id="formAdicionar" class="flex flex-col items-center justify-between bg-slate-100 shadow-xl w-1/2 rounded-xl h-full p-8">
+            <div id="formAdicionar" class="flex flex-col items-center justify-between bg-slate-100 shadow-xl w-3/4 rounded-xl h-full p-8">
                 <header class="w-full text-center mb-4">
                     <h2 class="text-xl font-semibold">
                         Cadastre um equipamento novo
@@ -107,39 +107,48 @@
                 <main class="flex flex-col w-full h-full">
 
                     <form action="../../src/models/labs.model.php?Ecad=1&l=<?=$id_lab?>" method="post"  class="flex flex-col justify-center items-center gap-4 w-full h-full">
-                        <div class="flex flex-col w-2/3">
+                        <div class="flex flex-col w-3/4">
                             <label class="ml-2" for="fabricante">Fabricante</label>
                             <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="fabricante">
                         </div>
-                        <div class="flex flex-col w-2/3">
+                        <div class="flex flex-col w-3/4">
                             <label class="ml-2" for="modelo">Tipo de equipamento</label>
                             <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="modelo" name="modelo">
                         </div>
                        
-                        <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="lab1">Lab 1</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab1" name="lab1" value="1">
-                        </div>
-                        <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="lab2">Lab 2</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab2" name="lab2" value="1">
+                        <style>
+                            .check{
+                                border: solid 1px black;
+                                padding: 0px 8px 0px 0px;
+                            }
+                        </style>
+                        <div class="flex flex-row gap-4">
+                            <div class="check flex flex-row w-2/3 gap-4">
+                                <label class="ml-2" for="categoria">Lab 1</label>
+                                <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab1" name="lab1" value="1">
+                            </div>
+                            <div class="check flex flex-row w-2/3 gap-4">
+                                <label class="ml-2" for="categoria">Lab 2</label>
+                                <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab2" name="lab2" value="1">
+                            </div>
+                            <div class="check flex flex-row w-2/3 gap-4">
+                                <label class="ml-2" for="categoria">Lab 3</label>
+                                <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab3" name="lab3" value="1">
+                            </div>
+                            <div class="check flex flex-row w-2/3 gap-4">
+                                <label class="ml-2" for="categoria">Lab 4</label>
+                                <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab4" name="lab4" value="1">
+                            </div>
+                            <div class="check flex flex-row w-2/3 gap-4">
+                                <label class="ml-2" for="categoria">Lab 5</label>
+                                <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab5" name="lab5" value="1">
+                            </div>
+                            <div class="check flex flex-row w-2/3 gap-4">
+                                <label class="ml-2" for="categoria">Lab 6 </label>
+                                <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab6" name="lab6" value="1">
+                            </div>
+                            
                         </div>   
-                        <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="lab3">Lab 3</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab3" name="lab3" value="1">
-                        </div>   
-                        <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="lab4">Lab 4</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab4" name="lab4" value="1">
-                        </div>   
-                        <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="lab5">Lab 5</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab5" name="lab5" value="1">
-                        </div>   
-                        <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="lab6">Lab 6</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab6" name="lab6" value="1">
-                        </div>      
       
                         
                         
