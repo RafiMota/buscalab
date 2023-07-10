@@ -13,15 +13,15 @@ function lixopopup(href_aqui, href_todos){
     let body = document.querySelector("body")
     body.appendChild(popup)
     popup.className = 'popup' 
-    popup.style = "padding: 10px; position: absolute; top: 250px; right: 250px; bottom: 250px; left: 350px; background: white;  opacity: 95%; border-radius: 20px; display: flex; flex-flow: column nowrap; gap: 20px; justify-content: center; align-items: center;"
+    popup.style = "padding: 60px; position: absolute; top: 250px; right: 200px; bottom: 250px; left: 300px; background: white; border-radius: 20px; display: flex; flex-flow: column nowrap; gap: 20px; justify-content: center; align-items: center;"
     let button_aqui = document.createElement('a')
     button_aqui.href = href_aqui
     button_aqui.innerText = "Excluir apenas deste laboratório"
-    button_aqui.style = "padding: 10px; background: grey; border-radius: 5px;"
+    button_aqui.style = "padding: 10px; background: #19CEEF; border-radius: 5px;"
     let button_todos = document.createElement('a')
     button_todos.href = href_todos
     button_todos.innerText = "Excluir de todos os laboratórios"
-    button_todos.style = "padding: 10px; background: grey; border-radius: 5px;"
+    button_todos.style = "padding: 10px; background: #19CEEF; border-radius: 5px;"
     
     let button_close = document.createElement('button')
     button_close.innerText = "X"
@@ -31,10 +31,26 @@ function lixopopup(href_aqui, href_todos){
         console.log(popup);
         popup[0].remove();
     }
+    let div_botoes = document.createElement('div')
+    div_botoes.style = "display: flex; flex-flow: row nowrap; justify-content: center; align-items: center; gap: 10px;"
+    let div_texto = document.createElement('div')
 
+    let texto_titulo = document.createElement('h2')
+    texto_titulo.innerText = "Atenção"
+
+    let texto_paragrafo = document.createElement('h3')
+    texto_paragrafo.innerText = "Você deseja excluir o software apenas desse laboratório ou de todos os laboratórios?"
+
+    div_texto.style = "display: flex; flex-flow: column nowrap; justify-content: center; align-items: center; gap: 10px;"
+
+    div_texto.appendChild(texto_titulo)
+    div_texto.appendChild(texto_paragrafo)
+    
     popup.appendChild(button_close)
-    popup.appendChild(button_aqui)
-    popup.appendChild(button_todos)
+    popup.appendChild(div_texto)
+    div_botoes.appendChild(button_aqui)
+    div_botoes.appendChild(button_todos)
+    popup.appendChild(div_botoes)
     // console.log(popup);
 }
 // href="../../../src/models/labs.model.php?l=<?= $id_lab . '&Sre=' . $id_soft ?>"
