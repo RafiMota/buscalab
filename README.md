@@ -29,7 +29,7 @@
  
  Após isso, no PHPMyadmin, crie um banco de dados com o nome "inventario_labs" e importe o arquivo .sql nesse banco.
  
- Por fim, vá no seu navegador e coloque o link "http://localhost/techplan-projeto-integrado1/inventario_labs/index.php"
+ Por fim, vá no seu navegador e coloque o link "http://localhost/front-projeto-integrado/index.php"
 
 </br>
 
