@@ -36,8 +36,8 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
 
 </head>
 
-<body class="font-montserrat h-screen flex flex-col justify-between">
-    <header class="flex justify-between pt-2 pb-2 pr-8 pl-8 items-center shadow-lg border-b-2 border-slate-200">
+<body class="font-montserrat h-screen flex flex-col justify-between bg-slate-200">
+    <header class="flex justify-between pt-2 pb-2 pr-8 pl-8 items-center shadow-lg border-b-2 border-slate-200 bg-white">
         <section>
             <a href="../main.php"><img src="../../../assets/cyberpunk/logo-cyberpunk.svg" alt="" class="w-1/4"></a>
         </section>
@@ -136,7 +136,7 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                                                 <div class="flex w-full p-4 items-center justify-between">
                                                     <div class="flex flex-col">
                                                         <h3 class="text-xl font-bold"><?= $dados_equip[$key]['modelo']; ?></h3>
-                                                        <span>Quantidade: <?= $dados_equip[$key]['lab' . $id_lab]; ?></span>
+                                                        <span>Fabricante: <?= $dados_equip[$key]['fabricante']; ?></span>
                                                     </div>
 
                                                     <div class="flex flex-row gap-4">

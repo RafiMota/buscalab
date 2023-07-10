@@ -25,7 +25,7 @@
     // -------------- EQUIPAMENTOS---------------------------------------------
 
 
-    $query_equip = $conexao->prepare("SELECT id,modelo,lab".$id_lab." FROM tb_equipamentos");
+    $query_equip = $conexao->prepare("SELECT id,fabricante,modelo,lab".$id_lab." FROM tb_equipamentos");
     $query_equip->execute();
     $dados_equip = $query_equip->fetchAll();
     $json = json_encode($dados_equip);
@@ -377,7 +377,7 @@
 
         $fabricante = $_POST['fabricante'];
         $modelo = $_POST['modelo'];
-        $patrimonio = $_POST['patrimonio'];
+        $patrimonio = '';
         $qnt_lab1 = (int)$_POST['lab1'];
         $qnt_lab2 = (int)$_POST['lab2'];
         $qnt_lab3 = (int)$_POST['lab3'];
@@ -417,13 +417,7 @@
             if(isset($_POST)&& !empty($_POST)){
                 $fabricante = $_POST['fabricante'];
                 $modelo = $_POST['modelo'];
-                $patrimonio = $_POST['patrimonio'];
-                $lab1 = (int)$_POST['lab1'];
-                $lab2 = (int)$_POST['lab2'];
-                $lab3 = (int)$_POST['lab3'];
-                $lab4 = (int)$_POST['lab4'];
-                $lab5 = (int)$_POST['lab5'];
-                $lab6 = (int)$_POST['lab6'];
+                
 
                 $query_edit_equip = $conexao->prepare(
                     
@@ -431,14 +425,8 @@
                         tb_equipamentos
                     SET
                         fabricante = '$fabricante',
-                        modelo = '$modelo',
-                        patrimonio ='$patrimonio',
-                        lab1 = $lab1,
-                        lab2 = $lab2,
-                        lab3 = $lab3,
-                        lab4 = $lab4,
-                        lab5 = $lab5,
-                        lab6 = $lab6
+                        modelo = '$modelo'
+                        
                         
                     WHERE
                         id = $id_equip");

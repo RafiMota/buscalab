@@ -47,34 +47,7 @@
                             <label class="ml-2" for="modelo">Tipo de equipamento</label>
                             <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="modelo" name="modelo" value="<?=$dados_edit_equip[0]['modelo'];?>">
                         </div>
-                        <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="patrimonio">N° de patrimônio</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="patrimonio" name="patrimonio" value="<?=$dados_edit_equip[0]['patrimonio'];?>">
-                        </div>
-                        <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="lab1">Lab 1 (Adicionar = 1 / Não adicionar = 0)</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="lab1" name="lab1" value="<?=$dados_edit_equip[0]['lab1'];?>">
-                        </div>
-                        <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="lab2">Lab 2 (Adicionar = 1 / Não adicionar = 0)</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="lab2" name="lab2" value="<?=$dados_edit_equip[0]['lab2'];?>">
-                        </div>   
-                        <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="lab3">Lab 3 (Adicionar = 1 / Não adicionar = 0)</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="lab3" name="lab3" value="<?=$dados_edit_equip[0]['lab3'];?>">
-                        </div>   
-                        <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="lab4">Lab 4 (Adicionar = 1 / Não adicionar = 0)</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="lab4" name="lab4" value="<?=$dados_edit_equip[0]['lab4'];?>">
-                        </div>   
-                        <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="lab5">Lab 5 (Adicionar = 1 / Não adicionar = 0)</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="lab5" name="lab5" value="<?=$dados_edit_equip[0]['lab5'];?>">
-                        </div>   
-                        <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="lab6">Lab 6 (Adicionar = 1 / Não adicionar = 0)</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="lab6" name="lab6" value="<?=$dados_edit_equip[0]['lab6'];?>">
-                        </div>      
+                        
       
                         
                         
@@ -95,7 +68,7 @@
             <div class="flex flex-col justify-between items-center bg-slate-100 shadow-xl w-1/2 rounded-xl h-full p-8">
                 <header class="w-full text-center">
                     <h2 class="text-2xl font-semibold">
-                        Qual equipamento?
+                        Adicione um equipamento existente
                     </h2>
                 </header>
                 <main class="flex">
@@ -136,39 +109,36 @@
                     <form action="../../src/models/labs.model.php?Ecad=1&l=<?=$id_lab?>" method="post"  class="flex flex-col justify-center items-center gap-4 w-full h-full">
                         <div class="flex flex-col w-2/3">
                             <label class="ml-2" for="fabricante">Fabricante</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="fabricante" name="fabricante">
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="fabricante">
                         </div>
                         <div class="flex flex-col w-2/3">
                             <label class="ml-2" for="modelo">Tipo de equipamento</label>
                             <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="modelo" name="modelo">
                         </div>
+                       
                         <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="patrimonio">N° de patrimônio</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="patrimonio" name="patrimonio">
+                            <label class="ml-2" for="lab1">Lab 1</label>
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab1" name="lab1" value="1">
                         </div>
                         <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="lab1">Lab 1 (Adicionar = 1 / Não adicionar = 0)</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="lab1" name="lab1">
-                        </div>
-                        <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="lab2">Lab 2 (Adicionar = 1 / Não adicionar = 0)</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="lab2" name="lab2">
+                            <label class="ml-2" for="lab2">Lab 2</label>
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab2" name="lab2" value="1">
                         </div>   
                         <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="lab3">Lab 3 (Adicionar = 1 / Não adicionar = 0)</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="lab3" name="lab3">
+                            <label class="ml-2" for="lab3">Lab 3</label>
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab3" name="lab3" value="1">
                         </div>   
                         <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="lab4">Lab 4 (Adicionar = 1 / Não adicionar = 0)</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="lab4" name="lab4">
+                            <label class="ml-2" for="lab4">Lab 4</label>
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab4" name="lab4" value="1">
                         </div>   
                         <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="lab5">Lab 5 (Adicionar = 1 / Não adicionar = 0)</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="lab5" name="lab5">
+                            <label class="ml-2" for="lab5">Lab 5</label>
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab5" name="lab5" value="1">
                         </div>   
                         <div class="flex flex-col w-2/3">
-                            <label class="ml-2" for="lab6">Lab 6 (Adicionar = 1 / Não adicionar = 0)</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="lab6" name="lab6">
+                            <label class="ml-2" for="lab6">Lab 6</label>
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="checkbox" id="lab6" name="lab6" value="1">
                         </div>      
       
                         

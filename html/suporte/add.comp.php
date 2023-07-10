@@ -47,7 +47,7 @@
                         </div>
                         <div class="flex flex-col w-2/3">
                             <label class="ml-2" for="modelo">Modelo</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="modelo" name="modelo" value="<?=$dados_detalhes[0]['modelo'];?>">
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="modelo" name="modelo" value="<?=$dados_detalhes[0]['modelo'];?>" required>
                         </div>
                         
                         <div class="flex flex-col w-2/3">
@@ -184,7 +184,7 @@
                         </div>
                         <div class="flex flex-col w-2/3">
                             <label class="ml-2" for="modelo">Modelo</label>
-                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="modelo" name="modelo">
+                            <input class="border-2 border-slate-300 p-2 pt-1 pb-1 rounded-md" type="text" id="modelo" name="modelo" required>
                         </div>
                         
                         <div class="flex flex-col w-2/3">
