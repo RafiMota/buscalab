@@ -14,20 +14,51 @@
 </head>
 
 <body class="font-montserrat">
-  <header class="flex items-center justify-center border-b-2 border-red-300 p-8 pb-2 pt-2">
+  <header class="flex border-b-2 border-red-300 p-4 pb-2 pt-2">
     <a href="../index.php">
       <img id="logo" src="../assets/cyberpunk/logo-cyberpunk.svg" alt="" class="w-16" />
     </a>
   </header>
+  <style>
+    article {
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: start;
+      align-items: center;
+      text-align: start;
+    }
 
+    h2,
+    h3 {
+      width: 90%;
+      padding-top: 10px;
+    }
+
+    section {
+      /* outline: dashed 1px red; */
+      width: 100%;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: start;
+      align-items: center;
+      text-align: start;
+    }
+
+    section>div {
+      width: 90%;
+    }
+  </style>
   <main class="p-6">
-    <h2 class="mb-4 text-4xl font-bold">REGRAS</h2>
+
     <article>
+      <h2 class="mb-4 text-4xl font-bold">REGRAS</h2>
+      <h3 class="text-2xl font-semibold mb-2 text-red-700">
+        Perguntas Frequentes
+      </h3>
       <section>
-        <h3 class="text-2xl font-semibold mb-2 text-red-700">
-          Perguntas Frequentes
-        </h3>
-        <div class="w-3/4 flex flex-col align-center justify-center">
+
+        <div>
+
           <details class="">
             <summary class="text-xl border-b-2 border-slate-300 p-4">Posso comer no lab?</summary>
             <p class="p-4 rounded-b-xl bg-slate-200">É proibido fumar e/ou consumir qualquer tipo de alimento ou
@@ -101,69 +132,76 @@
           </details>
         </div>
       </section>
-
+      <h3 class="text-2xl font-semibold mb-4 text-red-700">
+        Normas de Uso
+      </h3>
       <section class="mt-16">
-        <h3 class="text-2xl font-semibold mb-4 text-red-700">
-          Normas de Uso
-        </h3>
-        <details class="">
-          <summary class="text-xl border-b-2 border-slate-300 p-4">Acesso ao laboratório</summary>
-          <p class="p-4 rounded-b-xl bg-slate-200">
-            Os Laboratórios de Informática são vinculados à Coordenação do Curso de Sistemas e Mídias Digitais cuja
-            utilização está à disposição de alunos de graduação, pós-graduação e professores, durante os horários de
-            aulas dos cursos regulares, de extensão e demais cursos disponibilizados pela coordenação.
-            <br><br>
-            Cada usuário é responsável pelo equipamento no período em que estiver fazendo uso do mesmo. Os usuários dos
-            laboratórios de informática comprometem-se a utilizar os recursos exclusivamente para atividades de ensino,
-            pesquisa ou extensão. Espera-se de todo usuário o cumprimento das normas, favorecendo assim a coletividade e
-            o aproveitamento máximo dos laboratórios para fins educacionais.
-          </p>
-        </details>
+        <div>
+          <details class="">
+            <summary class="text-xl border-b-2 border-slate-300 p-4">Acesso ao laboratório</summary>
+            <p class="p-4 rounded-b-xl bg-slate-200">
+              Os Laboratórios de Informática são vinculados à Coordenação do Curso de Sistemas e Mídias Digitais cuja
+              utilização está à disposição de alunos de graduação, pós-graduação e professores, durante os horários de
+              aulas dos cursos regulares, de extensão e demais cursos disponibilizados pela coordenação.
+              <br><br>
+              Cada usuário é responsável pelo equipamento no período em que estiver fazendo uso do mesmo. Os usuários
+              dos
+              laboratórios de informática comprometem-se a utilizar os recursos exclusivamente para atividades de
+              ensino,
+              pesquisa ou extensão. Espera-se de todo usuário o cumprimento das normas, favorecendo assim a coletividade
+              e
+              o aproveitamento máximo dos laboratórios para fins educacionais.
+            </p>
+          </details>
 
-        <details class="">
-          <summary class="text-xl border-b-2 border-slate-300 p-4">Horário de funcionamento</summary>
-          <p class="p-4 rounded-b-xl bg-slate-200">
-            Os Laboratórios de Informática somente poderão ser utilizados para aulas dos cursos regulares, de acordo com
-            o horário de aulas, previamente agendado pelo professor que ministrará a devida aula. Não havendo
-            agendamento de aula para referido horário, e havendo disponibilidade do laboratório, o mesmo poderá ser
-            utilizado para atividades externas às aulas regulares, como cursos de extensão e outras atividades
-            habilitadas pela Coordenação. Nas aulas é obrigatório a presença de um professor-responsável, ou na ausência
-            deste, do técnico administrativo responsável pelo laboratório.
-          </p>
-        </details>
+          <details class="">
+            <summary class="text-xl border-b-2 border-slate-300 p-4">Horário de funcionamento</summary>
+            <p class="p-4 rounded-b-xl bg-slate-200">
+              Os Laboratórios de Informática somente poderão ser utilizados para aulas dos cursos regulares, de acordo
+              com
+              o horário de aulas, previamente agendado pelo professor que ministrará a devida aula. Não havendo
+              agendamento de aula para referido horário, e havendo disponibilidade do laboratório, o mesmo poderá ser
+              utilizado para atividades externas às aulas regulares, como cursos de extensão e outras atividades
+              habilitadas pela Coordenação. Nas aulas é obrigatório a presença de um professor-responsável, ou na
+              ausência
+              deste, do técnico administrativo responsável pelo laboratório.
+            </p>
+          </details>
 
-        <details class="">
-          <summary class="text-xl border-b-2 border-slate-300 p-4">Penalidades</summary>
-          <p class="p-4 rounded-b-xl bg-slate-200">
-            a) Suspensão temporária do direito de uso dos Laboratórios de Informática;
-            <br><br>
-            b) Reposição dos equipamentos danificados ou retirados. Caso o usuário tenha dúvida a respeito da permissão
-            de realizar alguma atividade, deve consultar o professor-responsável ou técnico administrativo responsável
-            pelo laboratório. A falta de informação não é justificativa para má utilização dos equipamentos ou outro
-            tipo de infração.
+          <details class="">
+            <summary class="text-xl border-b-2 border-slate-300 p-4">Penalidades</summary>
+            <p class="p-4 rounded-b-xl bg-slate-200">
+              a) Suspensão temporária do direito de uso dos Laboratórios de Informática;
+              <br><br>
+              b) Reposição dos equipamentos danificados ou retirados. Caso o usuário tenha dúvida a respeito da
+              permissão
+              de realizar alguma atividade, deve consultar o professor-responsável ou técnico administrativo responsável
+              pelo laboratório. A falta de informação não é justificativa para má utilização dos equipamentos ou outro
+              tipo de infração.
 
-          </p>
-        </details>
+            </p>
+          </details>
 
-        <details class="">
-          <summary class="text-xl border-b-2 border-slate-300 p-4">Boas práticas de utilização</summary>
-          <p class="p-4 rounded-b-xl bg-slate-200">
-            a) Os computadores devem ser desligados no final seção diária de trabalho pelos próprios usuários;
-            <br><br>
-            b) Arquivos gravados pelo usuário em discos rígidos devem ser copiados para seu dispositivo ou local de
-            armazenamento pessoal ao terminar da sessão diária de uso, pois os discos rígidos serão apagados sem prévio
-            aviso;
-            <br><br>
-            c) Problemas e ocorrências estranhas observadas com o equipamento devem imediatamente ser reportadas ao
-            professor-responsável ou através do email helpdesk@virtual.ufc.br, conforme o caso;
-            <br><br>
-            d) As cadeiras devem ser organizadas após o uso do laboratório;
-            <br><br>
-            e) Zelar pela boa utilização dos computadores, cadeiras, mesas e demais equipamentos do laboratórios de
-            informática.
-          </p>
-        </details>
-
+          <details class="">
+            <summary class="text-xl border-b-2 border-slate-300 p-4">Boas práticas de utilização</summary>
+            <p class="p-4 rounded-b-xl bg-slate-200">
+              a) Os computadores devem ser desligados no final seção diária de trabalho pelos próprios usuários;
+              <br><br>
+              b) Arquivos gravados pelo usuário em discos rígidos devem ser copiados para seu dispositivo ou local de
+              armazenamento pessoal ao terminar da sessão diária de uso, pois os discos rígidos serão apagados sem
+              prévio
+              aviso;
+              <br><br>
+              c) Problemas e ocorrências estranhas observadas com o equipamento devem imediatamente ser reportadas ao
+              professor-responsável ou através do email helpdesk@virtual.ufc.br, conforme o caso;
+              <br><br>
+              d) As cadeiras devem ser organizadas após o uso do laboratório;
+              <br><br>
+              e) Zelar pela boa utilização dos computadores, cadeiras, mesas e demais equipamentos do laboratórios de
+              informática.
+            </p>
+          </details>
+        </div>
       </section>
     </article>
   </main>
