@@ -15,7 +15,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet" />
     <title>Adicionar Software</title>
 </head>
-<body>
+<body class="bg-slate-200">
     <?php
         if(isset($_GET['edit'])&& !empty($_GET['edit'])){
             $id_equip = $_GET['edit'];
@@ -80,7 +80,7 @@
                                 if ($dados_equip[$key]['lab' . $id_lab] < 1) {
                             ?>
                             <div class="flex h-20 w-full rounded-xl ">
-                                <div class="h-full w-1/3 rounded-l-xl bg-black"></div>
+                                
                                 <a href="../../src/models/labs.model.php?l=<?=$id_lab.'&Eadd='.$id_equip;?>">
                                     <div class="w-full p-4">
                                         <h3 class="text-xl font-bold"><?= $dados_equip[$key]['modelo']; ?></h3>

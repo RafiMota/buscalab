@@ -290,6 +290,8 @@
         $qnt_lab4 = (int)$_POST['lab4'];
         $qnt_lab5 = (int)$_POST['lab5'];
         $qnt_lab6 = (int)$_POST['lab6'];
+        
+        
 
 
         $query_edit_modelo = $conexao->prepare(
@@ -319,7 +321,7 @@
                 mem_capacidade = '$mem_capacidade',
                 mem_tipo = '$mem_tipo',
                 disco1_capacidade ='$disco1_capacidade',
-                disco1_tipo = '$disco_tipo',
+                disco1_tipo = '$disco1_tipo',
                 disco1_modelo = '$disco1_modelo',
                 disco2_capacidade = '$disco2_capacidade',
                 disco2_tipo = '$disco2_tipo',
@@ -330,7 +332,7 @@
             WHERE 
                 modelo = '$modelo'");
         $query_edit_detalhes->execute();
-        header('location: ../../html/suporte/labs/lab.modelos.php?l='.$id_lab);
+        header('location: ../../html/suporte/labs/lab.modelos.php?l='.$id_lab); 
 
 
     }

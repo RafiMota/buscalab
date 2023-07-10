@@ -39,7 +39,7 @@ function lixopopup(href_aqui, href_todos){
     texto_titulo.innerText = "Atenção"
 
     let texto_paragrafo = document.createElement('h3')
-    texto_paragrafo.innerText = "Você deseja excluir o software apenas desse laboratório ou de todos os laboratórios?"
+    texto_paragrafo.innerText = "Você deseja excluir o item apenas desse laboratório ou de todos os laboratórios?"
 
     div_texto.style = "display: flex; flex-flow: column nowrap; justify-content: center; align-items: center; gap: 10px;"
 
