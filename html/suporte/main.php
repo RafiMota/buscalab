@@ -72,7 +72,7 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
 <body class="font-montserrat h-screen flex flex-col justify-between">
     <header class="flex justify-between pt-2 pb-2 pr-8 pl-8 items-center shadow-lg border-b-2 border-slate-200">
         <section>
-            <img src="../../assets/cyberpunk/logo-cyberpunk.svg" alt="" class="w-1/4">
+            <img src="../../assets/cyberpunk/logo-cyberpunk.svg" alt="" class="w-3/4">
         </section>
 
         <section class="flex gap-10 items-center">
