@@ -39,3 +39,18 @@
 [![Tecnologias escolhidas](https://skills.thijs.gg/icons?i=php,html,css,js,tailwind&theme=dark)](https://skills.thijs.gg)
 
 PHP, HTML5, CSS3, JavaScript e Tailwind CSS.
+
+ ## Tabela de requisitos
+
+| Código [RFXXXXX]         | Tipo/Origem do requisito     | Funcionalidade | Situação |
+|--------------|-----------|------------|------------|
+| RFG0001 | Geral      | Visualização do inventário dos laboratórios        | Feito           |
+| RFS0001      | **Suporte**  | Modificação do inventário dos laboratórios       | Feito           |
+| RFS0002 | **Suporte**      | Login para perfil de administrador        | Feito           |
+| RFS0003      | **Suporte**  | Logout       |  Feito          |
+| RFG0002 | Geral      | Barra de pesquisa        |  Feito          |
+| RFS0004      | **Suporte**  | Visualizar e gerenciar as reclamações       |   Feito         |
+| RFA0001 | Geral      | "Reclame aqui" para notificar problemas diretamente ao suporte via site        | Feito           |
+| RFG0003      | Geral  | Visualização dos softwares disponíveis       |  Feito          |
+| RFS0005 | **Suporte**      | Modificação dos softwares disponíveis        |  Feito          |
+| RFG0004      | Geral  | Visualização das regras de uso dos laboratórios       |  Feito          |
