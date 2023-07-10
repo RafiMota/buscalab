@@ -35,7 +35,7 @@ function lixopopup(href_aqui, href_todos){
     popup.appendChild(button_close)
     popup.appendChild(button_aqui)
     popup.appendChild(button_todos)
-    console.log(popup);
+    // console.log(popup);
 }
 // href="../../../src/models/labs.model.php?l=<?= $id_lab . '&Sre=' . $id_soft ?>"
 
@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function(){
     document.querySelectorAll(".lixo").forEach(lixo =>{
         lixo.onclick = function(){
             lixopopup(this.dataset.id, this.dataset.todos);
+           
         } 
     })
 })
