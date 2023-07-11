@@ -3,6 +3,6 @@
     unset($_SESSION['usuario']);
     unset($_SESSION['senha']);
     session_destroy();
-    header('location: ../../html/suporte/login.html');
+    header('location: ../../login.html');
     exit;
 ?>
