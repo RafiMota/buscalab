@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 10-Jul-2023 às 09:39
+-- Tempo de geração: 12-Jul-2023 às 01:39
 -- Versão do servidor: 8.0.33-0ubuntu0.22.04.2
 -- versão do PHP: 8.1.2-1ubuntu2.13
 
@@ -64,7 +64,7 @@ CREATE TABLE `tabela_softwares` (
   `lab4` bit(1) NOT NULL,
   `lab5` bit(1) NOT NULL,
   `lab6` bit(1) NOT NULL,
-  `imagem` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
+  `imagem` varchar(200) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -72,18 +72,41 @@ CREATE TABLE `tabela_softwares` (
 --
 
 INSERT INTO `tabela_softwares` (`id`, `software`, `lab1`, `lab2`, `lab3`, `lab4`, `lab5`, `lab6`, `imagem`) VALUES
-(1, 'Altium', b'0', b'0', b'1', b'1', b'1', b'1', 'img_software/logo-altium.png'),
-(2, 'Android Studio', b'1', b'1', b'0', b'0', b'0', b'1', 'img_software/logo-android-studio.svg'),
-(3, 'Arduino', b'0', b'0', b'1', b'0', b'0', b'1', 'img_software/logo-arduino.png'),
-(4, 'Blender', b'1', b'1', b'1', b'0', b'0', b'1', 'img_software/logo-blender.svg'),
-(5, 'Gimp', b'1', b'1', b'1', b'1', b'1', b'1', 'img_software/logo-gimp.png'),
+(1, 'Altium', b'0', b'0', b'0', b'0', b'1', b'1', 'img_software/logo-altium.png'),
+(2, 'Android Studio', b'1', b'0', b'0', b'1', b'0', b'0', 'img_software/logo-android-studio.svg'),
+(3, 'Arduino', b'0', b'1', b'0', b'0', b'0', b'1', 'img_software/logo-arduino.png'),
+(5, 'Gimp', b'0', b'1', b'1', b'0', b'1', b'0', 'img_software/logo-gimp.png'),
 (6, 'Processing', b'1', b'1', b'1', b'1', b'0', b'1', 'img_software/logo-processing.svg'),
 (17, 'vs code', b'1', b'1', b'1', b'1', b'1', b'0', 'img_software/logo-vscode.png'),
-(29, 'PyCharm', b'0', b'1', b'0', b'1', b'0', b'0', 'img_software/PyCharm_Icon.svg-removebg-preview.png'),
+(29, 'PyCharm', b'0', b'1', b'0', b'1', b'1', b'1', 'img_software/PyCharm_Icon.svg-removebg-preview.png'),
 (30, 'Eclipse C++', b'1', b'1', b'0', b'1', b'0', b'0', 'img_software/cdt_logo_icon_0-removebg-preview.png'),
-(31, 'PostgreSQL', b'0', b'0', b'1', b'0', b'1', b'1', 'img_software/download-removebg-preview.png'),
-(32, 'Natron', b'0', b'0', b'0', b'0', b'0', b'0', 'img_software/Natron_icon.svg-removebg-preview.png'),
-(35, 'Inkscape', b'1', b'1', b'0', b'0', b'1', b'0', 'img_software/Inkscape_Logo.svg-removebg-preview.png');
+(31, 'PostgreSQL', b'1', b'0', b'1', b'1', b'1', b'1', 'img_software/download-removebg-preview.png'),
+(32, 'Natron', b'0', b'0', b'0', b'0', b'1', b'0', 'img_software/Natron_icon.svg-removebg-preview.png'),
+(35, 'Inkscape', b'0', b'1', b'1', b'0', b'1', b'0', 'img_software/Inkscape_Logo.svg-removebg-preview.png'),
+(37, 'Anaconda', b'0', b'0', b'0', b'0', b'1', b'1', 'img_software/anaconda--v2-removebg-preview.png'),
+(38, 'Krita', b'0', b'0', b'1', b'0', b'1', b'0', 'img_software/Calligrakrita-base.svg-removebg-preview.png'),
+(39, 'FontForge', b'0', b'0', b'1', b'0', b'1', b'0', 'img_software/fontforge.png'),
+(40, 'Node.js', b'0', b'0', b'0', b'0', b'1', b'0', 'img_software/node-logo.png'),
+(41, 'MediBang', b'0', b'0', b'1', b'0', b'1', b'0', 'img_software/mediabang-logo.png'),
+(42, 'pgAdmin 4', b'1', b'0', b'0', b'1', b'1', b'0', 'img_software/download-removebg-preview.png'),
+(43, 'Wick editor', b'0', b'0', b'1', b'0', b'1', b'0', 'img_software/wick-logo.png'),
+(44, 'Fusion Studio', b'0', b'0', b'0', b'0', b'1', b'1', 'img_software/fusionstudio-logo.png'),
+(45, 'Unity', b'1', b'0', b'0', b'1', b'0', b'0', 'img_software/unity-logo.png'),
+(46, 'Python', b'1', b'0', b'0', b'1', b'1', b'1', 'img_software/Python-logo-notext.svg-removebg-preview.png'),
+(47, 'NPM', b'0', b'0', b'0', b'0', b'1', b'0', 'img_software/npm-2048-removebg-preview.png'),
+(48, 'Postman', b'0', b'0', b'0', b'0', b'1', b'0', 'img_software/postman-logo.png'),
+(49, 'Cypress', b'0', b'0', b'0', b'0', b'1', b'0', 'img_software/cypress-logo-circle-dark.png'),
+(50, 'Mocha', b'0', b'0', b'0', b'0', b'1', b'0', 'img_software/download-removebg-preview (1).png'),
+(51, 'Selenium IDE', b'0', b'0', b'0', b'0', b'1', b'0', 'img_software/selenium-ide (1).png'),
+(52, 'Kicad', b'0', b'0', b'0', b'0', b'1', b'1', 'img_software/download-removebg-preview (2).png'),
+(53, 'Wireshark', b'1', b'0', b'0', b'1', b'0', b'0', 'img_software/wireshark-logo.png'),
+(54, ' NetBeans', b'1', b'0', b'0', b'1', b'0', b'0', 'img_software/apache-netbeans-logo.png'),
+(55, 'Oracle', b'1', b'0', b'0', b'1', b'0', b'0', 'img_software/oracle-logo-removebg-preview (1).png'),
+(56, 'P5 js', b'1', b'0', b'0', b'1', b'0', b'0', 'img_software/download-removebg-preview (3).png'),
+(57, 'GNU Octave', b'0', b'0', b'0', b'0', b'1', b'1', 'img_software/download-removebg-preview (4).png'),
+(58, 'Glyphr', b'0', b'0', b'1', b'0', b'1', b'0', 'img_software/glyphr_studio_logo-removebg-preview.png'),
+(59, 'Proteus', b'0', b'0', b'0', b'0', b'1', b'1', 'img_software/download-removebg-preview (5) (1).png'),
+(60, 'Audacity', b'0', b'0', b'0', b'0', b'1', b'1', 'img_software/logo-removebg-preview.png');
 
 -- --------------------------------------------------------
 
@@ -156,9 +179,9 @@ CREATE TABLE `tb_equipamentos` (
 
 INSERT INTO `tb_equipamentos` (`id`, `modelo`, `patrimonio`, `fabricante`, `lab1`, `lab2`, `lab3`, `lab4`, `lab5`, `lab6`) VALUES
 (1, 'projetor', '2885677', 'Epson', 1, 1, 1, 1, 1, 1),
-(2, 'Ar-condicionar', '2345677', 'Philco', 1, 0, 0, 1, 1, 1),
-(6, 'mesa digitalizadora', '', '', 1, 1, 1, 0, 0, 1),
-(9, '', '', '', 0, 0, 0, 0, 0, 0);
+(2, 'Ar-condicionado', '2345677', 'Philco', 1, 1, 1, 1, 1, 1),
+(10, 'Tela de projeção', '', '', 1, 1, 1, 1, 1, 1),
+(11, 'Lousa', '', '', 1, 1, 1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -189,14 +212,13 @@ CREATE TABLE `tb_info_modelos` (
 --
 
 INSERT INTO `tb_info_modelos` (`fabricante`, `modelo`, `processador`, `cpu_mark`, `mem_capacidade`, `mem_tipo`, `disco1_capacidade`, `disco1_tipo`, `disco1_modelo`, `disco2_capacidade`, `disco2_tipo`, `disco2_modelo`, `so_nome`, `so_compilacao`, `id`) VALUES
-('Dell', 'OPtiplex 780', 'Intel(R) Core(TM)2 Quad CPU Q9550 @ 2.83GHz', '2290', '4GB', 'DDR3-10600', '240GB', '', 'ADATA SU630', '', '', '', 'Microsoft Windows 10 Pro', '19044', 7),
+('Dell', 'OPtiplex 780', 'Intel(R) Core(TM)2 Quad CPU Q9550 @ 2.83GHz', '2290', '4GB', 'DDR3-10600', '240GB', 'SSD', 'ADATA SU630', '', '', '', 'Microsoft Windows 10 Pro', '19044', 7),
 ('Dell', 'Inspiron 5400 AIO', 'Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz', '10548', '8 GB', 'DDR4 2666MHz', '256GB', 'SSD', 'indefinido', '', '', '', 'Microsoft Windows 11 Home Single Language', '22000', 8),
 ('Lenovo', 'Lenovo 32091M5', 'Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz', '4664', '8GB', 'DDR3-12800', '240 GB', 'SSD', 'ADATA SU630', '', '', '', 'Microsoft Windows 10 Pro', '19044', 15),
 ('Dell', 'Dell OptiPlex 7010', 'Intel(R) Core(TM) i5-3470 CPU @ 3.20GHz', '4664', '8GB', 'DDR3-12800', '240 GB', 'SSD', 'ADATA SU630', '500 GB', 'HDD', 'ST500DM002', 'Microsoft Windows 10 Pro', '19044', 16),
 ('Positivo', 'Positivo D610', 'Intel(R) Pentium(R) CPU G4560 @ 3.50GHz', '3515', '8 GB', 'DDR3-10600', '1 TB', 'HDD/SSD', 'indefinido', '', '', '', 'Microsoft Windows 10 Pro', '19044', 17),
 ('Apple', 'iMac16,2', 'Intel(R) Core(TM) i5-5575R CPU @ 2.80GHz', '5095', '8 GB', 'LPDDR3 1867MHz', '512 GB', 'SSD', 'indefinido', '', '', '', 'macOS Monterey', '12.3', 18),
-('HP', 'HP Compaq 6005 Pro SFF PC', 'AMD Phenom(tm) II X4 B95 Processor', '2329', '4GB', 'DDR3-10600', '1 TB', 'HDD', 'ST31000528AS', '', '', '', 'Microsoft Windows 10 Pro', '19044', 19),
-('', 'teste', '', '', '', '', '', '', '', '', '', '', '', '', 21);
+('HP', 'HP Compaq 6005 Pro SFF PC', 'AMD Phenom(tm) II X4 B95 Processor', '2329', '4GB', 'DDR3-10600', '1 TB', 'HDD', 'ST31000528AS', '', '', '', 'Microsoft Windows 10 Pro', '19044', 19);
 
 -- --------------------------------------------------------
 
@@ -220,7 +242,6 @@ INSERT INTO `tb_info_softwares` (`id`, `software`, `categoria`, `licenca`, `vers
 (1, 'Altium', 'Design', 'gratuita', '2.2.1.6'),
 (2, 'Android Studio', 'IDE', 'gratuita', '2021.2.1'),
 (3, 'Arduino', 'DEV', 'gratuita', '1.8.19'),
-(4, 'Blender', 'Animação', 'gratuita', '3.3'),
 (5, 'Gimp', 'Mídia', 'open source', '2.10'),
 (6, 'Processing', 'IDE', 'gratuita', '3.5.4'),
 (7, 'Visual Studio Code', 'Editor', 'gratuita', ''),
@@ -254,8 +275,7 @@ INSERT INTO `tb_modelos` (`modelo`, `lab1`, `lab2`, `lab3`, `lab4`, `lab5`, `lab
 ('Dell OptiPlex 7010', 0, 0, 0, 26, 0, 0, 31),
 ('Positivo D610', 0, 0, 0, 0, 10, 0, 32),
 ('iMac16,2', 0, 0, 24, 0, 0, 0, 33),
-('HP Compaq 6005 Pro SFF PC', 0, 10, 0, 0, 0, 0, 34),
-('teste', 10, 0, 0, 0, 0, 10, 36);
+('HP Compaq 6005 Pro SFF PC', 0, 10, 0, 0, 0, 0, 34);
 
 -- --------------------------------------------------------
 
@@ -355,7 +375,7 @@ ALTER TABLE `problemas`
 -- AUTO_INCREMENT de tabela `tabela_softwares`
 --
 ALTER TABLE `tabela_softwares`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT de tabela `tb_cadastro`
@@ -373,7 +393,7 @@ ALTER TABLE `tb_comp`
 -- AUTO_INCREMENT de tabela `tb_equipamentos`
 --
 ALTER TABLE `tb_equipamentos`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de tabela `tb_info_modelos`

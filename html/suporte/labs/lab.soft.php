@@ -127,7 +127,7 @@ if (mysqli_num_rows($result_num_report_lab) == 0) {
                                     ?>
                                             <div class="flex flex-col items-center justify-center h-42 w-32 rounded-xl  p-4 text-center transition-all">
 
-                                                <img src="../../../assets/<?= $dados_soft[$key]['imagem']; ?>" alt="" class="h-24 mb-2 hover:brightness-50"/>
+                                                <img src="../../../assets/<?= $dados_soft[$key]['imagem']; ?>" alt="" class="h-24 w-28 mb-2 hover:brightness-50"/>
                                                 <p class="text-xs font-bold"><?= $dados_soft[$key]['software']; ?></p>
                                                 
                                                 <style>
