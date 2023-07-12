@@ -40,6 +40,8 @@
 
 PHP, HTML5, CSS3, JavaScript e Tailwind CSS.
 
+## Link do site já hospedado : https://buscalab.000webhostapp.com/Buscalab/
+
  ## Tabela de requisitos
 
 | Código [RFXXXXX]         | Tipo/Origem do requisito     | Funcionalidade | Situação |
